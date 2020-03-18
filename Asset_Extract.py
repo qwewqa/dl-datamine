@@ -88,16 +88,24 @@ def unpack_GameObject(data, destination_folder):
         if obj_type_str in unpack_dict:
             subdata = obj.read()
             if obj_type_str == 'MonoBehaviour':
-                json_data = subdata.read_type_tree()
-                if json_data:
-                    mono_list.append(json_data)
+                if mono_ext == '.json':
+                    json_data = subdata.read_type_tree()
+                    if json_data:
+                        mono_list.append(json_data)
+                else:
+                    mono_list.append(data.dump())
             elif obj_type_str == 'GameObject':
                 unpack_dict[obj_type_str](subdata, os.path.join(dest, '{:02}'.format(idx)))
     if len(mono_list) > 0:
         dest += mono_ext
         check_target_path(dest)
         with open(dest, 'w', encoding='utf8', newline='') as f:
-            json.dump(mono_list, f, indent=2)
+            if mono_ext == '.json':
+                json.dump(mono_list, f, indent=2)
+            else:
+                for m in mono_list:
+                    f.write(m)
+                    f.write('\n')
 
 # def unpack_GameObject(data, destination_folder):
 #     print('GameObject', destination_folder, flush=True)
