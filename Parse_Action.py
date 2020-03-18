@@ -94,7 +94,7 @@ def bullet_data(data: dict):
                 label=data["_hitAttrLabel"])]
 
 
-def parabola_bullet_data(data: dict):
+def other_bullet_data(data: dict):
     return [Hit(seconds=data["_seconds"],
                 speed=data["_speed"],
                 duration=data["_duration"],
@@ -132,6 +132,7 @@ class CommandType(Enum):
     SEND_SIGNAL_DATA = 14
     ACTIVE_CANCEL_DATA = 15
     PARABOLA_BULLET_DATA = 41
+    PIVOT_BULLET_DATA = 53
 
     @classmethod
     def _missing_(cls, value):
@@ -142,7 +143,8 @@ PROCESSORS: Dict[CommandType, Callable[[Dict], List[Event]]] = {
     CommandType.HIT_DATA: hit_data,
     CommandType.ACTIVE_CANCEL_DATA: active_cancel,
     CommandType.BULLET_DATA: bullet_data,
-    CommandType.PARABOLA_BULLET_DATA: parabola_bullet_data
+    CommandType.PARABOLA_BULLET_DATA: other_bullet_data,
+    CommandType.PIVOT_BULLET_DATA: other_bullet_data
 }
 
 
