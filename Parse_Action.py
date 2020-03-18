@@ -64,7 +64,7 @@ class Hit(Event):
         if self.hits == 1:
             return f"[{Event.__str__(self)}] Hit: label {self.label}"
         else:
-            return f"[{Event.__str__(self)}] Hit: label {self.label}, hits {self.hits}, interval {self.interval:.3f} : {to_frames(self.interval)}f"
+            return f"[{Event.__str__(self)}] Hit: label {self.label}, hits {self.hits}, duration {self.duration:.3f} : {to_frames(self.duration)}f, interval {self.interval:.3f} : {to_frames(self.interval)}f"
 
 
 @dataclass_json
