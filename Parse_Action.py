@@ -191,7 +191,7 @@ def process_actions(in_path: str, out_path: str, mode: str):
                 process_action(file_in_path, file_out_path, mode)
     else:
         if os.path.isdir(out_path):
-            out_path = Path(in_path).with_suffix(extension)
+            out_path = os.path.join(out_path, Path(in_path).with_suffix(extension).name)
         process_action(in_path, out_path, mode)
 
 
