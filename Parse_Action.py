@@ -1,21 +1,18 @@
 import argparse
+import dataclasses
 import errno
 import json
 import os
 from dataclasses import dataclass
 from enum import Enum
-from math import ceil
 from pathlib import Path
 from typing import List, Dict, Callable
-
-from dataclasses_json import dataclass_json
 
 
 def to_frames(duration: float) -> int:
     return round(duration * 60)
 
 
-@dataclass_json
 @dataclass
 class Event:
     name: str = ""
@@ -48,7 +45,6 @@ class Event:
                        f"{to_frames(self.default_start)}f"
 
 
-@dataclass_json
 @dataclass
 class PartsMotion(Event):
     activate_id: int = 0
@@ -69,7 +65,6 @@ class PartsMotion(Event):
                f"blend_duration {self.blend_duration:.3f} : {to_frames(self.blend_duration)}f"
 
 
-@dataclass_json
 @dataclass
 class Hit(Event):
     interval: float = 50.0
@@ -83,7 +78,6 @@ class Hit(Event):
                f"interval {self.interval:.3f} : {to_frames(self.interval)}f"
 
 
-@dataclass_json
 @dataclass
 class ActiveCancel(Event):
     activate_id: int = 0
@@ -108,7 +102,6 @@ SIGNAL_TYPES = {
 }
 
 
-@dataclass_json
 @dataclass
 class Signal(Event):
     activate_id: int = 0
@@ -132,6 +125,13 @@ class Signal(Event):
                f"motion_end {self.motion_end}, " \
                f"deco_id {self.deco_id}, " \
                f"duration {self.duration:.3f} : {to_frames(self.duration)}f"
+
+
+class EnhancedJSONEncoder(json.JSONEncoder):
+    def default(self, o):
+        if dataclasses.is_dataclass(o):
+            return dataclasses.asdict(o)
+        return super().default(o)
 
 
 def parts_motion_data(data: dict):
@@ -248,7 +248,7 @@ def process_action(in_path: str, out_path: str, mode: str):
     check_target_path(out_path)
     with open(out_path, 'w+', encoding='utf8') as f:
         if mode == "json":
-            json.dump([event.to_dict() for event in action], f, indent=2)
+            json.dump(action, f, indent=2, cls=EnhancedJSONEncoder)
         elif mode == "simple":
             for event in action:
                 f.write(f"{event}\n")
