@@ -61,10 +61,7 @@ class Hit(Event):
         return 1 if self.duration == 0.0 or self.hit_delete else int(ceil(self.duration / self.interval))
 
     def __str__(self):
-        if self.hits == 1:
-            return f"[{Event.__str__(self)}] Hit: label {self.label}"
-        else:
-            return f"[{Event.__str__(self)}] Hit: label {self.label}, hits {self.hits}, duration {self.duration:.3f} : {to_frames(self.duration)}f, interval {self.interval:.3f} : {to_frames(self.interval)}f"
+        return f"[{Event.__str__(self)}] Hit: label {self.label}, hits {self.hits}, duration {self.duration:.3f} : {to_frames(self.duration)}f, interval {self.interval:.3f} : {to_frames(self.interval)}f"
 
 
 @dataclass_json
@@ -77,11 +74,30 @@ class ActiveCancel(Event):
     name: str = "ActiveCancel"
 
     def __str__(self):
-        if self.duration > 0.0:
-            return f"[{Event.__str__(self)}] Active Cancel: aid {self.action_id}, duration {self.duration:.3f} : {to_frames(self.duration)}f"
-        else:
-            return f"[{Event.__str__(self)}] Active Cancel: aid {self.action_id}"
+        return f"[{Event.__str__(self)}] Active Cancel: action_id {self.action_id}, " \
+               f"action_type {self.action_type}, " \
+               f"activate_id {self.activate_id}, " \
+               f"motion_end {self.motion_end}, " \
+               f"duration {self.duration:.3f} : {to_frames(self.duration)}f"
 
+
+@dataclass_json
+@dataclass
+class Signal(Event):
+    activate_id: int = 0
+    signal_type: int = 0
+    motion_end: bool = False
+    action_id: int = 0
+    deco_id: int = 0
+    name: str = "Signal"
+
+    def __str__(self):
+        return f"[{Event.__str__(self)}] Signal: signal_type {self.signal_type}, " \
+               f"activate_id {self.activate_id}, " \
+               f"action_id {self.action_id}, " \
+               f"motion_end {self.motion_end}, " \
+               f"deco_id {self.deco_id}, " \
+               f"duration {self.duration:.3f} : {to_frames(self.duration)}f"
 
 
 def bullet_data(data: dict):
@@ -121,6 +137,17 @@ def active_cancel(data: dict):
                          motion_end=bool(data["_motionEnd"]))]
 
 
+def signal_data(data: dict):
+    return [Signal(seconds=data["_seconds"],
+                   speed=data["_speed"],
+                   duration=data["_duration"],
+                   activate_id=data["_activateId"],
+                   signal_type=data["_signalType"],
+                   motion_end=bool(data["_motionEnd"]),
+                   action_id=data["_actionId"],
+                   deco_id=data["_decoId"])]
+
+
 class CommandType(Enum):
     UNKNOWN = -1
     PARTS_MOTION_DATA = 2
@@ -144,7 +171,8 @@ PROCESSORS: Dict[CommandType, Callable[[Dict], List[Event]]] = {
     CommandType.ACTIVE_CANCEL_DATA: active_cancel,
     CommandType.BULLET_DATA: bullet_data,
     CommandType.PARABOLA_BULLET_DATA: other_bullet_data,
-    CommandType.PIVOT_BULLET_DATA: other_bullet_data
+    CommandType.PIVOT_BULLET_DATA: other_bullet_data,
+    CommandType.SEND_SIGNAL_DATA: signal_data
 }
 
 
