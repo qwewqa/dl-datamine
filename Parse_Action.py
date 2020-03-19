@@ -3,10 +3,13 @@ import dataclasses
 import errno
 import json
 import os
+import re
 from dataclasses import dataclass
 from enum import Enum
 from pathlib import Path
 from typing import List, Dict, Callable
+
+from Asset_Extract import check_target_path
 
 
 def to_frames(duration: float) -> int:
@@ -127,6 +130,12 @@ class Signal(Event):
                f"duration {self.duration:.3f} : {to_frames(self.duration)}f"
 
 
+@dataclass
+class Action:
+    id: int
+    timeline: List[Event]
+
+
 class EnhancedJSONEncoder(json.JSONEncoder):
     def default(self, o):
         if dataclasses.is_dataclass(o):
@@ -222,16 +231,7 @@ PROCESSORS: Dict[CommandType, Callable[[Dict], List[Event]]] = {
 }
 
 
-def check_target_path(target):
-    if not os.path.exists(os.path.dirname(target)):
-        try:
-            os.makedirs(os.path.dirname(target))
-        except OSError as exc:  # Guard against race condition
-            if exc.errno != errno.EEXIST:
-                raise
-
-
-def parse_action(path: str) -> List[Event]:
+def parse_action(path: str) -> Action:
     with open(path) as f:
         raw = json.load(f)
         action = [gameObject['_data'] for gameObject in raw if '_data' in gameObject.keys()]
@@ -240,7 +240,10 @@ def parse_action(path: str) -> List[Event]:
             command_type = CommandType(command['commandType'])
             if command_type in PROCESSORS.keys():
                 data.extend(PROCESSORS[command_type](command))
-        return sorted(data)
+        return Action(
+            id=int(Path(path).stem.split('_')[1]),
+            timeline=sorted(data)
+        )
 
 
 def process_action(in_path: str, out_path: str, mode: str):
@@ -250,7 +253,8 @@ def process_action(in_path: str, out_path: str, mode: str):
         if mode == "json":
             json.dump(action, f, indent=2, cls=EnhancedJSONEncoder)
         elif mode == "simple":
-            for event in action:
+            f.write(f"Action {action.id}\n")
+            for event in action.timeline:
                 f.write(f"{event}\n")
 
 
@@ -259,9 +263,10 @@ def process_actions(in_path: str, out_path: str, mode: str):
         "json": ".json",
         "simple": ".txt"
     }[mode]
+    file_filter = re.compile("PlayerAction_[0-9]+\\.json")
     if os.path.isdir(in_path):
         for root, _, files in os.walk(in_path):
-            for file_name in [f for f in files if f.endswith(".json") and f.startswith("PlayerAction")]:
+            for file_name in [f for f in files if file_filter.match(f) and f.startswith("PlayerAction")]:
                 file_in_path = os.path.join(root, file_name)
                 file_out_path = os.path.join(out_path, Path(file_name).with_suffix(extension))
                 process_action(file_in_path, file_out_path, mode)
