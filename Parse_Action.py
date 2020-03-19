@@ -50,18 +50,37 @@ class Event:
 
 @dataclass_json
 @dataclass
+class PartsMotion(Event):
+    activate_id: int = 0
+    motion_state: str = ""
+    motion_frame: int = 0
+    blend_duration: float = 0
+
+    def __str__(self):
+        return f"[{Event.__str__(self)}] Parts Motion: motion_state {self.motion_state}, " \
+               f"duration {self.duration:.3f} : {to_frames(self.duration)}f, " \
+               f"blend_duration {self.blend_duration:.3f} : {to_frames(self.blend_duration)}f"
+
+    def __repr__(self):
+        return f"[{Event.__str__(self)}] Parts Motion: activate_id {self.activate_id}, " \
+               f"motion_state {self.motion_state}, " \
+               f"motion_frame {self.motion_frame}, " \
+               f"duration {self.duration:.3f} : {to_frames(self.duration)}f, " \
+               f"blend_duration {self.blend_duration:.3f} : {to_frames(self.blend_duration)}f"
+
+
+@dataclass_json
+@dataclass
 class Hit(Event):
     interval: float = 50.0
     label: str = ""
     hit_delete: bool = False
     name: str = "Hit"
 
-    @property
-    def hits(self) -> int:
-        return 1 if self.duration == 0.0 or self.hit_delete else int(ceil(self.duration / self.interval))
-
     def __str__(self):
-        return f"[{Event.__str__(self)}] Hit: label {self.label}, hits {self.hits}, duration {self.duration:.3f} : {to_frames(self.duration)}f, interval {self.interval:.3f} : {to_frames(self.interval)}f"
+        return f"[{Event.__str__(self)}] Hit: label {self.label}, " \
+               f"duration {self.duration:.3f} : {to_frames(self.duration)}f, " \
+               f"interval {self.interval:.3f} : {to_frames(self.interval)}f"
 
 
 @dataclass_json
@@ -75,10 +94,18 @@ class ActiveCancel(Event):
 
     def __str__(self):
         return f"[{Event.__str__(self)}] Active Cancel: action_id {self.action_id}, " \
+               f"duration {self.duration:.3f} : {to_frames(self.duration)}f"
+
+    def __repr__(self):
+        return f"[{Event.__str__(self)}] Active Cancel: action_id {self.action_id}, " \
                f"action_type {self.action_type}, " \
                f"activate_id {self.activate_id}, " \
                f"motion_end {self.motion_end}, " \
                f"duration {self.duration:.3f} : {to_frames(self.duration)}f"
+
+
+SIGNAL_TYPES = {
+}
 
 
 @dataclass_json
@@ -92,12 +119,30 @@ class Signal(Event):
     name: str = "Signal"
 
     def __str__(self):
-        return f"[{Event.__str__(self)}] Signal: signal_type {self.signal_type}, " \
+        return f"[{Event.__str__(self)}] Signal: " \
+               f"signal_type {SIGNAL_TYPES[self.signal_type] if self.signal_type in SIGNAL_TYPES.keys() else self.signal_type}, " \
+               f"action_id {self.action_id}, " \
+               f"duration {self.duration:.3f} : {to_frames(self.duration)}f"
+
+    def __repr__(self):
+        return f"[{Event.__str__(self)}] Signal: " \
+               f"signal_type {SIGNAL_TYPES[self.signal_type] if self.signal_type in SIGNAL_TYPES.keys() else self.signal_type}, " \
                f"activate_id {self.activate_id}, " \
                f"action_id {self.action_id}, " \
                f"motion_end {self.motion_end}, " \
                f"deco_id {self.deco_id}, " \
                f"duration {self.duration:.3f} : {to_frames(self.duration)}f"
+
+
+def parts_motion_data(data: dict):
+    return [PartsMotion(seconds=data["_seconds"],
+                        speed=data["_speed"],
+                        duration=data["_duration"],
+                        activate_id=data["_activateId"],
+                        motion_state=data["_motionState"],
+                        motion_frame=data["_motionFrame"],
+                        blend_duration=data["_blendDuration"]
+                        )]
 
 
 def bullet_data(data: dict):
@@ -172,7 +217,8 @@ PROCESSORS: Dict[CommandType, Callable[[Dict], List[Event]]] = {
     CommandType.BULLET_DATA: bullet_data,
     CommandType.PARABOLA_BULLET_DATA: other_bullet_data,
     CommandType.PIVOT_BULLET_DATA: other_bullet_data,
-    CommandType.SEND_SIGNAL_DATA: signal_data
+    CommandType.SEND_SIGNAL_DATA: signal_data,
+    CommandType.PARTS_MOTION_DATA: parts_motion_data
 }
 
 
