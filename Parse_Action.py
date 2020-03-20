@@ -139,7 +139,7 @@ class Signal(Event):
 class Action:
     id: int
     timeline: List[Event]
-    hit_attributes: List[Dict[str, Any]]
+    hit_attributes: Dict[str, Dict[str, Any]]
 
 
 class EnhancedJSONEncoder(json.JSONEncoder):
@@ -292,9 +292,9 @@ def parse_action(path: str, attributes: Dict[str, Dict[str, Any]]) -> Action:
         return Action(
             id=int(Path(path).stem.split('_')[1]),
             timeline=sorted(data),
-            hit_attributes=[attribute for label in
+            hit_attributes={attribute['_Id']: attribute for label in
                             hit_labels for attribute in
-                            get_attributes_for_label(label, attributes)]
+                            get_attributes_for_label(label, attributes)}
         )
 
 
