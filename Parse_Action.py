@@ -222,6 +222,12 @@ def multi_bullet_data(data: dict):
     return bullets
 
 
+def fire_stock_bullet_data(data: dict):
+    num = data['_bulletNum']
+    base = bullet_data(data)
+    return base * num
+
+
 class CommandType(Enum):
     UNKNOWN = -1
     PARTS_MOTION_DATA = 2
@@ -235,6 +241,7 @@ class CommandType(Enum):
     MULTI_BULLET_DATA = 24
     PARABOLA_BULLET_DATA = 41
     PIVOT_BULLET_DATA = 53
+    FIRE_STOCK_BULLET_DATA = 59
 
     @classmethod
     def _missing_(cls, value):
@@ -249,7 +256,8 @@ PROCESSORS: Dict[CommandType, Callable[[Dict], List[Event]]] = {
     CommandType.PIVOT_BULLET_DATA: other_bullet_data,
     CommandType.SEND_SIGNAL_DATA: signal_data,
     CommandType.PARTS_MOTION_DATA: parts_motion_data,
-    CommandType.MULTI_BULLET_DATA: multi_bullet_data
+    CommandType.MULTI_BULLET_DATA: multi_bullet_data,
+    CommandType.FIRE_STOCK_BULLET_DATA: fire_stock_bullet_data
 }
 
 
