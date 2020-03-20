@@ -101,7 +101,7 @@ def parse_hit_attributes(data: dict):
 @dataclass
 class ActionCondition:
     id: int
-    type: int
+    type: str
     text: str
     text_ex: str
     unique_icon: int
@@ -211,10 +211,25 @@ class ActionCondition:
     extra_buff_type: int
 
 
+ACTION_CONDITION_TYPES = {
+    0: "Normal",
+    1: "Poison",
+    2: "Burn",
+    3: "Freeze",
+    4: "Paralysis",
+    5: "Blind",
+    6: "Stun",
+    7: "Curse",  # no 8
+    9: "Bog",
+    10: "Sleep",
+    11: "Frostbite"
+}
+
+
 def parse_action_condition(data: dict, labels: Dict[str, str]) -> ActionCondition:
     return ActionCondition(
         id=data['_Id'],
-        type=data['_Type'],
+        type=ACTION_CONDITION_TYPES.get(data['_Type'], str(data['_Type'])),
         text=labels.get(data['_Text'], data['_Text']),
         text_ex=labels.get(data['_TextEx'], data['_TextEx']),
         unique_icon=data['_UniqueIcon'],
