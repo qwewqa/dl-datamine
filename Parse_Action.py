@@ -1,19 +1,24 @@
 import argparse
 import dataclasses
-import errno
 import json
 import os
 import re
 from dataclasses import dataclass
 from enum import Enum
+from functools import reduce
 from pathlib import Path
-from typing import List, Dict, Callable
+from typing import List, Dict, Callable, Any
 
 from Asset_Extract import check_target_path
 
 
 def to_frames(duration: float) -> int:
     return round(duration * 60)
+
+
+def hit_attributes(in_dir: str) -> Dict[str, Dict[str, Any]]:
+    with open(os.path.join(in_dir, 'PlayerActionHitAttribute.json')) as f:
+        return {entry['_Id']: entry for entry in json.load(f)}
 
 
 @dataclass
@@ -134,6 +139,7 @@ class Signal(Event):
 class Action:
     id: int
     timeline: List[Event]
+    hit_attributes: List[Dict[str, Any]]
 
 
 class EnhancedJSONEncoder(json.JSONEncoder):
@@ -261,7 +267,16 @@ PROCESSORS: Dict[CommandType, Callable[[Dict], List[Event]]] = {
 }
 
 
-def parse_action(path: str) -> Action:
+def get_attributes_for_label(label: str, attributes: Dict[str, Dict[str, Any]]) -> List[Dict[str, Any]]:
+    if re.compile('.*LV0[1-4]').match(label):
+        suffixes = ['LV01', 'LV02', 'LV03', 'LV04']
+        base_name = label[0:-4]
+        return [attributes[base_name + suffix] for suffix in suffixes if base_name + suffix in attributes.keys()]
+    else:
+        return [attributes[label]]
+
+
+def parse_action(path: str, attributes: Dict[str, Dict[str, Any]]) -> Action:
     with open(path) as f:
         raw = json.load(f)
         action = [gameObject['_data'] for gameObject in raw if '_data' in gameObject.keys()]
@@ -270,14 +285,21 @@ def parse_action(path: str) -> Action:
             command_type = CommandType(command['commandType'])
             if command_type in PROCESSORS.keys():
                 data.extend(PROCESSORS[command_type](command))
+        hit_labels = set()
+        for event in data:
+            if hasattr(event, 'label'):
+                hit_labels.add(event.label)
         return Action(
             id=int(Path(path).stem.split('_')[1]),
-            timeline=sorted(data)
+            timeline=sorted(data),
+            hit_attributes=[attribute for label in
+                            hit_labels for attribute in
+                            get_attributes_for_label(label, attributes)]
         )
 
 
-def process_action(in_path: str, out_path: str, mode: str):
-    action = parse_action(in_path)
+def process_action(in_path: str, out_path: str, mode: str, attributes: Dict[str, Dict[str, Any]]):
+    action = parse_action(in_path, attributes)
     check_target_path(out_path)
     with open(out_path, 'w+', encoding='utf8') as f:
         if mode == 'json':
@@ -295,15 +317,17 @@ def process_actions(in_path: str, out_path: str, mode: str):
     }[mode]
     file_filter = re.compile('PlayerAction_[0-9]+\\.json')
     if os.path.isdir(in_path):
+        attributes = hit_attributes(in_path)
         for root, _, files in os.walk(in_path):
             for file_name in [f for f in files if file_filter.match(f) and f.startswith('PlayerAction')]:
                 file_in_path = os.path.join(root, file_name)
                 file_out_path = os.path.join(out_path, Path(file_name).with_suffix(extension))
-                process_action(file_in_path, file_out_path, mode)
+                process_action(file_in_path, file_out_path, mode, attributes)
     else:
         if os.path.isdir(out_path):
             out_path = os.path.join(out_path, Path(in_path).with_suffix(extension).name)
-        process_action(in_path, out_path, mode)
+        attributes = hit_attributes(Path(in_path).parent)
+        process_action(in_path, out_path, mode, attributes)
 
 
 if __name__ == '__main__':
