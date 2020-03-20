@@ -3,10 +3,11 @@ import dataclasses
 import json
 import os
 import re
+from collections import defaultdict
 from dataclasses import dataclass
 from enum import Enum
 from pathlib import Path
-from typing import List, Dict, Callable, Any
+from typing import List, Dict, Callable, Any, Optional
 
 from Asset_Extract import check_target_path
 
@@ -15,9 +16,14 @@ def to_frames(duration: float) -> int:
     return round(duration * 60)
 
 
-def load_by_id(path: str) -> Dict[str, Dict[str, Any]]:
+def load_by_id(path: str) -> Dict[Any, Any]:
     with open(path) as f:
         return {entry['_Id']: entry for entry in json.load(f)}
+
+
+def get_text_labels(in_dir: str) -> Dict[str, str]:
+    with open(os.path.join(in_dir, 'TextLabel.json')) as f:
+        return {entry['_Id']: entry['_Text'] for entry in json.load(f)}
 
 
 @dataclass
@@ -92,9 +98,214 @@ def parse_hit_attributes(data: dict):
     )
 
 
+@dataclass
+class ActionCondition:
+    id: int
+    type: int
+    text: str
+    text_ex: str
+    unique_icon: int
+    resist_buff_reset: int
+    unified_management: int
+    overwrite: int
+    overwrite_identical_owner: int
+    overwrite_group_id: int
+    user_power_up_effect: int
+    lost_on_dragon: int
+    restore_on_reborn: int
+    rate: int
+    efficacy_type: int
+    remove_condition_id: int
+    duration: float
+    duration_num: int
+    min_duration: float
+    remove_action: int
+    slip_damage_interval: float
+    slip_damage_fixed: int
+    slip_damage_ratio: float
+    slip_damage_max: int
+    slip_damage_power: float
+    regen_power: float
+    event_probability: int
+    event_coefficient: float
+    damage_coefficient: float
+    target_action: int
+    target_elemental: int
+    condition_abs: int
+    condition_debuff: int
+    hp: float
+    attack: float
+    defense: float
+    defense_b: float
+    critical: float
+    skill: float
+    fs: float
+    recovery: float
+    sp: float
+    attack_speed: float
+    charge_speed: float
+    # rate_poison: float
+    # rate_burn: float
+    # rate_freeze: float
+    # rate_paralysis: float
+    # rate_blind: float
+    # rate_stun: float
+    # rate_curse: float
+    # rate_bog: float
+    # rate_sleep: float
+    # rate_frostbite: float
+    # rate_fire: float
+    # rate_water: float
+    # rate_wind: float
+    # rate_light: float
+    # rate_dark: float
+    # rate_thaumian: float
+    # rate_physian: float
+    # rate_demihuman: float
+    # rate_therion: float
+    # rate_undead: float
+    # rate_demon: float
+    # rate_human: float
+    # rate_dragon: float
+    damage_cut: float
+    damage_cut_2: float
+    weak_invalid: float
+    heal_invalid: int
+    valid_regen_hp: float
+    valid_regen_sp: float
+    valid_regen_dp: float
+    valid_slip_hp: float
+    unique_regen_sp: float
+    auto_regen_s1: float
+    auto_regen_s2: float
+    rate_reraise: float
+    rate_armored: float
+    shield1: float
+    shield2: float
+    shield3: float
+    # malaise1: int  # vnidd
+    # malaise2: int
+    # malaise3: int
+    # rate_nicked: float  # dull
+    transform_skill: float
+    grant_skill: int
+    disable_action: int
+    disable_move: int
+    invincible_lv: int
+    combo_shift: int
+    enhanced_fs: int
+    enhanced_skill1: int
+    enhanced_skill2: int
+    enhanced_weapon_skill: int
+    enhanced_critical: float
+    tension: int
+    inspiration: int
+    sparking: int
+    rate_hp_drain: float
+    hp_drain_limit_rate: float
+    self_damage_rate: float
+    hp_consumption_rate: float
+    hp_consumption_coef: float
+    remove_trigger: int
+    damage_link: str
+    extra_buff_type: int
+
+
+def parse_action_condition(data: dict, labels: Dict[str, str]) -> ActionCondition:
+    return ActionCondition(
+        id=data['_Id'],
+        type=data['_Type'],
+        text=labels.get(data['_Text'], data['_Text']),
+        text_ex=labels.get(data['_TextEx'], data['_TextEx']),
+        unique_icon=data['_UniqueIcon'],
+        resist_buff_reset=data['_ResistBuffReset'],
+        unified_management=data['_UnifiedManagement'],
+        overwrite=data['_Overwrite'],
+        overwrite_identical_owner=data['_OverwriteIdenticalOwner'],
+        overwrite_group_id=data['_OverwriteGroupId'],
+        user_power_up_effect=data['_UsePowerUpEffect'],
+        lost_on_dragon=data['_LostOnDragon'],
+        restore_on_reborn=data['_RestoreOnReborn'],
+        rate=data['_Rate'],
+        efficacy_type=data['_EfficacyType'],
+        remove_condition_id=data['_RemoveConditionId'],
+        duration=data['_DurationSec'],
+        duration_num=data['_DurationNum'],
+        min_duration=data['_MinDurationSec'],
+        remove_action=data['_RemoveAciton'],
+        slip_damage_interval=data['_SlipDamageIntervalSec'],
+        slip_damage_fixed=data['_SlipDamageFixed'],
+        slip_damage_ratio=data['_SlipDamageRatio'],
+        slip_damage_max=data['_SlipDamageMax'],
+        slip_damage_power=data['_SlipDamagePower'],
+        regen_power=data['_RegenePower'],
+        event_probability=data['_EventProbability'],
+        event_coefficient=data['_EventCoefficient'],
+        damage_coefficient=data['_DamageCoefficient'],
+        target_action=data['_TargetAction'],
+        target_elemental=data['_TargetElemental'],
+        condition_abs=data['_ConditionAbs'],
+        condition_debuff=data['_ConditionDebuff'],
+        hp=data['_RateHP'],
+        attack=data['_RateAttack'],
+        defense=data['_RateDefense'],
+        defense_b=data['_RateDefenseB'],
+        critical=data['_RateCritical'],
+        skill=data['_RateSkill'],
+        fs=data['_RateBurst'],
+        recovery=data['_RateRecovery'],
+        sp=data['_RateRecoverySp'],
+        attack_speed=data['_RateAttackSpeed'],
+        charge_speed=data['_RateChargeSpeed'],
+        damage_cut=data['_RateDamageCut'],
+        damage_cut_2=data['_RateDamageCut2'],
+        weak_invalid=data['_RateWeakInvalid'],
+        heal_invalid=data['_HealInvalid'],
+        valid_regen_hp=data['_ValidRegeneHP'],
+        valid_regen_sp=data['_ValidRegeneSP'],
+        valid_regen_dp=data['_ValidRegeneDP'],
+        valid_slip_hp=data['_ValidSlipHp'],
+        unique_regen_sp=data['_UniqueRegeneSp01'],
+        auto_regen_s1=data['_AutoRegeneS1'],
+        auto_regen_s2=data['_AutoRegeneSW'],
+        rate_reraise=data['_RateReraise'],
+        rate_armored=data['_RateArmored'],
+        shield1=data['_RateDamageShield'],
+        shield2=data['_RateDamageShield2'],
+        shield3=data['_RateDamageShield3'],
+        transform_skill=data['_TransSkill'],
+        grant_skill=data['_GrantSkill'],
+        disable_action=data['_DisableAction'],
+        disable_move=data['_DisableMove'],
+        invincible_lv=data['_InvincibleLv'],
+        combo_shift=data['_ComboShift'],
+        enhanced_fs=data['_EnhancedBurstAttack'],
+        enhanced_skill1=data['_EnhancedSkill1'],
+        enhanced_skill2=data['_EnhancedSkill2'],
+        enhanced_weapon_skill=data['_EnhancedSkillWeapon'],
+        enhanced_critical=data['_EnhancedCritical'],
+        tension=data['_Tension'],
+        inspiration=data['_Inspiration'],
+        sparking=data['_Sparking'],
+        rate_hp_drain=data['_RateHpDrain'],
+        hp_drain_limit_rate=data['_HpDrainLimitRate'],
+        self_damage_rate=data['_SelfDamageRate'],
+        hp_consumption_rate=data['_HpConsumptionRate'],
+        hp_consumption_coef=data['_HpConsumptionCoef'],
+        remove_trigger=data['_RemoveTrigger'],
+        damage_link=data['_DamageLink'],
+        extra_buff_type=data['_ExtraBuffType']
+    )
+
+
 def get_hit_attributes(in_dir: str) -> Dict[str, HitAttributes]:
     return {data[0]: parse_hit_attributes(data[1]) for data in
             load_by_id(os.path.join(in_dir, 'PlayerActionHitAttribute.json')).items()}
+
+
+def get_action_conditions(in_dir: str, labels: Dict[str, str]) -> Dict[int, ActionCondition]:
+    return {data[0]: parse_action_condition(data[1], labels) for data in
+            load_by_id(os.path.join(in_dir, 'ActionCondition.json')).items()}
 
 
 @dataclass
@@ -215,7 +426,8 @@ class Signal(Event):
 class Action:
     id: int
     timeline: List[Event]
-    hit_attributes: Dict[str, Dict[str, Any]]
+    hit_attributes: Dict[str, HitAttributes]
+    action_conditions: Dict[int, ActionCondition]
 
 
 class EnhancedJSONEncoder(json.JSONEncoder):
@@ -343,7 +555,7 @@ PROCESSORS: Dict[CommandType, Callable[[Dict], List[Event]]] = {
 }
 
 
-def get_attributes_for_label(label: str, attributes: Dict[str, HitAttributes]) -> List[HitAttributes]:
+def attributes_for_label(label: str, attributes: Dict[str, HitAttributes]) -> List[HitAttributes]:
     if re.compile('.*LV0[1-4]').match(label):
         suffixes = ['LV01', 'LV02', 'LV03', 'LV04']
         base_name = label[0:-4]
@@ -352,7 +564,8 @@ def get_attributes_for_label(label: str, attributes: Dict[str, HitAttributes]) -
         return [attributes[label]] if label in attributes.keys() else []
 
 
-def parse_action(path: str, attributes: Dict[str, Dict[str, Any]]) -> Action:
+def parse_action(path: str, attributes: Dict[str, HitAttributes],
+                 action_conditions: Dict[int, ActionCondition]) -> Action:
     with open(path) as f:
         raw = json.load(f)
         action = [gameObject['_data'] for gameObject in raw if '_data' in gameObject.keys()]
@@ -365,17 +578,22 @@ def parse_action(path: str, attributes: Dict[str, Dict[str, Any]]) -> Action:
         for event in data:
             if hasattr(event, 'label'):
                 hit_labels.add(event.label)
+        hit_attrs: Dict[str, HitAttributes] = {attribute.id: attribute for label in
+                                               hit_labels for attribute in
+                                               attributes_for_label(label, attributes)}
         return Action(
             id=int(Path(path).stem.split('_')[1]),
             timeline=sorted(data),
-            hit_attributes={attribute.id: attribute for label in
-                            hit_labels for attribute in
-                            get_attributes_for_label(label, attributes)}
+            hit_attributes=hit_attrs,
+            action_conditions={ac.id: ac for ac in
+                               [action_conditions[attr.action_condition] for attr in hit_attrs.values() if
+                                attr.action_condition > 0]}
         )
 
 
-def process_action(in_path: str, out_path: str, mode: str, attributes: Dict[str, HitAttributes]):
-    action = parse_action(in_path, attributes)
+def process_action(in_path: str, out_path: str, mode: str, attributes: Dict[str, HitAttributes],
+                   action_conditions: Dict[int, ActionCondition]):
+    action = parse_action(in_path, attributes, action_conditions)
     check_target_path(out_path)
     with open(out_path, 'w+', encoding='utf8') as f:
         if mode == 'json':
@@ -393,17 +611,22 @@ def process_actions(in_path: str, out_path: str, mode: str):
     }[mode]
     file_filter = re.compile('PlayerAction_[0-9]+\\.json')
     if os.path.isdir(in_path):
+        labels = get_text_labels(in_path)
         attributes = get_hit_attributes(in_path)
+        action_conditions = get_action_conditions(in_path, labels)
         for root, _, files in os.walk(in_path):
             for file_name in [f for f in files if file_filter.match(f) and f.startswith('PlayerAction')]:
                 file_in_path = os.path.join(root, file_name)
                 file_out_path = os.path.join(out_path, Path(file_name).with_suffix(extension))
-                process_action(file_in_path, file_out_path, mode, attributes)
+                process_action(file_in_path, file_out_path, mode, attributes, action_conditions)
     else:
         if os.path.isdir(out_path):
             out_path = os.path.join(out_path, Path(in_path).with_suffix(extension).name)
-        attributes = get_hit_attributes(Path(in_path).parent)
-        process_action(in_path, out_path, mode, attributes)
+        in_dir = Path(in_path).parent
+        labels = get_text_labels(in_dir)
+        attributes = get_hit_attributes(in_dir)
+        action_conditions = get_action_conditions(in_dir, labels)
+        process_action(in_path, out_path, mode, attributes, action_conditions)
 
 
 if __name__ == '__main__':
