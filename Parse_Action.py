@@ -273,7 +273,7 @@ def get_attributes_for_label(label: str, attributes: Dict[str, Dict[str, Any]]) 
         base_name = label[0:-4]
         return [attributes[base_name + suffix] for suffix in suffixes if base_name + suffix in attributes.keys()]
     else:
-        return [attributes[label]]
+        return [attributes[label]] if label in attributes.keys() else []
 
 
 def parse_action(path: str, attributes: Dict[str, Dict[str, Any]]) -> Action:
