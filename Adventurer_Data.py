@@ -2,12 +2,12 @@ import argparse
 import json
 import os
 import re
-from collections import defaultdict
 from dataclasses import dataclass
 from typing import Dict, Any, List, Optional
 
 from Asset_Extract import check_target_path
-from Parse_Action import Action, parse_action, EnhancedJSONEncoder, hit_attributes
+from Parse_Action import Action, parse_action, EnhancedJSONEncoder, get_hit_attributes, get_text_labels, \
+    get_action_conditions
 
 WEAPON_TYPES = {
     1: "Sword",
@@ -57,11 +57,6 @@ class Adventurer:
     playable: bool
 
 
-def text_label(in_dir: str) -> Dict[str, Optional[str]]:
-    with open(os.path.join(in_dir, 'TextLabel.json')) as f:
-        return defaultdict(lambda: None, {entry['_Id']: entry['_Text'] for entry in json.load(f)})
-
-
 def get_skill_transforms(skill: SkillData, skills: Dict[int, SkillData]) -> List[SkillData]:
     ids = [skill.id]
     s = skill
@@ -83,7 +78,7 @@ def adventurer_data(in_dir: str, label: Dict[str, str], skills: Dict[int, SkillD
             skill2 = skills.get(char['_Skill2'], None)
             adventurers[cid] = Adventurer(
                 id=cid,
-                name=label[char['_SecondName']] or label[char['_Name']],
+                name=label.get(char['_SecondName'], label.get(char['_Name'], char['_Name'])),
                 weapon_type=WEAPON_TYPES[char['_WeaponType']],
                 rarity=char['_Rarity'],
                 element=ELEMENTS[char['_ElementalType']],
@@ -94,14 +89,15 @@ def adventurer_data(in_dir: str, label: Dict[str, str], skills: Dict[int, SkillD
         return adventurers
 
 
-def action_data(in_dir: str) -> Dict[int, Action]:
+def action_data(in_dir: str, labels: Dict[str, str]) -> Dict[int, Action]:
     file_filter = re.compile("PlayerAction_[0-9]+\\.json")
-    hit_attrs = hit_attributes(in_dir)
+    hit_attrs = get_hit_attributes(in_dir)
+    action_conditions = get_action_conditions(in_dir, labels)
     actions = {}
     for root, _, files in os.walk(in_dir):
         for file_name in [f for f in files if file_filter.match(f) and f.startswith("PlayerAction")]:
             file_path = os.path.join(root, file_name)
-            action = parse_action(file_path, hit_attrs)
+            action = parse_action(file_path, hit_attrs, action_conditions)
             actions[action.id] = action
     return actions
 
@@ -138,8 +134,8 @@ def get_valid_filename(s):
 
 
 def get_adventurers(in_dir: str) -> Dict[int, Adventurer]:
-    labels = text_label(in_dir)
-    actions = action_data(in_dir)
+    labels = get_text_labels(in_dir)
+    actions = action_data(in_dir, labels)
     skills = skill_data(in_dir, labels, actions)
     return adventurer_data(in_dir, labels, skills)
 
