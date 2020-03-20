@@ -4,11 +4,10 @@ import os
 import re
 from collections import defaultdict
 from dataclasses import dataclass
-from enum import Enum
 from typing import Dict, Any, List, Optional
 
 from Asset_Extract import check_target_path
-from Parse_Action import Action, parse_action, EnhancedJSONEncoder
+from Parse_Action import Action, parse_action, EnhancedJSONEncoder, hit_attributes
 
 WEAPON_TYPES = {
     1: "Sword",
@@ -97,11 +96,12 @@ def adventurer_data(in_dir: str, label: Dict[str, str], skills: Dict[int, SkillD
 
 def action_data(in_dir: str) -> Dict[int, Action]:
     file_filter = re.compile("PlayerAction_[0-9]+\\.json")
+    hit_attrs = hit_attributes(in_dir)
     actions = {}
     for root, _, files in os.walk(in_dir):
         for file_name in [f for f in files if file_filter.match(f) and f.startswith("PlayerAction")]:
             file_path = os.path.join(root, file_name)
-            action = parse_action(file_path)
+            action = parse_action(file_path, hit_attrs)
             actions[action.id] = action
     return actions
 
