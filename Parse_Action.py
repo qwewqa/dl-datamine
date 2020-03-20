@@ -5,7 +5,6 @@ import os
 import re
 from dataclasses import dataclass
 from enum import Enum
-from functools import reduce
 from pathlib import Path
 from typing import List, Dict, Callable, Any
 
@@ -16,9 +15,86 @@ def to_frames(duration: float) -> int:
     return round(duration * 60)
 
 
-def hit_attributes(in_dir: str) -> Dict[str, Dict[str, Any]]:
-    with open(os.path.join(in_dir, 'PlayerActionHitAttribute.json')) as f:
+def load_by_id(path: str) -> Dict[str, Dict[str, Any]]:
+    with open(path) as f:
         return {entry['_Id']: entry for entry in json.load(f)}
+
+
+@dataclass
+class HitAttributes:
+    id: str
+    hit_exec: int
+    target_group: int
+    mod: float
+    od_rate: float
+    break_rate: float
+    self_damage: int
+    set_hp: float
+    consume_hp_rate: float
+    recovery_value: int
+    sp: int
+    recovery_sp_ratio: float
+    recovery_sp_skill: int
+    recovery_dp_percentage: float
+    recovery_dragon_time: float
+    recovery_dp: int
+    recovery_ep: int
+    gauge: int
+    fixed_damage: int
+    current_hp_damage_rate: int
+    hp_drain_rate: float
+    hp_drain_rate2: float
+    hp_drain_limit_rate: float
+    hp_drain_attribute: str
+    counter_coef: float
+    crisis_rate: float
+    action_condition: int
+    action_grant: int
+    killer_states: List[int]
+    killer_rate: int
+    buff_boost: float
+
+
+def parse_hit_attributes(data: dict):
+    return HitAttributes(
+        id=data['_Id'],
+        hit_exec=data['_HitExecType'],
+        target_group=data['_TargetGroup'],
+        mod=data['_DamageAdjustment'],
+        od_rate=data['_ToOdDmgRate'],
+        break_rate=data['_ToBreakDmgRate'],
+        self_damage=data['_IsDamageMyself'],
+        set_hp=data['_SetCurrentHpRate'],
+        consume_hp_rate=data['_ConsumeHpRate'],
+        recovery_value=data['_RecoveryValue'],
+        sp=data['_AdditionRecoverySp'],
+        recovery_sp_ratio=data['_RecoverySpRatio'],
+        recovery_sp_skill=data['_RecoverySpSkillIndex'],
+        recovery_dp_percentage=data['_AdditionRecoveryDpPercentage'],
+        recovery_dragon_time=data['_RecoveryDragonTime'],
+        recovery_dp=data['_AdditionRecoveryDpLv1'],
+        recovery_ep=data['_RecoveryEp'],
+        gauge=data['_AdditionActiveGaugeValue'],
+        fixed_damage=data['_FixedDamage'],
+        current_hp_damage_rate=data['_CurrentHpRateDamage'],
+        hp_drain_rate=data['_HpDrainRate'],
+        hp_drain_rate2=data['_HpDrainRate2'],
+        hp_drain_limit_rate=data['_HpDrainLimitRate'],
+        hp_drain_attribute=data['_HpDrainAttribute'],
+        counter_coef=data['_DamageCounterCoef'],
+        crisis_rate=data['_CrisisLimitRate'],
+        action_condition=data['_ActionCondition1'],
+        action_grant=data['_ActionGrant'],
+        killer_states=[cond for cond in [data['_KillerState1'], data['_KillerState2'], data['_KillerState3']] if
+                       cond > 0],
+        killer_rate=data['_KillerStateDamageRate'],
+        buff_boost=data['_DamageUpRateByBuffCount']
+    )
+
+
+def get_hit_attributes(in_dir: str) -> Dict[str, HitAttributes]:
+    return {data[0]: parse_hit_attributes(data[1]) for data in
+            load_by_id(os.path.join(in_dir, 'PlayerActionHitAttribute.json')).items()}
 
 
 @dataclass
@@ -267,7 +343,7 @@ PROCESSORS: Dict[CommandType, Callable[[Dict], List[Event]]] = {
 }
 
 
-def get_attributes_for_label(label: str, attributes: Dict[str, Dict[str, Any]]) -> List[Dict[str, Any]]:
+def get_attributes_for_label(label: str, attributes: Dict[str, HitAttributes]) -> List[HitAttributes]:
     if re.compile('.*LV0[1-4]').match(label):
         suffixes = ['LV01', 'LV02', 'LV03', 'LV04']
         base_name = label[0:-4]
@@ -292,13 +368,13 @@ def parse_action(path: str, attributes: Dict[str, Dict[str, Any]]) -> Action:
         return Action(
             id=int(Path(path).stem.split('_')[1]),
             timeline=sorted(data),
-            hit_attributes={attribute['_Id']: attribute for label in
+            hit_attributes={attribute.id: attribute for label in
                             hit_labels for attribute in
                             get_attributes_for_label(label, attributes)}
         )
 
 
-def process_action(in_path: str, out_path: str, mode: str, attributes: Dict[str, Dict[str, Any]]):
+def process_action(in_path: str, out_path: str, mode: str, attributes: Dict[str, HitAttributes]):
     action = parse_action(in_path, attributes)
     check_target_path(out_path)
     with open(out_path, 'w+', encoding='utf8') as f:
@@ -317,7 +393,7 @@ def process_actions(in_path: str, out_path: str, mode: str):
     }[mode]
     file_filter = re.compile('PlayerAction_[0-9]+\\.json')
     if os.path.isdir(in_path):
-        attributes = hit_attributes(in_path)
+        attributes = get_hit_attributes(in_path)
         for root, _, files in os.walk(in_path):
             for file_name in [f for f in files if file_filter.match(f) and f.startswith('PlayerAction')]:
                 file_in_path = os.path.join(root, file_name)
@@ -326,7 +402,7 @@ def process_actions(in_path: str, out_path: str, mode: str):
     else:
         if os.path.isdir(out_path):
             out_path = os.path.join(out_path, Path(in_path).with_suffix(extension).name)
-        attributes = hit_attributes(Path(in_path).parent)
+        attributes = get_hit_attributes(Path(in_path).parent)
         process_action(in_path, out_path, mode, attributes)
 
 
