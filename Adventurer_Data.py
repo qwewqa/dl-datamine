@@ -7,7 +7,7 @@ from typing import Dict, Any, List, Optional
 
 from Abilities import ability_data, AbilityData, get_ability_and_references
 from Asset_Extract import check_target_path
-from Common import ELEMENTS, WEAPON_TYPES
+from Mappings import ELEMENTS, WEAPON_TYPES
 from Parse_Action import Action, parse_action, EnhancedJSONEncoder, get_hit_attributes, get_text_labels, \
     get_action_conditions
 
@@ -119,7 +119,7 @@ def skill_data(in_dir: str, label: Dict[str, str], actions: Dict[int, Action], a
                 actions=[actions[aid] for aid in action_ids if aid in actions.keys()],
                 advanced_action=actions.get(advanced_action_id, None),
                 abilities=[get_ability_and_references(skill[n], abilities) for n in
-                           ['_Ability1', '_Ability2', '_Ability3', '_Ability4'] if skill[n]],
+                           ['_Ability1', '_Ability2', '_Ability3', '_Ability4']],
                 trans_skill_id=skill['_TransSkill'],
                 tension=bool(skill['_IsAffectedByTension'])
             )

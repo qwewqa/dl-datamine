@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import List, Dict, Callable, Any, Optional
 
 from Asset_Extract import check_target_path
-from Common import ACTION_CONDITION_TYPES
+from Mappings import ACTION_CONDITION_TYPES
 
 
 def to_frames(duration: float) -> int:

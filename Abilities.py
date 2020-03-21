@@ -3,13 +3,52 @@ import os
 from dataclasses import dataclass, InitVar
 from typing import List, Dict, Any, Callable
 
-from Common import ACTION_CONDITION_TYPES
+from Mappings import ACTION_CONDITION_TYPES, ABILITY_CONDITION_TYPES
+
+
+STAT_ABILITIES = {
+    2: 'strength',
+    3: 'defense',
+    4: 'skill_haste',
+    8: 'shapeshift_time',
+    10: 'attack_speed',
+    12: 'fs_charge_rate'
+}
+
 
 ABILITY_TYPES: Dict[int, Callable[[List[int], str], str]] = {
-    1: lambda *_: 'strength',
+    1: lambda ids, _: STAT_ABILITIES.get(ids[0], f'stat {ids[0]}'),
     2: lambda ids, _: f'affliction_res {ACTION_CONDITION_TYPES.get(ids[0], ids[0])}',
-    14: lambda ids, _: f'action_condition {ids[0]}',
-    43: lambda ids, _: f'ability_ref {ids[0]}'
+    3: lambda ids, _: f'affliction_proc_rate {ACTION_CONDITION_TYPES.get(ids[0], ids[0])}',
+    4: lambda ids, _: f'tribe_res {ids[0]}',
+    5: lambda ids, _: f'bane {ids[0]}',
+    6: lambda *_: 'broken_punisher',
+    7: lambda ids, _: f'critical_rate',
+    8: lambda ids, _: f'recovery_potency',
+    9: lambda ids, _: f'gauge_accelerator',
+    11: lambda ids, _: f'striking_haste',
+    14: lambda ids, _: f'action_condition {[i for i in ids if i]}',
+    16: lambda ids, _: f'debuff_chance',
+    17: lambda ids, _: f'skill_prep',
+    18: lambda ids, _: f'buff_tim',
+    20: lambda ids, _: f'punisher {ACTION_CONDITION_TYPES.get(ids[0], ids[0])}',
+    21: lambda ids, _: f'player_exp',
+    25: lambda ids, _: f'cond_action_grant {ids[0]}',
+    26: lambda ids, _: f'critical_damage',
+    27: lambda ids, _: f'shapeshift_prep',
+    30: lambda ids, _: f'specific_bane {ids[0]}',
+    35: lambda ids, _: f'gauge_inhibitor',
+    36: lambda ids, _: f'dragon damage',
+    39: lambda ids, _: f'action_grant {ids[0]}',
+    40: lambda _, s: f'gauge def/skillboost {s}',
+    43: lambda ids, _: f'ability_ref {ids[0]}',
+    44: lambda ids, _: f'action {ids[0]}',
+    48: lambda ids, _: f'dragon_timer_decrease_rate',
+    49: lambda ids, _: f'shapeshift_fill',
+    51: lambda ids, _: f'random_buff {ids}',
+    52: lambda ids, _: f'critical_rate',
+    54: lambda _, s: f'combo_dmg_boost {s}',
+    55: lambda ids, _: f'combo_time',
 }
 
 
@@ -86,7 +125,7 @@ def ability_data(in_dir: str, label: Dict[str, str]) -> Dict[int, AbilityData]:
                 element_type=str(ability['_ElementalType']),
                 weapon_type=str(ability['_WeaponType']),
                 on_skill=ability['_OnSkill'],
-                condition_type=str(ability['_ConditionType']),
+                condition_type=ABILITY_CONDITION_TYPES.get(ability['_ConditionType'], str(ability['_ConditionType'])),
                 expire_condition=str(ability['_ExpireCondition']),
                 condition_value=ability['_ConditionValue'],
                 probability=ability['_Probability'],
