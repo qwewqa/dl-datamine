@@ -378,6 +378,7 @@ class PartsMotion(Event):
 @dataclass
 class Hit(Event):
     interval: float = 50.0
+    lifetime: Optional[float] = None
     label: str = ''
     hit_delete: bool = False
     name: str = 'Hit'
@@ -385,7 +386,8 @@ class Hit(Event):
     def __str__(self):
         return f'[{Event.__str__(self)}] Hit: label {self.label}, ' \
                f'duration {self.duration:.3f} : {to_frames(self.duration)}f, ' \
-               f'interval {self.interval:.3f} : {to_frames(self.interval)}f'
+               f'interval {self.interval:.3f} : {to_frames(self.interval)}f' + \
+               (f', lifetime {self.lifetime:.3f} : {to_frames(self.lifetime)}f' if self.lifetime else '')
 
 
 @dataclass
@@ -500,6 +502,16 @@ def hit_data(data: dict):
                 label=data['_hitLabel'])]
 
 
+def setting_hit_data(data: dict):
+    return [Hit(seconds=data['_seconds'],
+                speed=data['_speed'],
+                duration=data['_duration'],
+                lifetime=data['_lifetime'],
+                delay=data['_delayTime'],
+                interval=data['_collisionHitInterval'],
+                label=data['_hitAttrLabel'])]
+
+
 def active_cancel(data: dict):
     return [ActiveCancel(seconds=data['_seconds'],
                          speed=data['_speed'],
@@ -551,6 +563,7 @@ class CommandType(Enum):
     PARABOLA_BULLET_DATA = 41
     PIVOT_BULLET_DATA = 53
     FIRE_STOCK_BULLET_DATA = 59
+    SETTING_HIT_DATA = 66
 
     @classmethod
     def _missing_(cls, value):
@@ -566,7 +579,8 @@ PROCESSORS: Dict[CommandType, Callable[[Dict], List[Event]]] = {
     CommandType.SEND_SIGNAL_DATA: signal_data,
     CommandType.PARTS_MOTION_DATA: parts_motion_data,
     CommandType.MULTI_BULLET_DATA: multi_bullet_data,
-    CommandType.FIRE_STOCK_BULLET_DATA: fire_stock_bullet_data
+    CommandType.FIRE_STOCK_BULLET_DATA: fire_stock_bullet_data,
+    CommandType.SETTING_HIT_DATA: setting_hit_data
 }
 
 
