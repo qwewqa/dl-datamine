@@ -5,42 +5,24 @@ import re
 from dataclasses import dataclass
 from typing import Dict, Any, List, Optional
 
+from Abilities import ability_data, AbilityData, get_ability_and_references
 from Asset_Extract import check_target_path
+from Common import ELEMENTS, WEAPON_TYPES
 from Parse_Action import Action, parse_action, EnhancedJSONEncoder, get_hit_attributes, get_text_labels, \
     get_action_conditions
-
-WEAPON_TYPES = {
-    1: "Sword",
-    2: "Blade",
-    3: "Dagger",
-    4: "Axe",
-    5: "Lance",
-    6: "Bow",
-    7: "Wand",
-    8: "staff"
-}
-
-ELEMENTS = {
-    1: "Flame",
-    2: "Water",
-    3: "Wind",
-    4: "Light",
-    5: "Shadow"
-}
 
 
 @dataclass
 class SkillData:
     id: int
     name: str
-    description1: str
-    description2: str
-    description3: str
-    description4: str
+    icons: List[str]
+    descriptions: List[str]
     sp: int
     sp_lv2: int
     actions: List[Action]
     advanced_action: Optional[Action]
+    abilities: List[List[AbilityData]]
     trans_skill_id: int
     tension: bool
 
@@ -52,9 +34,13 @@ class Adventurer:
     weapon_type: str
     rarity: int
     element: str
+    abilities: Dict[str, AbilityData]
     skill1: Optional[List[SkillData]]
     skill2: Optional[List[SkillData]]
     playable: bool
+    cv_info: str
+    cv_info_en: str
+    profile_text: str
 
 
 def get_skill_transforms(skill: SkillData, skills: Dict[int, SkillData]) -> List[SkillData]:
@@ -66,7 +52,8 @@ def get_skill_transforms(skill: SkillData, skills: Dict[int, SkillData]) -> List
     return [skills[sid] for sid in ids]
 
 
-def adventurer_data(in_dir: str, label: Dict[str, str], skills: Dict[int, SkillData]) -> Dict[int, Adventurer]:
+def adventurer_data(in_dir: str, label: Dict[str, str], skills: Dict[int, SkillData],
+                    abilities: Dict[int, AbilityData]) -> Dict[int, Adventurer]:
     with open(os.path.join(in_dir, 'CharaData.json')) as f:
         data: List[Dict[str, Any]] = json.load(f)
         adventurers = {}
@@ -82,27 +69,34 @@ def adventurer_data(in_dir: str, label: Dict[str, str], skills: Dict[int, SkillD
                 weapon_type=WEAPON_TYPES[char['_WeaponType']],
                 rarity=char['_Rarity'],
                 element=ELEMENTS[char['_ElementalType']],
+                abilities={s.replace('_Abilities', ''): get_ability_and_references(char[s], abilities) for s in
+                           char.keys() if
+                           s.startswith('_Abilities') and char[s]},
                 skill1=skill1 if skill1 is None else get_skill_transforms(skill1, skills),
                 skill2=skill2 if skill2 is None else get_skill_transforms(skill2, skills),
-                playable=bool(char['_IsPlayable'])
+                playable=bool(char['_IsPlayable']),
+                cv_info=label.get(char['_CvInfo'], ''),
+                cv_info_en=label.get(char['_CvInfoEn'], ''),
+                profile_text=label.get(char['_ProfileText'], '')
             )
         return adventurers
 
 
 def action_data(in_dir: str, labels: Dict[str, str]) -> Dict[int, Action]:
-    file_filter = re.compile("PlayerAction_[0-9]+\\.json")
+    file_filter = re.compile('PlayerAction_[0-9]+\\.json')
     hit_attrs = get_hit_attributes(in_dir)
     action_conditions = get_action_conditions(in_dir, labels)
     actions = {}
     for root, _, files in os.walk(in_dir):
-        for file_name in [f for f in files if file_filter.match(f) and f.startswith("PlayerAction")]:
+        for file_name in [f for f in files if file_filter.match(f) and f.startswith('PlayerAction')]:
             file_path = os.path.join(root, file_name)
             action = parse_action(file_path, hit_attrs, action_conditions)
             actions[action.id] = action
     return actions
 
 
-def skill_data(in_dir: str, label: Dict[str, str], actions: Dict[int, Action]) -> Dict[int, SkillData]:
+def skill_data(in_dir: str, label: Dict[str, str], actions: Dict[int, Action], abilities: Dict[int, AbilityData]) -> \
+        Dict[int, SkillData]:
     with open(os.path.join(in_dir, 'SkillData.json')) as f:
         data: List[Dict[str, Any]] = json.load(f)
         skills = {}
@@ -114,14 +108,18 @@ def skill_data(in_dir: str, label: Dict[str, str], actions: Dict[int, Action]) -
             skills[skill['_Id']] = SkillData(
                 id=skill['_Id'],
                 name=label[skill['_Name']] or "",
-                description1=label.get(skill['_Description1'], ""),
-                description2=label.get(skill['_Description2'], ""),
-                description3=label.get(skill['_Description3'], ""),
-                description4=label.get(skill['_Description4'], ""),
+                icons=[skill['_SkillLv1IconName'], skill['_SkillLv2IconName'], skill['_SkillLv3IconName'],
+                       skill['_SkillLv4IconName']],
+                descriptions=[desc for desc in
+                              [label.get(skill['_Description1'], None), label.get(skill['_Description2'], None),
+                               label.get(skill['_Description3'], None), label.get(skill['_Description4'], None)] if
+                              desc],
                 sp=skill['_Sp'],
                 sp_lv2=skill['_SpLv2'],
                 actions=[actions[aid] for aid in action_ids if aid in actions.keys()],
                 advanced_action=actions.get(advanced_action_id, None),
+                abilities=[get_ability_and_references(skill[n], abilities) for n in
+                           ['_Ability1', '_Ability2', '_Ability3', '_Ability4'] if skill[n]],
                 trans_skill_id=skill['_TransSkill'],
                 tension=bool(skill['_IsAffectedByTension'])
             )
@@ -136,8 +134,9 @@ def get_valid_filename(s):
 def get_adventurers(in_dir: str) -> Dict[int, Adventurer]:
     labels = get_text_labels(in_dir)
     actions = action_data(in_dir, labels)
-    skills = skill_data(in_dir, labels, actions)
-    return adventurer_data(in_dir, labels, skills)
+    abilities = ability_data(in_dir, labels)
+    skills = skill_data(in_dir, labels, actions, abilities)
+    return adventurer_data(in_dir, labels, skills, abilities)
 
 
 def run(in_dir: str, out_dir: str) -> None:

@@ -3,13 +3,13 @@ import dataclasses
 import json
 import os
 import re
-from collections import defaultdict
 from dataclasses import dataclass
 from enum import Enum
 from pathlib import Path
 from typing import List, Dict, Callable, Any, Optional
 
 from Asset_Extract import check_target_path
+from Common import ACTION_CONDITION_TYPES
 
 
 def to_frames(duration: float) -> int:
@@ -209,21 +209,6 @@ class ActionCondition:
     remove_trigger: int
     damage_link: str
     extra_buff_type: int
-
-
-ACTION_CONDITION_TYPES = {
-    0: "Normal",
-    1: "Poison",
-    2: "Burn",
-    3: "Freeze",
-    4: "Paralysis",
-    5: "Blind",
-    6: "Stun",
-    7: "Curse",  # no 8
-    9: "Bog",
-    10: "Sleep",
-    11: "Frostbite"
-}
 
 
 def parse_action_condition(data: dict, labels: Dict[str, str]) -> ActionCondition:
