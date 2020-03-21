@@ -361,6 +361,7 @@ class PartsMotion(Event):
     motion_state: str = ''
     motion_frame: int = 0
     blend_duration: float = 0
+    name: str = 'PartsMotion'
 
     def __str__(self):
         return f'[{Event.__str__(self)}] Parts Motion: motion_state {self.motion_state}, ' \
