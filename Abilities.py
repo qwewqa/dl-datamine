@@ -142,7 +142,7 @@ def ability_data(in_dir: str, label: Dict[str, str]) -> Dict[int, AbilityData]:
 
 
 def get_ability_and_references(ability_id: int, abilities: Dict[int, AbilityData]) -> List[AbilityData]:
-    if ability_id not in abilities:
+    if ability_id not in abilities or ability_id == 0:
         return []
     queue = [abilities[ability_id]]
     referenced = []
