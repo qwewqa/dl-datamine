@@ -16,6 +16,8 @@ from Skills import Skill, get_skills
 @dataclass
 class AdventurerData:
     id: int
+    base_id: int
+    variation_id: int
     name: str
     weapon_type: str
     rarity: int
@@ -32,6 +34,8 @@ class AdventurerData:
 @dataclass
 class Adventurer:
     id: int
+    base_id: int
+    variation_id: int
     name: str
     weapon_type: str
     rarity: int
@@ -64,6 +68,8 @@ def get_adventurer_data(in_dir: str, label: Dict[str, str]) -> Dict[int, Adventu
                 continue
             adventurers[cid] = AdventurerData(
                 id=cid,
+                base_id=char['_BaseId'],
+                variation_id=char['_VariationId'],
                 name=label.get(char['_SecondName'], label.get(char['_Name'], char['_Name'])),
                 weapon_type=WEAPON_TYPES[char['_WeaponType']],
                 rarity=char['_Rarity'],
@@ -86,6 +92,8 @@ def gather_adventurer(adventurer_data: AdventurerData, skills: Dict[int, Skill],
     skill2 = skills.get(adventurer_data.skill2, None)
     return Adventurer(
         id=adventurer_data.id,
+        base_id=adventurer_data.base_id,
+        variation_id=adventurer_data.variation_id,
         name=adventurer_data.name,
         weapon_type=adventurer_data.weapon_type,
         rarity=adventurer_data.rarity,
@@ -104,11 +112,6 @@ def gather_adventurers(in_dir: str, label: Dict[str, str], skills: Dict[int, Ski
                        abilities: Dict[int, AbilityData]) -> Dict[int, Adventurer]:
     return {adv_id: gather_adventurer(adv, skills, abilities) for adv_id, adv in
             get_adventurer_data(in_dir, label).items()}
-
-
-def get_valid_filename(s):
-    s = str(s).strip().replace(' ', '_')
-    return re.sub(r'(?u)[^-\w.]', '', s)
 
 
 def run(in_dir: str) -> Dict[int, Adventurer]:
