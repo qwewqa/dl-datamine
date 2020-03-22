@@ -1,8 +1,11 @@
+import argparse
 import json
 import os
 from dataclasses import dataclass, InitVar
 from typing import List, Dict, Any, Callable
 
+from Actions import get_text_label
+from Common import run_common
 from Mappings import ACTION_CONDITION_TYPES, ABILITY_CONDITION_TYPES
 
 
@@ -75,7 +78,7 @@ class AbilityData:
     id: int
     event_id: int
     might: int
-    name: int
+    name: str
     details: int
     view_ability_group_ids: List[int]
     ability_icon_name: str
@@ -107,7 +110,7 @@ def ability_part(data: Dict[str, Any], suffix: str) -> AbilityPart:
     )
 
 
-def ability_data(in_dir: str, label: Dict[str, str]) -> Dict[int, AbilityData]:
+def get_ability_data(in_dir: str, label: Dict[str, str]) -> Dict[int, AbilityData]:
     with open(os.path.join(in_dir, 'AbilityData.json')) as f:
         data: List[Dict[str, Any]] = json.load(f)
         abilities = {}
@@ -154,3 +157,11 @@ def get_ability_and_references(ability_id: int, abilities: Dict[int, AbilityData
                 if part.ability_type == 43:
                     queue.append(abilities[part.ids[0]])
     return referenced
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Extract ability data.')
+    parser.add_argument('-i', type=str, help='input file or dir', default='./extract')
+    parser.add_argument('-o', type=str, help='output file dir', default='./abilities')
+    args = parser.parse_args()
+    run_common(args.o, [(ab.name, ab) for ab in get_ability_data(args.i, get_text_label(args.i)).values()])

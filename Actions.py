@@ -21,13 +21,13 @@ def load_by_id(path: str) -> Dict[Any, Any]:
         return {entry['_Id']: entry for entry in json.load(f)}
 
 
-def get_text_labels(in_dir: str) -> Dict[str, str]:
+def get_text_label(in_dir: str) -> Dict[str, str]:
     with open(os.path.join(in_dir, 'TextLabel.json')) as f:
         return {entry['_Id']: entry['_Text'] for entry in json.load(f)}
 
 
 @dataclass
-class HitAttributes:
+class HitAttributeData:
     id: str
     hit_exec: int
     target_group: int
@@ -62,7 +62,7 @@ class HitAttributes:
 
 
 def parse_hit_attributes(data: dict):
-    return HitAttributes(
+    return HitAttributeData(
         id=data['_Id'],
         hit_exec=data['_HitExecType'],
         target_group=data['_TargetGroup'],
@@ -99,7 +99,7 @@ def parse_hit_attributes(data: dict):
 
 
 @dataclass
-class ActionCondition:
+class ActionConditionData:
     id: int
     type: str
     text: str
@@ -211,8 +211,8 @@ class ActionCondition:
     extra_buff_type: int
 
 
-def parse_action_condition(data: dict, labels: Dict[str, str]) -> ActionCondition:
-    return ActionCondition(
+def parse_action_condition(data: dict, labels: Dict[str, str]) -> ActionConditionData:
+    return ActionConditionData(
         id=data['_Id'],
         type=ACTION_CONDITION_TYPES.get(data['_Type'], str(data['_Type'])),
         text=labels.get(data['_Text'], data['_Text']),
@@ -298,12 +298,12 @@ def parse_action_condition(data: dict, labels: Dict[str, str]) -> ActionConditio
     )
 
 
-def get_hit_attributes(in_dir: str) -> Dict[str, HitAttributes]:
+def get_hit_attribute_data(in_dir: str) -> Dict[str, HitAttributeData]:
     return {data[0]: parse_hit_attributes(data[1]) for data in
             load_by_id(os.path.join(in_dir, 'PlayerActionHitAttribute.json')).items()}
 
 
-def get_action_conditions(in_dir: str, labels: Dict[str, str]) -> Dict[int, ActionCondition]:
+def get_action_condition_data(in_dir: str, labels: Dict[str, str]) -> Dict[int, ActionConditionData]:
     return {data[0]: parse_action_condition(data[1], labels) for data in
             load_by_id(os.path.join(in_dir, 'ActionCondition.json')).items()}
 
@@ -429,15 +429,8 @@ class Signal(Event):
 class Action:
     id: int
     timeline: List[Event]
-    hit_attributes: Dict[str, HitAttributes]
-    action_conditions: Dict[int, ActionCondition]
-
-
-class EnhancedJSONEncoder(json.JSONEncoder):
-    def default(self, o):
-        if dataclasses.is_dataclass(o):
-            return dataclasses.asdict(o)
-        return super().default(o)
+    hit_attributes: Dict[str, HitAttributeData]
+    action_conditions: Dict[int, ActionConditionData]
 
 
 def parts_motion_data(data: dict):
@@ -570,7 +563,7 @@ PROCESSORS: Dict[CommandType, Callable[[Dict], List[Event]]] = {
 }
 
 
-def attributes_for_label(label: str, attributes: Dict[str, HitAttributes]) -> List[HitAttributes]:
+def attributes_for_label(label: str, attributes: Dict[str, HitAttributeData]) -> List[HitAttributeData]:
     if re.compile('.*LV0[1-4]').match(label):
         suffixes = ['LV01', 'LV02', 'LV03', 'LV04']
         base_name = label[0:-4]
@@ -579,8 +572,8 @@ def attributes_for_label(label: str, attributes: Dict[str, HitAttributes]) -> Li
         return [attributes[label]] if label in attributes.keys() else []
 
 
-def parse_action(path: str, attributes: Dict[str, HitAttributes],
-                 action_conditions: Dict[int, ActionCondition]) -> Action:
+def parse_action(path: str, attributes: Dict[str, HitAttributeData],
+                 action_conditions: Dict[int, ActionConditionData]) -> Action:
     with open(path) as f:
         raw = json.load(f)
         action = [gameObject['_data'] for gameObject in raw if '_data' in gameObject.keys()]
@@ -593,9 +586,9 @@ def parse_action(path: str, attributes: Dict[str, HitAttributes],
         for event in data:
             if hasattr(event, 'label'):
                 hit_labels.add(event.label)
-        hit_attrs: Dict[str, HitAttributes] = {attribute.id: attribute for label in
-                                               hit_labels for attribute in
-                                               attributes_for_label(label, attributes)}
+        hit_attrs: Dict[str, HitAttributeData] = {attribute.id: attribute for label in
+                                                  hit_labels for attribute in
+                                                  attributes_for_label(label, attributes)}
         return Action(
             id=int(Path(path).stem.split('_')[1]),
             timeline=sorted(data),
@@ -606,8 +599,8 @@ def parse_action(path: str, attributes: Dict[str, HitAttributes],
         )
 
 
-def process_action(in_path: str, out_path: str, mode: str, attributes: Dict[str, HitAttributes],
-                   action_conditions: Dict[int, ActionCondition]):
+def process_action(in_path: str, out_path: str, mode: str, attributes: Dict[str, HitAttributeData],
+                   action_conditions: Dict[int, ActionConditionData]):
     action = parse_action(in_path, attributes, action_conditions)
     check_target_path(out_path)
     with open(out_path, 'w+', encoding='utf8') as f:
@@ -626,9 +619,9 @@ def process_actions(in_path: str, out_path: str, mode: str):
     }[mode]
     file_filter = re.compile('PlayerAction_[0-9]+\\.json')
     if os.path.isdir(in_path):
-        labels = get_text_labels(in_path)
-        attributes = get_hit_attributes(in_path)
-        action_conditions = get_action_conditions(in_path, labels)
+        labels = get_text_label(in_path)
+        attributes = get_hit_attribute_data(in_path)
+        action_conditions = get_action_condition_data(in_path, labels)
         for root, _, files in os.walk(in_path):
             for file_name in [f for f in files if file_filter.match(f) and f.startswith('PlayerAction')]:
                 file_in_path = os.path.join(root, file_name)
@@ -638,14 +631,14 @@ def process_actions(in_path: str, out_path: str, mode: str):
         if os.path.isdir(out_path):
             out_path = os.path.join(out_path, Path(in_path).with_suffix(extension).name)
         in_dir = Path(in_path).parent
-        labels = get_text_labels(in_dir)
-        attributes = get_hit_attributes(in_dir)
-        action_conditions = get_action_conditions(in_dir, labels)
+        labels = get_text_label(in_dir)
+        attributes = get_hit_attribute_data(in_dir)
+        action_conditions = get_action_condition_data(in_dir, labels)
         process_action(in_path, out_path, mode, attributes, action_conditions)
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Extract asset files.')
+    parser = argparse.ArgumentParser(description='Extract action data.')
     parser.add_argument('-i', type=str, help='input file or dir', default='./extract')
     parser.add_argument('-o', type=str, help='output file dir', default='./actions')
     parser.add_argument('-m', type=str, help='mode: default "json", "simple")', default='json')
