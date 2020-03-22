@@ -69,7 +69,7 @@ def get_skill_data(in_dir: str, label: Dict[str, str]) -> Dict[int, SkillData]:
         return skills
 
 
-def skill_from_skill_data(skill_data: SkillData, actions: Dict[int, Action], abilities: Dict[int, AbilityData]):
+def gather_skill(skill_data: SkillData, actions: Dict[int, Action], abilities: Dict[int, AbilityData]):
     return Skill(
         id=skill_data.id,
         name=skill_data.name,
@@ -86,14 +86,14 @@ def skill_from_skill_data(skill_data: SkillData, actions: Dict[int, Action], abi
     )
 
 
-def skills_from_skill_data(skill_data: Dict[int, SkillData], actions: Dict[int, Action],
-                           abilities: Dict[int, AbilityData]):
-    return {d[0]: skill_from_skill_data(d[1], actions, abilities) for d in skill_data.items()}
+def gather_skills(skill_data: Dict[int, SkillData], actions: Dict[int, Action],
+                  abilities: Dict[int, AbilityData]):
+    return {i: gather_skill(s, actions, abilities) for i, s in skill_data.items()}
 
 
 def get_skills(in_dir: str, label: Dict[str, str], actions: Dict[int, Action], abilities: Dict[int, AbilityData]) -> \
         Dict[int, Skill]:
-    return skills_from_skill_data(get_skill_data(in_dir, label), actions, abilities)
+    return gather_skills(get_skill_data(in_dir, label), actions, abilities)
 
 
 if __name__ == '__main__':

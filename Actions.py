@@ -563,6 +563,19 @@ PROCESSORS: Dict[CommandType, Callable[[Dict], List[Event]]] = {
 }
 
 
+def get_actions(in_dir: str, labels: Dict[str, str]) -> Dict[int, Action]:
+    file_filter = re.compile('PlayerAction_[0-9]+\\.json')
+    hit_attrs = get_hit_attribute_data(in_dir)
+    action_conditions = get_action_condition_data(in_dir, labels)
+    actions = {}
+    for root, _, files in os.walk(in_dir):
+        for file_name in [f for f in files if file_filter.match(f) and f.startswith('PlayerAction')]:
+            file_path = os.path.join(root, file_name)
+            action = parse_action(file_path, hit_attrs, action_conditions)
+            actions[action.id] = action
+    return actions
+
+
 def attributes_for_label(label: str, attributes: Dict[str, HitAttributeData]) -> List[HitAttributeData]:
     if re.compile('.*LV0[1-4]').match(label):
         suffixes = ['LV01', 'LV02', 'LV03', 'LV04']
