@@ -2,7 +2,7 @@ import argparse
 import json
 import os
 from dataclasses import dataclass
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Union
 
 from Abilities import AbilityData, get_ability_and_references
 from Actions import Action, get_text_label
@@ -23,6 +23,9 @@ class SkillData:
     trans_skill_id: int
     tension: bool
 
+    def __hash__(self):
+        return (self.id, self.name).__hash__()
+
 
 @dataclass
 class Skill:
@@ -33,10 +36,13 @@ class Skill:
     sp: int
     sp_lv2: int
     actions: List[Action]
-    advanced_action: Optional[Action]
+    advanced_action: Union[Action, int]
     abilities: List[List[AbilityData]]
     trans_skill_id: int
     tension: bool
+
+    def __hash__(self):
+        return (self.id, self.name).__hash__()
 
 
 def get_skill_data(in_dir: str, label: Dict[str, str]) -> Dict[int, SkillData]:
@@ -78,7 +84,7 @@ def gather_skill(skill_data: SkillData, actions: Dict[int, Action], abilities: D
         sp=skill_data.sp,
         sp_lv2=skill_data.sp_lv2,
         actions=[actions[aid] for aid in skill_data.action_ids if aid in actions.keys()],
-        advanced_action=actions.get(skill_data.advanced_action_id, None),
+        advanced_action=actions.get(skill_data.advanced_action_id, skill_data.advanced_action_id),
         abilities=[get_ability_and_references(n, abilities) for n in
                    skill_data.ability_ids],
         trans_skill_id=skill_data.trans_skill_id,

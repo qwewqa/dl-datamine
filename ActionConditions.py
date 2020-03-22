@@ -120,6 +120,9 @@ class ActionConditionData:
     damage_link: str
     extra_buff_type: int
 
+    def __hash__(self):
+        return (self.id, self.text).__hash__()
+
 
 def parse_action_condition(data: dict, labels: Dict[str, str]) -> ActionConditionData:
     return ActionConditionData(
@@ -213,10 +216,21 @@ def get_action_condition_data(in_dir: str, label: Dict[str, str]) -> Dict[int, A
             load_by_id(os.path.join(in_dir, 'ActionCondition.json')).items()}
 
 
+def get_action_condition_filename(ac: ActionConditionData):
+    if ac.type != 'Normal':
+        return f'{ac.id}_{ac.type}'
+    elif ac.text:
+        return f'{ac.id}_{ac.text}'
+    elif ac.efficacy_type == 100:
+        return f'{ac.id}_Dispel'
+    else:
+        return f'{ac.id}'
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Extract action condition data.')
     parser.add_argument('-i', type=str, help='input dir', default='./extract')
     parser.add_argument('-o', type=str, help='output dir', default='./action_conditions')
     args = parser.parse_args()
-    run_common(args.o, [(f'{ac.id}_{ac.text}', ac) for ac in
+    run_common(args.o, [(get_action_condition_filename(ac), ac) for ac in
                         get_action_condition_data(args.i, get_text_label(args.i)).values()])

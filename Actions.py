@@ -219,6 +219,9 @@ class Action:
     hit_attributes: Dict[str, HitAttributeData]
     action_conditions: Dict[int, ActionConditionData]
 
+    def __hash__(self):
+        return self.id.__hash__()
+
 
 def parts_motion_data(data: dict):
     return [PartsMotion(seconds=data['_seconds'],

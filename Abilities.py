@@ -98,6 +98,9 @@ class AbilityData:
     head_text: str
     abilities: List[AbilityPart]
 
+    def __hash__(self):
+        return (self.id, self.name).__hash__()
+
 
 def ability_part(data: Dict[str, Any], suffix: str) -> AbilityPart:
     return AbilityPart(
