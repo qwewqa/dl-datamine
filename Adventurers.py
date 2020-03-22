@@ -19,6 +19,8 @@ class AdventurerData:
     base_id: int
     variation_id: int
     name: str
+    atk: int
+    hp: int
     weapon_type: str
     rarity: int
     element: str
@@ -36,6 +38,8 @@ class Adventurer:
     id: int
     base_id: int
     variation_id: int
+    atk: int
+    hp: int
     name: str
     weapon_type: str
     rarity: int
@@ -71,6 +75,10 @@ def get_adventurer_data(in_dir: str, label: Dict[str, str]) -> Dict[int, Adventu
                 base_id=char['_BaseId'],
                 variation_id=char['_VariationId'],
                 name=label.get(char['_SecondName'], label.get(char['_Name'], char['_Name'])),
+                atk=sum([char[s] for s in char.keys() if s.startswith('_PlusAtk')]) + char['_McFullBonusAtk5'] + char[
+                    '_AddMaxAtk1'],
+                hp=sum([char[s] for s in char.keys() if s.startswith('_PlusHp')]) + char['_McFullBonusHp5'] + char[
+                    '_AddMaxHp1'],
                 weapon_type=WEAPON_TYPES[char['_WeaponType']],
                 rarity=char['_Rarity'],
                 element=ELEMENTS[char['_ElementalType']],
@@ -95,6 +103,8 @@ def gather_adventurer(adventurer_data: AdventurerData, skills: Dict[int, Skill],
         base_id=adventurer_data.base_id,
         variation_id=adventurer_data.variation_id,
         name=adventurer_data.name,
+        atk=adventurer_data.atk,
+        hp=adventurer_data.hp,
         weapon_type=adventurer_data.weapon_type,
         rarity=adventurer_data.rarity,
         element=adventurer_data.element,
