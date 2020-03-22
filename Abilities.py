@@ -25,7 +25,7 @@ ABILITY_TYPES: Dict[int, Callable[[List[int], str], str]] = {
     3: lambda ids, _: f'affliction_proc_rate {ACTION_CONDITION_TYPES.get(ids[0], ids[0])}',
     4: lambda ids, _: f'tribe_res {ids[0]}',
     5: lambda ids, _: f'bane {ids[0]}',
-    6: lambda *_: 'broken_punisher',
+    6: lambda ids, _: 'damage',
     7: lambda ids, _: f'critical_rate',
     8: lambda ids, _: f'recovery_potency',
     9: lambda ids, _: f'gauge_accelerator',
