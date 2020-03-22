@@ -7,10 +7,34 @@ from typing import Dict, Any, List, Optional, Union
 from Abilities import get_ability_data, AbilityData, get_ability_and_references
 from ActionConditions import ActionConditionData, get_action_condition_data
 from Actions import get_text_label, \
-    get_actions, Action
+    get_actions, Action, get_action_and_associated
 from Common import run_common
 from Mappings import ELEMENTS, WEAPON_TYPES
+from Mode import get_modes, Mode
 from Skills import Skill, get_skills
+from UniqueCombo import get_unique_combos, UniqueCombo
+
+
+@dataclass
+class AdventurerModeData:
+    mode_change_type: str
+    mode_ids: List[int]
+    original_combo_id: int
+    mode1_combo_id: int
+    mode2_combo_id: int
+    fs_id: int
+    dash_id: int
+
+
+@dataclass
+class AdventurerMode:
+    mode_change_type: str
+    modes: List[Optional[Mode]]
+    original_combo: Optional[UniqueCombo]
+    mode1_combo: Optional[UniqueCombo]
+    mode2_combo: Optional[UniqueCombo]
+    fs: Optional[Action]
+    dash: Optional[Action]
 
 
 @dataclass
@@ -27,10 +51,12 @@ class AdventurerData:
     ability_ids: Dict[str, int]
     skill1: int
     skill2: int
+    modes: AdventurerModeData
     playable: bool
     cv_info: str
     cv_info_en: str
     profile_text: str
+    unique_dragon_id: int
 
     def __hash__(self):
         return (self.id, self.name).__hash__()
@@ -50,14 +76,48 @@ class Adventurer:
     abilities: Dict[str, AbilityData]
     skill1: List[Skill]
     skill2: List[Skill]
+    modes: AdventurerMode
     enhanced: Dict
     playable: bool
     cv_info: str
     cv_info_en: str
     profile_text: str
+    unique_dragon_id: int
 
     def __hash__(self):
         return (self.id, self.name).__hash__()
+
+
+MODE_CHANGE_TYPES = {
+    0: 'Normal',
+    1: 'Skill',
+    2: 'Hud'
+}
+
+
+def adventurer_mode_data(data: Dict[str, Any]):
+    return AdventurerModeData(
+        mode_change_type=MODE_CHANGE_TYPES[data['_ModeChangeType']],
+        mode_ids=[data['_ModeId1'], data['_ModeId2'], data['_ModeId3']],
+        original_combo_id=data['_OriginCombo'],
+        mode1_combo_id=data['_Mode1Combo'],
+        mode2_combo_id=data['_Mode2Combo'],
+        fs_id=data['_BurstAttack'],
+        dash_id=data['_DashAttack'],
+    )
+
+
+def gather_adventurer_mode(mode_data: AdventurerModeData, actions: Dict[int, Action], combos: Dict[int, UniqueCombo],
+                           modes: Dict[int, Mode]) -> AdventurerMode:
+    return AdventurerMode(
+        mode_change_type=mode_data.mode_change_type,
+        modes=[modes.get(mid) for mid in mode_data.mode_ids],
+        original_combo=combos.get(mode_data.original_combo_id),
+        mode1_combo=combos.get(mode_data.mode1_combo_id),
+        mode2_combo=combos.get(mode_data.mode2_combo_id),
+        fs=actions.get(mode_data.fs_id),
+        dash=actions.get(mode_data.dash_id)
+    )
 
 
 def get_skill_transforms(skill: Skill, skills: Dict[int, Skill]) -> List[Skill]:
@@ -93,16 +153,19 @@ def get_adventurer_data(in_dir: str, label: Dict[str, str]) -> Dict[int, Adventu
                              char.keys() if s.startswith('_Abilities') and char[s]},
                 skill1=char['_Skill1'],
                 skill2=char['_Skill2'],
+                modes=adventurer_mode_data(char),
                 playable=bool(char['_IsPlayable']),
                 cv_info=label.get(char['_CvInfo'], ''),
                 cv_info_en=label.get(char['_CvInfoEn'], ''),
-                profile_text=label.get(char['_ProfileText'], '')
+                profile_text=label.get(char['_ProfileText'], ''),
+                unique_dragon_id=char['_UniqueDragonId']
             )
         return adventurers
 
 
 def get_enhanced(subjects: List[Union[AbilityData, Skill, Action, ActionConditionData]], skills: Dict[int, Skill],
-                 actions: Dict[int, Action], action_conditions: Dict[int, ActionConditionData], abilities: Dict[int, AbilityData]) -> Dict:
+                 actions: Dict[int, Action], action_conditions: Dict[int, ActionConditionData],
+                 abilities: Dict[int, AbilityData]) -> Dict:
     queue = subjects
     passed = set()
     s1 = set()
@@ -145,7 +208,8 @@ def get_enhanced(subjects: List[Union[AbilityData, Skill, Action, ActionConditio
 
 def gather_adventurer(adventurer_data: AdventurerData, skills: Dict[int, Skill], actions: Dict[int, Action],
                       action_conditions: Dict[int, ActionConditionData],
-                      abilities: Dict[int, AbilityData]) -> Adventurer:
+                      abilities: Dict[int, AbilityData], combos: Dict[int, UniqueCombo],
+                      modes: Dict[int, Mode]) -> Adventurer:
     s1 = skills.get(adventurer_data.skill1, None)
     s2 = skills.get(adventurer_data.skill2, None)
     s1 = [] if s1 is None else get_skill_transforms(s1, skills)
@@ -165,18 +229,22 @@ def gather_adventurer(adventurer_data: AdventurerData, skills: Dict[int, Skill],
         abilities=ab,
         skill1=s1,
         skill2=s2,
+        modes=gather_adventurer_mode(adventurer_data.modes, actions, combos, modes),
         enhanced=get_enhanced(flat_skills_abilities, skills, actions, action_conditions, abilities),
         playable=adventurer_data.playable,
         cv_info=adventurer_data.cv_info,
         cv_info_en=adventurer_data.cv_info_en,
-        profile_text=adventurer_data.profile_text
+        profile_text=adventurer_data.profile_text,
+        unique_dragon_id=adventurer_data.unique_dragon_id
     )
 
 
 def gather_adventurers(in_dir: str, label: Dict[str, str], skills: Dict[int, Skill], actions: Dict[int, Action],
                        action_conditions: Dict[int, ActionConditionData],
-                       abilities: Dict[int, AbilityData]) -> Dict[int, Adventurer]:
-    return {adv_id: gather_adventurer(adv, skills, actions, action_conditions, abilities) for adv_id, adv in
+                       abilities: Dict[int, AbilityData], combos: Dict[int, UniqueCombo],
+                       modes: Dict[int, Mode]) -> Dict[int, Adventurer]:
+    return {adv_id: gather_adventurer(adv, skills, actions, action_conditions, abilities, combos, modes) for adv_id, adv
+            in
             get_adventurer_data(in_dir, label).items()}
 
 
@@ -186,7 +254,9 @@ def run(in_dir: str) -> Dict[int, Adventurer]:
     action_conditions = get_action_condition_data(in_dir, label)
     abilities = get_ability_data(in_dir, label)
     skills = get_skills(in_dir, label, actions, abilities)
-    return gather_adventurers(in_dir, label, skills, actions, action_conditions, abilities)
+    combos = get_unique_combos(in_dir, actions)
+    modes = get_modes(in_dir, actions, skills, combos)
+    return gather_adventurers(in_dir, label, skills, actions, action_conditions, abilities, combos, modes)
 
 
 if __name__ == '__main__':

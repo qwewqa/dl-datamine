@@ -6,7 +6,7 @@ import re
 from dataclasses import dataclass
 from enum import Enum
 from pathlib import Path
-from typing import List, Dict, Callable, Optional
+from typing import List, Dict, Callable, Optional, Union
 
 from ActionConditions import ActionConditionData, get_action_condition_data
 from Asset_Extract import check_target_path
@@ -215,7 +215,7 @@ class Signal(Event):
 @dataclass
 class Action:
     id: int
-    timeline: List[Event]
+    timeline: List[Union[Event, PartsMotion, Hit, Signal, ActiveCancel]]
     hit_attributes: Dict[str, HitAttributeData]
     action_conditions: Dict[int, ActionConditionData]
 
@@ -364,6 +364,25 @@ def get_actions(in_dir: str, labels: Dict[str, str]) -> Dict[int, Action]:
             action = parse_action(file_path, hit_attrs, action_conditions)
             actions[action.id] = action
     return actions
+
+
+def get_action_and_associated(action: Action, actions: Dict[int, Action], exclude_default_combo: bool = True):
+    queue = [action]
+    passed = set()
+    default_combo_re = re.compile('[0-7]0000[0-5]')
+    while queue:
+        a = queue.pop()
+        if a in passed:
+            continue
+        if exclude_default_combo and default_combo_re.match(str(a.id)):
+            continue
+        passed.add(a)
+        for ev in a.timeline:
+            try:
+                queue.append(actions[ev.action_id])
+            except (AttributeError, KeyError) as e:
+                pass
+    return list(passed)
 
 
 def attributes_for_label(label: str, attributes: Dict[str, HitAttributeData]) -> List[HitAttributeData]:
