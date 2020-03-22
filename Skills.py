@@ -101,4 +101,4 @@ if __name__ == '__main__':
     parser.add_argument('-i', type=str, help='input dir (from extracting master and actions)', default='./extract')
     parser.add_argument('-o', type=str, help='output dir', default='./skills')
     args = parser.parse_args()
-    run_common(args.o, [(skill.name, skill) for skill in get_skill_data(args.i, get_text_label(args.i)).values()])
+    run_common(args.o, [(f'{skill.id}_{skill.name}', skill) for skill in get_skill_data(args.i, get_text_label(args.i)).values()])

@@ -2,9 +2,14 @@ import dataclasses
 import json
 import os
 import re
-from typing import Tuple, List, Any
+from typing import Tuple, List, Any, Dict
 
 from Asset_Download import check_target_path
+
+
+def load_by_id(path: str) -> Dict[Any, Any]:
+    with open(path) as f:
+        return {entry['_Id']: entry for entry in json.load(f)}
 
 
 class EnhancedJSONEncoder(json.JSONEncoder):

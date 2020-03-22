@@ -1,7 +1,6 @@
 import argparse
 import json
 import os
-import re
 from dataclasses import dataclass
 from typing import Dict, Any, List, Optional
 
@@ -137,4 +136,4 @@ if __name__ == '__main__':
     parser.add_argument('-i', type=str, help='input dir (from extracting master and actions)', default='./extract')
     parser.add_argument('-o', type=str, help='output dir', default='./adventurers')
     args = parser.parse_args()
-    run_common(args.o, [(adv.name, adv) for adv in run(args.i).values()])
+    run_common(args.o, [(f'{adv.id}_{adv.name}', adv) for adv in run(args.i).values()])

@@ -1,7 +1,7 @@
 import argparse
 import json
 import os
-from dataclasses import dataclass, InitVar
+from dataclasses import dataclass
 from typing import List, Dict, Any, Callable
 
 from Actions import get_text_label
@@ -161,7 +161,7 @@ def get_ability_and_references(ability_id: int, abilities: Dict[int, AbilityData
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Extract ability data.')
-    parser.add_argument('-i', type=str, help='input file or dir', default='./extract')
-    parser.add_argument('-o', type=str, help='output file dir', default='./abilities')
+    parser.add_argument('-i', type=str, help='input dir', default='./extract')
+    parser.add_argument('-o', type=str, help='output dir', default='./abilities')
     args = parser.parse_args()
-    run_common(args.o, [(ab.name, ab) for ab in get_ability_data(args.i, get_text_label(args.i)).values()])
+    run_common(args.o, [(f'{ab.id}_{ab.name}', ab) for ab in get_ability_data(args.i, get_text_label(args.i)).values()])
