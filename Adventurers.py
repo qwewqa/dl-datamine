@@ -7,7 +7,7 @@ from typing import Dict, Any, List, Optional, Union
 from Abilities import get_ability_data, AbilityData, get_ability_and_references
 from ActionConditions import ActionConditionData, get_action_condition_data
 from Actions import get_text_label, \
-    get_actions, Action, get_action_and_associated
+    get_actions, Action, get_action_and_associated, get_action_metadata
 from Common import run_common
 from Mappings import ELEMENTS, WEAPON_TYPES
 from Mode import get_modes, Mode
@@ -250,7 +250,8 @@ def gather_adventurers(in_dir: str, label: Dict[str, str], skills: Dict[int, Ski
 
 def run(in_dir: str) -> Dict[int, Adventurer]:
     label = get_text_label(in_dir)
-    actions = get_actions(in_dir, label)
+    metadata = get_action_metadata(in_dir)
+    actions = get_actions(in_dir, label, metadata)
     action_conditions = get_action_condition_data(in_dir, label)
     abilities = get_ability_data(in_dir, label)
     skills = get_skills(in_dir, label, actions, abilities)

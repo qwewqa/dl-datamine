@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from typing import List, Dict, Any, Optional, Union
 
 from Abilities import AbilityData, get_ability_and_references
-from Actions import Action, get_text_label
+from Actions import Action, get_text_label, get_action_and_associated
 from Common import run_common
 
 
@@ -83,7 +83,8 @@ def gather_skill(skill_data: SkillData, actions: Dict[int, Action], abilities: D
         descriptions=skill_data.descriptions,
         sp=skill_data.sp,
         sp_lv2=skill_data.sp_lv2,
-        actions=[actions[aid] for aid in skill_data.action_ids if aid in actions.keys()],
+        actions=[a for acts in [get_action_and_associated(actions[aid], actions) for aid in skill_data.action_ids if
+                                aid in actions.keys()] for a in acts],
         advanced_action=actions.get(skill_data.advanced_action_id, skill_data.advanced_action_id),
         abilities=[get_ability_and_references(n, abilities) for n in
                    skill_data.ability_ids],
@@ -107,4 +108,5 @@ if __name__ == '__main__':
     parser.add_argument('-i', type=str, help='input dir (from extracting master and actions)', default='./extract')
     parser.add_argument('-o', type=str, help='output dir', default='./skills')
     args = parser.parse_args()
-    run_common(args.o, [(f'{skill.id}_{skill.name}', skill) for skill in get_skill_data(args.i, get_text_label(args.i)).values()])
+    run_common(args.o, [(f'{skill.id}_{skill.name}', skill) for skill in
+                        get_skill_data(args.i, get_text_label(args.i)).values()])

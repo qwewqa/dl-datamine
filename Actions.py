@@ -6,7 +6,7 @@ import re
 from dataclasses import dataclass
 from enum import Enum
 from pathlib import Path
-from typing import List, Dict, Callable, Optional, Union
+from typing import List, Dict, Callable, Optional, Union, Any
 
 from ActionConditions import ActionConditionData, get_action_condition_data
 from Asset_Extract import check_target_path
@@ -213,11 +213,35 @@ class Signal(Event):
 
 
 @dataclass
+class PlayerActionMetadata:
+    id: int
+    name: str
+    range: float
+    can_turn_prepare: bool
+    is_dragon_attack: bool
+    is_default_skill: bool
+    is_charge_skill: bool
+    is_hero_skill: bool
+    heal_type: int
+    max_stock_bullet: int
+    next_action: int
+    is_loop_action: bool
+    max_additional_input: int
+    is_ally_target: bool
+    burst_marker_id: int
+    is_long_range_camera: bool
+    ignore_long_range_camera: bool
+    overwrite_voice: str
+    consume_ep: int
+
+
+@dataclass
 class Action:
     id: int
     timeline: List[Union[Event, PartsMotion, Hit, Signal, ActiveCancel]]
     hit_attributes: Dict[str, HitAttributeData]
     action_conditions: Dict[int, ActionConditionData]
+    metadata: Optional[PlayerActionMetadata]
 
     def __hash__(self):
         return self.id.__hash__()
@@ -353,7 +377,36 @@ PROCESSORS: Dict[CommandType, Callable[[Dict], List[Event]]] = {
 }
 
 
-def get_actions(in_dir: str, labels: Dict[str, str]) -> Dict[int, Action]:
+def get_action_metadata(in_dir: str) -> Dict[int, PlayerActionMetadata]:
+    with open(os.path.join(in_dir, 'PlayerAction.json')) as f:
+        data: List[Dict[str, Any]] = json.load(f)
+        metadata = {}
+        for md in data:
+            metadata[md['_Id']] = PlayerActionMetadata(
+                id=md['_Id'],
+                name=md['_ActionName'],
+                range=md['_Range'],
+                can_turn_prepare=bool(md['_CanTurnPrepare']),
+                is_dragon_attack=bool(md['_IsDragonAttack']),
+                is_default_skill=bool(md['_IsDefaultSkill']),
+                is_charge_skill=bool(md['_IsChargeSkill']),
+                is_hero_skill=bool(md['_IsHeroSkill']),
+                heal_type=md['_HealType'],
+                max_stock_bullet=md['_MaxStockBullet'],
+                next_action=md['_NextAction'],
+                is_loop_action=bool(md['_IsLoopAction']),
+                max_additional_input=md['_MaxAdditionalInput'],
+                is_ally_target=bool(md['_IsAllyTarget']),
+                burst_marker_id=md['_BurstMarkerId'],
+                is_long_range_camera=bool(md['_IsLongRangeCamera']),
+                ignore_long_range_camera=bool(md['_IgnoreLongRangeCamera']),
+                overwrite_voice=md['_OverwriteVoice'],
+                consume_ep=md['_ConsumeEp'],
+            )
+        return metadata
+
+
+def get_actions(in_dir: str, labels: Dict[str, str], metadata: Dict[int, PlayerActionMetadata]) -> Dict[int, Action]:
     file_filter = re.compile('PlayerAction_[0-9]+\\.json')
     hit_attrs = get_hit_attribute_data(in_dir)
     action_conditions = get_action_condition_data(in_dir, labels)
@@ -361,7 +414,7 @@ def get_actions(in_dir: str, labels: Dict[str, str]) -> Dict[int, Action]:
     for root, _, files in os.walk(in_dir):
         for file_name in [f for f in files if file_filter.match(f) and f.startswith('PlayerAction')]:
             file_path = os.path.join(root, file_name)
-            action = parse_action(file_path, hit_attrs, action_conditions)
+            action = parse_action(file_path, hit_attrs, action_conditions, metadata)
             actions[action.id] = action
     return actions
 
@@ -377,10 +430,12 @@ def get_action_and_associated(action: Action, actions: Dict[int, Action], exclud
         if exclude_default_combo and default_combo_re.match(str(a.id)):
             continue
         passed.add(a)
+        if a.metadata.next_action:
+            queue.append(actions[a.metadata.next_action])
         for ev in a.timeline:
             try:
                 queue.append(actions[ev.action_id])
-            except (AttributeError, KeyError) as e:
+            except (AttributeError, KeyError):
                 pass
     return list(passed)
 
@@ -395,7 +450,8 @@ def attributes_for_label(label: str, attributes: Dict[str, HitAttributeData]) ->
 
 
 def parse_action(path: str, attributes: Dict[str, HitAttributeData],
-                 action_conditions: Dict[int, ActionConditionData]) -> Action:
+                 action_conditions: Dict[int, ActionConditionData],
+                 metadata: Dict[int, PlayerActionMetadata]) -> Action:
     with open(path) as f:
         raw = json.load(f)
         action = [gameObject['_data'] for gameObject in raw if '_data' in gameObject.keys()]
@@ -417,13 +473,14 @@ def parse_action(path: str, attributes: Dict[str, HitAttributeData],
             hit_attributes=hit_attrs,
             action_conditions={ac.id: ac for ac in
                                [action_conditions[attr.action_condition] for attr in hit_attrs.values() if
-                                attr.action_condition > 0]}
+                                attr.action_condition > 0]},
+            metadata=metadata.get(int(Path(path).stem.split('_')[1]))
         )
 
 
 def process_action(in_path: str, out_path: str, mode: str, attributes: Dict[str, HitAttributeData],
-                   action_conditions: Dict[int, ActionConditionData]):
-    action = parse_action(in_path, attributes, action_conditions)
+                   action_conditions: Dict[int, ActionConditionData], metadata: Dict[int, PlayerActionMetadata]):
+    action = parse_action(in_path, attributes, action_conditions, metadata)
     check_target_path(out_path)
     with open(out_path, 'w+', encoding='utf8') as f:
         if mode == 'json':
@@ -443,20 +500,22 @@ def process_actions(in_path: str, out_path: str, mode: str):
     if os.path.isdir(in_path):
         labels = get_text_label(in_path)
         attributes = get_hit_attribute_data(in_path)
+        metadata = get_action_metadata(in_path)
         action_conditions = get_action_condition_data(in_path, labels)
         for root, _, files in os.walk(in_path):
             for file_name in [f for f in files if file_filter.match(f) and f.startswith('PlayerAction')]:
                 file_in_path = os.path.join(root, file_name)
                 file_out_path = os.path.join(out_path, Path(file_name).with_suffix(extension))
-                process_action(file_in_path, file_out_path, mode, attributes, action_conditions)
+                process_action(file_in_path, file_out_path, mode, attributes, action_conditions, metadata)
     else:
         if os.path.isdir(out_path):
             out_path = os.path.join(out_path, Path(in_path).with_suffix(extension).name)
         in_dir = Path(in_path).parent
         labels = get_text_label(in_dir)
         attributes = get_hit_attribute_data(in_dir)
+        metadata = get_action_metadata(in_dir)
         action_conditions = get_action_condition_data(in_dir, labels)
-        process_action(in_path, out_path, mode, attributes, action_conditions)
+        process_action(in_path, out_path, mode, attributes, action_conditions, metadata)
 
 
 if __name__ == '__main__':
