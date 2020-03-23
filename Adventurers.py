@@ -7,7 +7,8 @@ from typing import Dict, Any, List, Optional, Union
 from Abilities import get_ability_data, AbilityData, get_ability_and_references
 from ActionConditions import ActionConditionData, get_action_condition_data
 from Actions import get_text_label, \
-    get_actions, Action, get_action_and_associated, get_action_metadata
+    get_actions, Action, get_action_metadata
+from CharacterMotion import AnimationClipData, get_animation_clip_data_by_id
 from Common import run_common
 from Mappings import ELEMENTS, WEAPON_TYPES
 from Mode import get_modes, Mode
@@ -78,6 +79,7 @@ class Adventurer:
     skill2: List[Skill]
     modes: AdventurerMode
     enhanced: Dict
+    animation_clips: Dict[str, AnimationClipData]
     playable: bool
     cv_info: str
     cv_info_en: str
@@ -209,7 +211,7 @@ def get_enhanced(subjects: List[Union[AbilityData, Skill, Action, ActionConditio
 def gather_adventurer(adventurer_data: AdventurerData, skills: Dict[int, Skill], actions: Dict[int, Action],
                       action_conditions: Dict[int, ActionConditionData],
                       abilities: Dict[int, AbilityData], combos: Dict[int, UniqueCombo],
-                      modes: Dict[int, Mode]) -> Adventurer:
+                      modes: Dict[int, Mode], animation_clips: Dict[int, Dict[str, AnimationClipData]]) -> Adventurer:
     s1 = skills.get(adventurer_data.skill1, None)
     s2 = skills.get(adventurer_data.skill2, None)
     s1 = [] if s1 is None else get_skill_transforms(s1, skills)
@@ -231,6 +233,7 @@ def gather_adventurer(adventurer_data: AdventurerData, skills: Dict[int, Skill],
         skill2=s2,
         modes=gather_adventurer_mode(adventurer_data.modes, actions, combos, modes),
         enhanced=get_enhanced(flat_skills_abilities, skills, actions, action_conditions, abilities),
+        animation_clips=animation_clips.get(int(f'{adventurer_data.base_id}{adventurer_data.variation_id:02d}')),
         playable=adventurer_data.playable,
         cv_info=adventurer_data.cv_info,
         cv_info_en=adventurer_data.cv_info_en,
@@ -242,10 +245,11 @@ def gather_adventurer(adventurer_data: AdventurerData, skills: Dict[int, Skill],
 def gather_adventurers(in_dir: str, label: Dict[str, str], skills: Dict[int, Skill], actions: Dict[int, Action],
                        action_conditions: Dict[int, ActionConditionData],
                        abilities: Dict[int, AbilityData], combos: Dict[int, UniqueCombo],
-                       modes: Dict[int, Mode]) -> Dict[int, Adventurer]:
-    return {adv_id: gather_adventurer(adv, skills, actions, action_conditions, abilities, combos, modes) for adv_id, adv
-            in
-            get_adventurer_data(in_dir, label).items()}
+                       modes: Dict[int, Mode], animation_clips: Dict[int, Dict[str, AnimationClipData]]) \
+        -> Dict[int, Adventurer]:
+    return {
+        adv_id: gather_adventurer(adv, skills, actions, action_conditions, abilities, combos, modes, animation_clips)
+        for adv_id, adv in get_adventurer_data(in_dir, label).items()}
 
 
 def run(in_dir: str) -> Dict[int, Adventurer]:
@@ -257,7 +261,9 @@ def run(in_dir: str) -> Dict[int, Adventurer]:
     skills = get_skills(in_dir, label, actions, abilities)
     combos = get_unique_combos(in_dir, actions)
     modes = get_modes(in_dir, actions, skills, combos)
-    return gather_adventurers(in_dir, label, skills, actions, action_conditions, abilities, combos, modes)
+    animation_clips = get_animation_clip_data_by_id(os.path.join(in_dir, 'characters_motion'))
+    return gather_adventurers(in_dir, label, skills, actions, action_conditions, abilities, combos, modes,
+                              animation_clips)
 
 
 if __name__ == '__main__':
