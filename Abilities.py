@@ -165,6 +165,6 @@ def get_ability_and_references(ability_id: int, abilities: Dict[int, AbilityData
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Extract ability data.')
     parser.add_argument('-i', type=str, help='input dir', default='./extract')
-    parser.add_argument('-o', type=str, help='output dir', default='./abilities')
+    parser.add_argument('-o', type=str, help='output dir', default='./out/abilities')
     args = parser.parse_args()
     run_common(args.o, [(f'{ab.id}_{ab.name}', ab) for ab in get_ability_data(args.i, get_text_label(args.i)).values()])

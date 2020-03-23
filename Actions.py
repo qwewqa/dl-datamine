@@ -521,7 +521,7 @@ def process_actions(in_path: str, out_path: str, mode: str):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Extract action data.')
     parser.add_argument('-i', type=str, help='input file or dir', default='./extract')
-    parser.add_argument('-o', type=str, help='output file dir', default='./actions')
+    parser.add_argument('-o', type=str, help='output file dir', default='./out/actions')
     parser.add_argument('-m', type=str, help='mode: default "json", "simple")', default='json')
     args = parser.parse_args()
     process_actions(args.i, args.o, args.m)

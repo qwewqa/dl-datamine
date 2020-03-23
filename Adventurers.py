@@ -242,10 +242,10 @@ def gather_adventurer(adventurer_data: AdventurerData, skills: Dict[int, Skill],
     )
 
 
-def gather_adventurers(in_dir: str, label: Dict[str, str], skills: Dict[int, Skill], actions: Dict[int, Action],
-                       action_conditions: Dict[int, ActionConditionData],
-                       abilities: Dict[int, AbilityData], combos: Dict[int, UniqueCombo],
-                       modes: Dict[int, Mode], animation_clips: Dict[int, Dict[str, AnimationClipData]]) \
+def get_adventurers(in_dir: str, label: Dict[str, str], skills: Dict[int, Skill], actions: Dict[int, Action],
+                    action_conditions: Dict[int, ActionConditionData],
+                    abilities: Dict[int, AbilityData], combos: Dict[int, UniqueCombo],
+                    modes: Dict[int, Mode], animation_clips: Dict[int, Dict[str, AnimationClipData]]) \
         -> Dict[int, Adventurer]:
     return {
         adv_id: gather_adventurer(adv, skills, actions, action_conditions, abilities, combos, modes, animation_clips)
@@ -262,13 +262,13 @@ def run(in_dir: str) -> Dict[int, Adventurer]:
     combos = get_unique_combos(in_dir, actions)
     modes = get_modes(in_dir, actions, skills, combos)
     animation_clips = get_animation_clip_data_by_id(os.path.join(in_dir, 'characters_motion'))
-    return gather_adventurers(in_dir, label, skills, actions, action_conditions, abilities, combos, modes,
-                              animation_clips)
+    return get_adventurers(in_dir, label, skills, actions, action_conditions, abilities, combos, modes,
+                           animation_clips)
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Adventurer Data.')
     parser.add_argument('-i', type=str, help='input dir (from extracting master and actions)', default='./extract')
-    parser.add_argument('-o', type=str, help='output dir', default='./adventurers')
+    parser.add_argument('-o', type=str, help='output dir', default='./out/adventurers')
     args = parser.parse_args()
     run_common(args.o, [(f'{adv.id}_{adv.name}', adv) for adv in run(args.i).values()])

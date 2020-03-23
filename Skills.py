@@ -106,7 +106,7 @@ def get_skills(in_dir: str, label: Dict[str, str], actions: Dict[int, Action], a
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Adventurer Data.')
     parser.add_argument('-i', type=str, help='input dir (from extracting master and actions)', default='./extract')
-    parser.add_argument('-o', type=str, help='output dir', default='./skills')
+    parser.add_argument('-o', type=str, help='output dir', default='./out/skills')
     args = parser.parse_args()
     run_common(args.o, [(f'{skill.id}_{skill.name}', skill) for skill in
                         get_skill_data(args.i, get_text_label(args.i)).values()])

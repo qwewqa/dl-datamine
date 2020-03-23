@@ -230,7 +230,7 @@ def get_action_condition_filename(ac: ActionConditionData):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Extract action condition data.')
     parser.add_argument('-i', type=str, help='input dir', default='./extract')
-    parser.add_argument('-o', type=str, help='output dir', default='./action_conditions')
+    parser.add_argument('-o', type=str, help='output dir', default='./out/action_conditions')
     args = parser.parse_args()
     run_common(args.o, [(get_action_condition_filename(ac), ac) for ac in
                         get_action_condition_data(args.i, get_text_label(args.i)).values()])
