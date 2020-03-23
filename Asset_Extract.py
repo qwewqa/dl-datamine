@@ -107,22 +107,12 @@ def unpack_GameObject(data, destination_folder):
                     f.write(m)
                     f.write('\n')
 
-# def unpack_GameObject(data, destination_folder):
-#     print('GameObject', destination_folder, flush=True)
-#     for obj in data.components:
-#         obj_type_str = str(obj.type)
-#         if obj_type_str in unpack_dict:
-#             subdata = obj.read()
-
-#             dest, _ = os.path.splitext(data.name)
-#             dest = os.path.join(destination_folder, dest)
-#             if data.name or obj_type_str == 'GameObject':
-#                 unpack_dict[obj_type_str](subdata, dest)
-
 unpack_dict = {
     'Texture2D': unpack_Texture2D, 
     'MonoBehaviour': unpack_MonoBehaviour,
-    'GameObject': unpack_GameObject
+    'GameObject': unpack_GameObject,
+    'AnimationClip': unpack_MonoBehaviour,
+    'AnimatorOverrideController': unpack_MonoBehaviour
 }
 
 def unpack_asset(file_path, destination_folder, root=None, source_folder=None):
@@ -142,15 +132,15 @@ def unpack_asset(file_path, destination_folder, root=None, source_folder=None):
                 # create destination path
                 if root and source_folder:
                     intermediate = root.replace(source_folder, '')
+                    if intermediate[0] == '\\':
+                        intermediate = intermediate[1:]
                 else:
                     intermediate = ''
-
                 if obj_type_str == 'GameObject':
                     dest = os.path.join(destination_folder, intermediate)
-                    unpack_dict[obj_type_str](data, dest)
                 elif data.name:
                     dest = os.path.join(destination_folder, intermediate, data.name)
-                    unpack_dict[obj_type_str](data, dest)
+                unpack_dict[obj_type_str](data, dest)
                 
 
 def unpack_all_assets(source_folder, destination_folder):
