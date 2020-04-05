@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import Enemy_Parser
 import argparse
 import csv
 import json
@@ -26,6 +27,8 @@ TEXT_LABEL = 'TextLabel'
 TEXT_LABEL_JP = 'TextLabelJP'
 TEXT_LABEL_DICT = {}
 
+CHAIN_COAB_SET = set()
+# CHAIN_COAB_DICT = {}
 EPITHET_DATA_NAME = 'EmblemData'
 EPITHET_DATA_NAMES = None
 RAID_EVENT_ITEM_DATA_NAME = 'RaidEventItem'
@@ -105,14 +108,14 @@ def csv_as_index(path, index=None, value_key=None, tabs=False):
             reader = csv.DictReader(csvfile, dialect='excel-tab')
         else:
             reader = csv.DictReader(csvfile)
-        first_row = next(reader)
-        key_iter = iter(first_row.keys())
-        csvfile.seek(0)
+
+        keys = reader.fieldnames
+
         if not index:
-            index = next(key_iter) # get first key as index
-        if len(first_row) == 2:
-            # load 2 column files as dict[string] = string
-            value_key = next(key_iter) # get second key
+            index = keys[0] # get first key as index
+        if not value_key and len(keys) == 2:
+            # If not otherwise specified, load 2 column files as dict[string] = string
+            value_key = keys[1] # get second key
         if value_key:
             return {row[index]: row[value_key] for row in reader if row[index] != '0'}
         else:
@@ -151,6 +154,11 @@ def process_AbilityShiftGroup(row, existing_data, ability_shift_groups):
     ability_shift_groups[row[ROW_INDEX]] = row
 
 def process_AbilityData(row, existing_data, ability_shift_groups):
+    if row[ROW_INDEX] in CHAIN_COAB_SET:
+        # Process abilities known to be chain coabilities (from being
+        # referenced in CharaData), separately.
+        # process_ChainCoAbility(row, existing_data)
+        return
     new_row = OrderedDict()
 
     new_row['Id'] = row[ROW_INDEX]
@@ -189,6 +197,39 @@ def process_AbilityData(row, existing_data, ability_shift_groups):
     new_row['AbilityLimitedGroupId1'] = row['_AbilityLimitedGroupId1']
     new_row['AbilityLimitedGroupId2'] = row['_AbilityLimitedGroupId2']
     new_row['AbilityLimitedGroupId3'] = row['_AbilityLimitedGroupId3']
+    existing_data.append((new_row['Name'], new_row))
+
+def process_ChainCoAbility(row, existing_data):
+    if not row[ROW_INDEX] in CHAIN_COAB_SET:
+        return
+    new_row = OrderedDict()
+    new_row['Id'] = row[ROW_INDEX]
+
+    ability_value = (EDIT_THIS if row['_AbilityType1UpValue'] == '0'
+                               else row['_AbilityType1UpValue'])
+    new_row['Name'] = get_label(row['_Name']).format(
+        ability_val0 = ability_value)
+    
+    # try:
+    #     CHAIN_COAB_DICT[new_row['Id']][0] = new_row['Name']
+    # except:
+    #     pass
+
+    # guess the generic name by chopping off the last word, which is usually +n% or V
+    new_row['GenericName'] = new_row['Name'][:new_row['Name'].rfind(' ')]
+
+    # _ElementalType seems unreliable, use (element) in _Name for now
+    detail_label = get_label(row['_Details'])
+    if '{element_owner}' in detail_label and ')' in new_row['Name']:
+        element = new_row['Name'][1:new_row['Name'].index(')')]
+    else:
+        element = ELEMENT_TYPE[int(row['_ElementalType'])]
+    new_row['Details'] = detail_label.format(
+        ability_cond0   =   row['_ConditionValue'],
+        ability_val0    =   ability_value,
+        element_owner   =   element)
+    new_row['AbilityIconName'] = row['_AbilityIconName']
+
     existing_data.append((new_row['Name'], new_row))
 
 def process_AmuletData(row, existing_data):
@@ -280,7 +321,12 @@ def process_CharaData(row, existing_data):
     new_row['Rarity'] = row['_Rarity']
     new_row['Gender'] = '' # EDIT_THIS
     new_row['Race'] = '' # EDIT_THIS
-    new_row['ElementalType'] = ELEMENT_TYPE[int(row['_ElementalType'])]
+    elemental_type_int = int(row['_ElementalType'])
+    if elemental_type_int == 99:
+        # The puppy has a non-existent elemental type as an adventurer.
+        new_row['ElementalType'] = ''
+    else:
+        new_row['ElementalType'] = ELEMENT_TYPE[elemental_type_int]
     new_row['CharaType'] = CLASS_TYPE[int(row['_CharaType'])]
     new_row['VariationId'] = row['_VariationId']
     for stat in ('Hp', 'Atk'):
@@ -316,6 +362,15 @@ def process_CharaData(row, existing_data):
     for i in range(1, 6):
         ex_k = 'ExAbilityData{}'.format(i)
         new_row[ex_k] = row['_' + ex_k]
+    for i in range(1, 6):
+        ex_k = 'ExAbility2Data{}'.format(i)
+        new_row[ex_k] = row['_' + ex_k]
+        CHAIN_COAB_SET.add(new_row[ex_k])
+        # if i == 5:
+        #     try:
+        #         CHAIN_COAB_DICT[new_row[ex_k]][1].append(new_row['FullName'])
+        #     except:
+        #         CHAIN_COAB_DICT[new_row[ex_k]] = [None, [new_row['FullName']]]
     new_row['ManaCircleName'] = row['_ManaCircleName']
 
     # new_row['EffNameCriticalHit'] = row['_EffNameCriticalHit']
@@ -927,12 +982,14 @@ def row_as_kv_pairs(row, template_name=None, display_name=None, delim=': '):
 
 DATA_PARSER_PROCESSING = {
     'AbilityLimitedGroup': ('AbilityLimitedGroup', row_as_wikitext, process_AbilityLimitedGroup),
+    'CharaData': ('Adventurer', row_as_wikitext, process_CharaData),
+    # Must come after CharaData processing
     'AbilityData': ('Ability', row_as_wikitext,
         [('AbilityShiftGroup', process_AbilityShiftGroup),
          ('AbilityData', process_AbilityData)]),
+    'ChainCoAbility': ('ChainCoAbility', row_as_wikitext, [('AbilityData', process_ChainCoAbility)]),
     'AmuletData': ('Wyrmprint', row_as_wikitext, process_AmuletData),
     'BuildEventItem': ('Material', row_as_wikitext, process_Material),
-    'CharaData': ('Adventurer', row_as_wikitext, process_CharaData),
     'CollectEventItem': ('Material', row_as_wikitext, process_Material),
     'SkillData': ('Skill', row_as_wikitext, process_SkillData),
     'DragonData': ('Dragon', row_as_wikitext, process_Dragon),
@@ -945,6 +1002,7 @@ DATA_PARSER_PROCESSING = {
     'RaidEventItem': ('Material', row_as_wikitext, process_Material),
     'MissionDailyData': ('EndeavorRow', row_as_wikirow, process_MissionData),
     'MissionPeriodData': ('EndeavorRow', row_as_wikirow, process_MissionData),
+    'MissionMemoryEventData': ('EndeavorRow', row_as_wikirow, process_MissionData),
     'MissionNormalData': ('EndeavorRow', row_as_wikirow, process_MissionData),
     'QuestData': ('QuestDisplay', row_as_wikitext,
         [('QuestData', process_QuestData),
@@ -963,11 +1021,23 @@ DATA_PARSER_PROCESSING = {
 }
 
 KV_PROCESSING = {
+    'AbilityData': ('AbilityData', row_as_kv_pairs, process_KeyValues),
     'ActionCondition': ('ActionCondition', row_as_kv_pairs, process_KeyValues),
-    'EnemyActionHitAttribute': ('EnemyActionHitAttribute', row_as_kv_pairs, process_KeyValues),
-    'PlayerActionHitAttribute': ('PlayerActionHitAttribute', row_as_kv_pairs, process_KeyValues),
+    'BuildEventReward': ('BuildEventReward', row_as_kv_pairs, process_KeyValues),
+    'CampaignData': ('CampaignData', row_as_kv_pairs, process_KeyValues),
+    'CharaModeData': ('CharaModeData', row_as_kv_pairs, process_KeyValues),
+    'CharaUniqueCombo': ('CharaUniqueCombo', row_as_kv_pairs, process_KeyValues),
+    'CommonActionHitAttribute': ('CommonActionHitAttribute', row_as_kv_pairs, process_KeyValues),
     'EnemyAbility': ('EnemyAbility', row_as_kv_pairs, process_KeyValues),
-    'AbilityData': ('AbilityData', row_as_kv_pairs, process_KeyValues)
+    'EnemyActionHitAttribute': ('EnemyActionHitAttribute', row_as_kv_pairs, process_KeyValues),
+    'EnemyParam': ('EnemyParam', row_as_kv_pairs, process_KeyValues),
+    'EventData': ('EventData', row_as_kv_pairs, process_KeyValues),
+    'EventPassive': ('EventPassive', row_as_kv_pairs, process_KeyValues),
+    'LoginBonusReward': ('LoginBonusReward', row_as_kv_pairs, process_KeyValues),
+    'PlayerAction': ('PlayerAction', row_as_kv_pairs, process_KeyValues),
+    'PlayerActionHitAttribute': ('PlayerActionHitAttribute', row_as_kv_pairs, process_KeyValues),
+    'QuestData': ('QuestData', row_as_kv_pairs, process_KeyValues),
+    'RaidEventReward': ('RaidEventReward', row_as_kv_pairs, process_KeyValues)
 }
 
 if __name__ == '__main__':
@@ -1021,3 +1091,9 @@ if __name__ == '__main__':
         parser.process()
         parser.emit(kv_out)
         print('Saved kv/{}{}'.format(data_name, EXT))
+
+    # Outsource enemy parsing
+    Enemy_Parser.parse(in_dir, text_label_dict=TEXT_LABEL_DICT['en'])
+
+    # with open('chaincoabs.json', 'w', newline='') as f:
+    #     json.dump(CHAIN_COAB_DICT, f, sort_keys=True, indent=2)

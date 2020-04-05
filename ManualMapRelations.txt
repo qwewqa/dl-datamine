@@ -1,0 +1,1911 @@
+Id	Name
+RAID_01_01_E_01	Loyalty's Requiem: Story
+RAID_01_01_E_02	Loyalty's Requiem: Story
+RAID_01_01_E_03	Loyalty's Requiem: Story
+RAID_01_01_E_04	Loyalty's Requiem: Story
+RAID_01_01_E_06	Loyalty's Requiem: Story
+RAID_01_01_E_07	Loyalty's Requiem: Story
+RAID_01_01_E_08	Loyalty's Requiem: Story
+RAID_01_01_E_09	Loyalty's Requiem: Story
+RAID_01_01_E_10	Loyalty's Requiem: Story
+RAID_01_01_E_11	Loyalty's Requiem: Story
+RAID_01_01_E_12	Loyalty's Requiem: Story
+RAID_01_01_E_13	Loyalty's Requiem: Story
+RAID_01_01_E_14	Loyalty's Requiem: Story
+RAID_01_01_E_15	Loyalty's Requiem: Story
+RAID_01_01_E_16	Loyalty's Requiem: Story
+RAID_01_01_E_17	Loyalty's Requiem: Story
+RAID_01_01_E_18	Loyalty's Requiem: Story
+RAID_01_01_E_19	Phraeganoth Clash: Beginner
+RAID_01_01_E_20	Phraeganoth Clash: Beginner
+RAID_01_01_E_21	Phraeganoth Clash: Beginner
+RAID_01_01_E_22	Phraeganoth Clash: Beginner
+RAID_01_01_E_23	Phraeganoth Clash: Beginner
+RAID_01_01_E_24	Phraeganoth Clash: Beginner
+RAID_01_01_E_25	Assault on Archeole: Beginner
+RAID_01_02_E_01	Assault on Archeole: Standard
+RAID_01_02_E_02	Assault on Archeole: Standard
+RAID_01_02_E_04	Assault on Archeole: Standard
+RAID_01_02_E_08	Assault on Archeole: Standard
+RAID_01_02_E_09	Assault on Archeole: Standard
+RAID_01_02_E_19	Phraeganoth Clash: Standard
+RAID_01_02_E_20	Phraeganoth Clash: Standard
+RAID_01_02_E_21	Phraeganoth Clash: Standard
+RAID_01_02_E_22	Phraeganoth Clash: Standard
+RAID_01_02_E_23	Phraeganoth Clash: Standard
+RAID_01_02_E_24	Phraeganoth Clash: Standard
+RAID_01_02_E_25	Assault on Archeole: Standard
+RAID_01_03_E_01	Assault on Archeole: Expert
+RAID_01_03_E_02	Assault on Archeole: Expert
+RAID_01_03_E_04	Assault on Archeole: Expert
+RAID_01_03_E_08	Assault on Archeole: Expert
+RAID_01_03_E_09	Assault on Archeole: Expert
+RAID_01_03_E_19	Phraeganoth Clash: Expert
+RAID_01_03_E_20	Phraeganoth Clash: Expert
+RAID_01_03_E_21	Phraeganoth Clash: Expert
+RAID_01_03_E_22	Phraeganoth Clash: Expert
+RAID_01_03_E_23	Phraeganoth Clash: Expert
+RAID_01_03_E_24	Phraeganoth Clash: Expert
+RAID_01_03_E_25	Assault on Archeole: Expert
+RAID_01_04_E_01	Phraeganoth Clash: EX
+RAID_01_04_E_02	Phraeganoth Clash: EX
+RAID_01_04_E_03	Phraeganoth Clash: EX
+RAID_01_04_E_04	Phraeganoth Clash: EX
+RAID_01_04_E_05	Phraeganoth Clash: EX
+RAID_01_04_E_06	Phraeganoth Clash: EX
+RAID_02_01_E_01	Kindness And Captivity: Story
+RAID_02_01_E_02	Kindness And Captivity: Story
+RAID_02_01_E_03	Kindness And Captivity: Story
+RAID_02_01_E_04	Kindness And Captivity: Story
+RAID_02_01_E_05	Kindness And Captivity: Story
+RAID_02_01_E_06	Kindness And Captivity: Story
+RAID_02_01_E_07	Kindness And Captivity: Story
+RAID_02_01_E_08	Kindness And Captivity: Story
+RAID_02_01_E_09	Kindness And Captivity: Story
+RAID_02_01_E_10	Kindness And Captivity: Story
+RAID_02_01_E_11	Kindness And Captivity: Story
+RAID_02_01_E_12	Kindness And Captivity: Story
+RAID_02_01_E_13	Storm Sentinel Clash: Beginner
+RAID_02_01_E_14	Storm Sentinel Clash: Beginner
+RAID_02_01_E_15	Hypnos Showdown: Beginner
+RAID_02_01_E_16	Hypnos Showdown: Beginner
+RAID_02_01_E_17	Hypnos Showdown: Beginner
+RAID_02_01_E_18	Hypnos Showdown: Beginner
+RAID_02_01_E_19	Hypnos Showdown: Beginner
+RAID_02_01_E_20	Hypnos Showdown: Beginner
+RAID_02_01_E_21	Hypnos Showdown: Beginner
+RAID_02_01_E_22	Hypnos Showdown: Beginner
+RAID_02_02_E_01	Storm Sentinel Clash: Standard
+RAID_02_02_E_02	Storm Sentinel Clash: Standard
+RAID_02_02_E_03	Storm Sentinel Clash: Standard
+RAID_02_02_E_04	Storm Sentinel Clash: Standard
+RAID_02_02_E_05	Storm Sentinel Clash: Standard
+RAID_02_02_E_06	Storm Sentinel Clash: Standard
+RAID_02_02_E_07	Storm Sentinel Clash: Standard
+RAID_02_02_E_08	Storm Sentinel Clash: Standard
+RAID_02_02_E_09	Hypnos Showdown: Standard
+RAID_02_02_E_10	Hypnos Showdown: Standard
+RAID_02_02_E_11	Hypnos Showdown: Standard
+RAID_02_02_E_12	Hypnos Showdown: Standard
+RAID_02_02_E_13	Hypnos Showdown: Standard
+RAID_02_02_E_14	Hypnos Showdown: Standard
+RAID_02_02_E_15	Hypnos Showdown: Standard
+RAID_02_02_E_16	Hypnos Showdown: Standard
+RAID_02_03_E_01	Storm Sentinel Clash: Expert
+RAID_02_03_E_02	Storm Sentinel Clash: Expert
+RAID_02_03_E_03	Storm Sentinel Clash: Expert
+RAID_02_03_E_04	Storm Sentinel Clash: Expert
+RAID_02_03_E_05	Storm Sentinel Clash: Expert
+RAID_02_03_E_06	Storm Sentinel Clash: Expert
+RAID_02_03_E_07	Storm Sentinel Clash: Expert
+RAID_02_03_E_08	Storm Sentinel Clash: Expert
+RAID_02_03_E_09	Hypnos Showdown: Expert
+RAID_02_03_E_10	Hypnos Showdown: Expert
+RAID_02_03_E_11	Hypnos Showdown: Expert
+RAID_02_03_E_12	Hypnos Showdown: Expert
+RAID_02_03_E_13	Hypnos Showdown: Expert
+RAID_02_03_E_14	Hypnos Showdown: Expert
+RAID_02_03_E_15	Hypnos Showdown: Expert
+RAID_02_03_E_16	Hypnos Showdown: Expert
+RAID_02_04_E_01	Hypnos Showdown: EX
+RAID_02_04_E_02	Hypnos Showdown: EX
+RAID_02_04_E_03	Hypnos Showdown: EX
+RAID_02_04_E_04	Hypnos Showdown: EX
+RAID_02_04_E_05	Hypnos Showdown: EX
+RAID_02_04_E_06	Hypnos Showdown: EX
+RAID_02_04_E_07	Hypnos Showdown: EX
+RAID_02_04_E_08	Hypnos Showdown: EX
+RAID_02_05_E_01	Hypnos Clash: Nightmare
+RAID_02_05_E_02	Hypnos Clash: Nightmare
+RAID_02_05_E_03	Hypnos Clash: Nightmare
+RAID_02_05_E_04	Hypnos Clash: Nightmare
+RAID_02_05_E_05	Hypnos Clash: Nightmare
+RAID_02_05_E_06	Hypnos Clash: Nightmare
+RAID_02_05_E_07	Hypnos Clash: Nightmare
+RAID_02_05_E_08	Hypnos Clash: Nightmare
+RAID_02_06_E_01	Hypnos Clash: Omega (Solo)
+RAID_02_06_E_02	Hypnos Clash: Omega (Solo)
+RAID_02_06_E_03	Hypnos Clash: Omega (Solo)
+RAID_02_06_E_04	Hypnos Clash: Omega (Solo)
+RAID_02_06_E_05	Hypnos Clash: Omega (Solo)
+RAID_02_06_E_06	Hypnos Clash: Omega (Solo)
+RAID_02_06_E_07	Hypnos Clash: Omega (Solo)
+RAID_02_06_E_08	Hypnos Clash: Omega (Solo)
+RAID_02_06_E_21	Hypnos Clash: Omega (Raid)
+RAID_02_06_E_22	Hypnos Clash: Omega (Raid)
+RAID_02_06_E_23	Hypnos Clash: Omega (Raid)
+RAID_02_06_E_24	Hypnos Clash: Omega (Raid)
+RAID_02_06_E_25	Hypnos Clash: Omega (Raid)
+RAID_02_06_E_26	Hypnos Clash: Omega (Raid)
+RAID_02_06_E_27	Hypnos Clash: Omega (Raid)
+RAID_02_06_E_28	Hypnos Clash: Omega (Raid)
+RAID_03_01_E_01	Resplendent Refrain: Story
+RAID_03_01_E_02	Resplendent Refrain: Story
+RAID_03_01_E_03	Resplendent Refrain: Story
+RAID_03_01_E_04	Resplendent Refrain: Story
+RAID_03_01_E_05	Resplendent Refrain: Story
+RAID_03_01_E_06	Resplendent Refrain: Story
+RAID_03_01_E_07	Resplendent Refrain: Story
+RAID_03_01_E_08	Resplendent Refrain: Story
+RAID_03_01_E_09	Resplendent Refrain: Story
+RAID_03_01_E_10	Resplendent Refrain: Story
+RAID_03_01_E_11	Resplendent Refrain: Story
+RAID_03_01_E_12	Resplendent Refrain: Story
+RAID_03_01_E_13	Manticore Assault: Beginner
+RAID_03_01_E_14	Sabnock Clash: Beginner
+RAID_03_01_E_15	Sabnock Clash: Beginner
+RAID_03_01_E_16	Sabnock Clash: Beginner
+RAID_03_01_E_17	Sabnock Clash: Beginner
+RAID_03_01_E_18	Sabnock Clash: Beginner
+RAID_03_01_E_19	Sabnock Clash: Beginner
+RAID_03_01_E_20	Sabnock Clash: Beginner
+RAID_03_02_E_01	Manticore Assault: Standard
+RAID_03_02_E_02	Manticore Assault: Standard
+RAID_03_02_E_03	Manticore Assault: Standard
+RAID_03_02_E_04	Manticore Assault: Standard
+RAID_03_02_E_05	Manticore Assault: Standard
+RAID_03_02_E_06	Manticore Assault: Standard
+RAID_03_02_E_07	Sabnock Clash: Standard
+RAID_03_02_E_08	Sabnock Clash: Standard
+RAID_03_02_E_09	Sabnock Clash: Standard
+RAID_03_02_E_10	Sabnock Clash: Standard
+RAID_03_02_E_11	Sabnock Clash: Standard
+RAID_03_02_E_12	Sabnock Clash: Standard
+RAID_03_02_E_13	Sabnock Clash: Standard
+RAID_03_03_E_01	Manticore Assault: Expert
+RAID_03_03_E_02	Manticore Assault: Expert
+RAID_03_03_E_03	Manticore Assault: Expert
+RAID_03_03_E_04	Manticore Assault: Expert
+RAID_03_03_E_05	Manticore Assault: Expert
+RAID_03_03_E_06	Manticore Assault: Expert
+RAID_03_03_E_07	Sabnock Clash: Expert
+RAID_03_03_E_08	Sabnock Clash: Expert
+RAID_03_03_E_09	Sabnock Clash: Expert
+RAID_03_03_E_10	Sabnock Clash: Expert
+RAID_03_03_E_11	Sabnock Clash: Expert
+RAID_03_03_E_12	Sabnock Clash: Expert
+RAID_03_03_E_13	Sabnock Clash: Expert
+RAID_03_04_E_01	Sabnock Clash: EX
+RAID_03_04_E_02	Sabnock Clash: EX
+RAID_03_04_E_03	Sabnock Clash: EX
+RAID_03_04_E_04	Sabnock Clash: EX
+RAID_03_05_E_01	Sabnock Clash: Nightmare
+RAID_03_05_E_02	Sabnock Clash: Nightmare
+RAID_03_05_E_03	Sabnock Clash: Nightmare
+RAID_03_05_E_04	Sabnock Clash: Nightmare
+RAID_04_01_E_01	Shishimai Showdown: Beginner
+RAID_04_01_E_02	Shishimai Showdown: Beginner
+RAID_04_01_E_04	Shishimai Showdown: Beginner
+RAID_04_01_E_05	Shishimai Showdown: Beginner
+RAID_04_01_E_06	Fortune from Afar: Story
+RAID_04_01_E_07	Fortune from Afar: Story
+RAID_04_01_E_08	Fortune from Afar: Story
+RAID_04_01_E_09	Fortune from Afar: Story
+RAID_04_01_E_10	Fortune from Afar: Story
+RAID_04_01_E_11	Fortune from Afar: Story
+RAID_04_01_E_12	Fortune from Afar: Story
+RAID_04_01_E_13	Fortune from Afar: Story
+RAID_04_01_E_14	Fortune from Afar: Story
+RAID_04_01_E_15	Fortune from Afar: Story
+RAID_04_01_E_16	Fortune from Afar: Story
+RAID_04_01_E_17	Fortune from Afar: Story
+RAID_04_01_E_18	Fortune from Afar: Story
+RAID_04_01_E_19	Fortune from Afar: Story
+RAID_04_01_E_20	Ieyasu's Crucible: Beginner
+RAID_04_01_E_21	Ieyasu's Crucible: Beginner
+RAID_04_01_E_22	Ieyasu's Crucible: Beginner
+RAID_04_01_E_23	Shishimai Showdown: Beginner
+RAID_04_01_E_24	Ieyasu's Crucible: Beginner
+RAID_04_01_E_25	Ieyasu's Crucible: Beginner
+RAID_04_01_E_26	Ieyasu's Crucible: Beginner
+RAID_04_01_E_27	Ieyasu's Crucible: Beginner
+RAID_04_01_E_28	Ieyasu's Crucible: Beginner
+RAID_04_01_E_29	Ieyasu's Crucible: Beginner
+RAID_04_02_E_01	Shishimai Showdown: Standard
+RAID_04_02_E_02	Shishimai Showdown: Standard
+RAID_04_02_E_04	Shishimai Showdown: Standard
+RAID_04_02_E_05	Shishimai Showdown: Standard
+RAID_04_02_E_06	Ieyasu's Crucible: Standard
+RAID_04_02_E_07	Ieyasu's Crucible: Standard
+RAID_04_02_E_08	Ieyasu's Crucible: Standard
+RAID_04_02_E_09	Shishimai Showdown: Standard
+RAID_04_02_E_10	Ieyasu's Crucible: Standard
+RAID_04_02_E_11	Ieyasu's Crucible: Standard
+RAID_04_02_E_12	Ieyasu's Crucible: Standard
+RAID_04_02_E_13	Ieyasu's Crucible: Standard
+RAID_04_02_E_14	Ieyasu's Crucible: Standard
+RAID_04_02_E_15	Ieyasu's Crucible: Standard
+RAID_04_03_E_01	Shishimai Showdown: Expert
+RAID_04_03_E_02	Shishimai Showdown: Expert
+RAID_04_03_E_04	Shishimai Showdown: Expert
+RAID_04_03_E_05	Shishimai Showdown: Expert
+RAID_04_03_E_06	Ieyasu's Crucible: Expert
+RAID_04_03_E_07	Ieyasu's Crucible: Expert
+RAID_04_03_E_08	Ieyasu's Crucible: Expert
+RAID_04_03_E_09	Shishimai Showdown: Expert
+RAID_04_03_E_10	Ieyasu's Crucible: Expert
+RAID_04_03_E_11	Ieyasu's Crucible: Expert
+RAID_04_03_E_12	Ieyasu's Crucible: Expert
+RAID_04_03_E_13	Ieyasu's Crucible: Expert
+RAID_04_03_E_14	Ieyasu's Crucible: Expert
+RAID_04_03_E_15	Ieyasu's Crucible: Expert
+RAID_04_04_E_01	Shishimai Showdown: EX
+RAID_04_04_E_02	Shishimai Showdown: EX
+RAID_04_04_E_04	Shishimai Showdown: EX
+RAID_04_04_E_05	Shishimai Showdown: EX
+RAID_04_04_E_06	Shishimai Showdown: EX
+RAID_04_05_E_01	Shishimai Showdown: Nightmare
+RAID_04_05_E_02	Shishimai Showdown: Nightmare
+RAID_04_05_E_04	Shishimai Showdown: Nightmare
+RAID_04_05_E_05	Shishimai Showdown: Nightmare
+RAID_04_05_E_06	Shishimai Showdown: Nightmare
+RAID_05_01_E_01	Aquatic Cyclops Assault: Beginner
+RAID_05_01_E_02	Skyborne Spectacle: Story
+RAID_05_01_E_03	Skyborne Spectacle: Story
+RAID_05_01_E_04	Skyborne Spectacle: Story
+RAID_05_01_E_05	Skyborne Spectacle: Story
+RAID_05_01_E_06	Aquatic Cyclops Assault: Beginner
+RAID_05_01_E_07	Aquatic Cyclops Assault: Beginner
+RAID_05_01_E_08	Aquatic Cyclops Assault: Beginner
+RAID_05_01_E_09	Skyborne Spectacle: Story
+RAID_05_01_E_10	Skyborne Spectacle: Story
+RAID_05_01_E_11	Skyborne Spectacle: Story
+RAID_05_01_E_12	Skyborne Spectacle: Story
+RAID_05_01_E_13	Skyborne Spectacle: Story
+RAID_05_01_E_14	Aquatic Cyclops Assault: Beginner
+RAID_05_01_E_15	Valfarre Clash: Beginner
+RAID_05_01_E_16	Valfarre Clash: Beginner
+RAID_05_01_E_17	Valfarre Clash: Beginner
+RAID_05_01_E_19	Valfarre Clash: Beginner
+RAID_05_02_E_01	Aquatic Cyclops Assault: Standard
+RAID_05_02_E_06	Aquatic Cyclops Assault: Standard
+RAID_05_02_E_07	Aquatic Cyclops Assault: Standard
+RAID_05_02_E_08	Aquatic Cyclops Assault: Standard
+RAID_05_02_E_14	Aquatic Cyclops Assault: Standard
+RAID_05_02_E_15	Valfarre Clash: Standard
+RAID_05_02_E_16	Valfarre Clash: Standard
+RAID_05_02_E_17	Valfarre Clash: Standard
+RAID_05_02_E_19	Valfarre Clash: Standard
+RAID_05_03_E_01	Aquatic Cyclops Assault: Expert
+RAID_05_03_E_06	Aquatic Cyclops Assault: Expert
+RAID_05_03_E_07	Aquatic Cyclops Assault: Expert
+RAID_05_03_E_08	Aquatic Cyclops Assault: Expert
+RAID_05_03_E_14	Aquatic Cyclops Assault: Expert
+RAID_05_03_E_15	Valfarre Clash: Expert
+RAID_05_03_E_16	Valfarre Clash: Expert
+RAID_05_03_E_17	Valfarre Clash: Expert
+RAID_05_03_E_19	Valfarre Clash: Expert
+RAID_05_03_E_20	Valfarre Clash: Expert
+RAID_05_04_E_15	Valfarre Clash: EX
+RAID_05_04_E_16	Valfarre Clash: EX
+RAID_05_04_E_17	Valfarre Clash: EX
+RAID_05_04_E_19	Valfarre Clash: EX
+RAID_05_04_E_20	Valfarre Clash: EX
+RAID_05_05_E_15	Valfarre Clash: Nightmare
+RAID_05_05_E_16	Valfarre Clash: Nightmare
+RAID_05_05_E_17	Valfarre Clash: Nightmare
+RAID_05_05_E_19	Valfarre Clash: Nightmare
+RAID_05_05_E_20	Valfarre Clash: Nightmare
+RAID_05_06_E_15	Valfarre Clash: Omega (Solo)
+RAID_05_06_E_16	Valfarre Clash: Omega (Solo)
+RAID_05_06_E_17	Valfarre Clash: Omega (Solo)
+RAID_05_06_E_19	Valfarre Clash: Omega (Solo)
+RAID_05_06_E_20	Valfarre Clash: Omega (Solo)
+RAID_05_06_E_25	Valfarre Clash: Omega (Raid)
+RAID_05_06_E_26	Valfarre Clash: Omega (Raid)
+RAID_05_06_E_27	Valfarre Clash: Omega (Raid)
+RAID_05_06_E_29	Valfarre Clash: Omega (Raid)
+RAID_05_06_E_30	Valfarre Clash: Omega (Raid)
+RAID_06_01_E_01	Guardian Sentinel Assault: Beginner
+RAID_06_01_E_02	Guardian Sentinel Assault: Beginner
+RAID_06_01_E_03	Guardian Sentinel Assault: Beginner
+RAID_06_01_E_04	A Waltz with Fate: Story
+RAID_06_01_E_05	Guardian Sentinel Assault: Beginner
+RAID_06_01_E_06	A Waltz with Fate: Story
+RAID_06_01_E_07	Guardian Sentinel Assault: Beginner
+RAID_06_01_E_08	A Waltz with Fate: Story
+RAID_06_01_E_09	Guardian Sentinel Assault: Beginner
+RAID_06_01_E_10	Guardian Sentinel Assault: Beginner
+RAID_06_01_E_11	A Waltz with Fate: Story
+RAID_06_01_E_12	A Waltz with Fate: Story
+RAID_06_01_E_13	A Waltz with Fate: Story
+RAID_06_01_E_14	A Waltz with Fate: Story
+RAID_06_01_E_15	A Waltz with Fate: Story
+RAID_06_01_E_16	A Waltz with Fate: Story
+RAID_06_01_E_17	Guardian Sentinel Assault: Beginner
+RAID_06_01_E_18	Guardian Sentinel Assault: Beginner
+RAID_06_01_E_19	Thanatos Clash: Beginner
+RAID_06_01_E_20	Thanatos Clash: Beginner
+RAID_06_01_E_21	Thanatos Clash: Beginner
+RAID_06_01_E_22	Thanatos Clash: Beginner
+RAID_06_01_E_23	Thanatos Clash: Beginner
+RAID_06_01_E_25	Thanatos Clash: Beginner
+RAID_06_01_E_26	Thanatos Clash: Beginner
+RAID_06_01_E_27	Thanatos Clash: Beginner
+RAID_06_02_E_01	Guardian Sentinel Assault: Standard
+RAID_06_02_E_02	Guardian Sentinel Assault: Standard
+RAID_06_02_E_03	Guardian Sentinel Assault: Standard
+RAID_06_02_E_05	Guardian Sentinel Assault: Standard
+RAID_06_02_E_07	Guardian Sentinel Assault: Standard
+RAID_06_02_E_09	Guardian Sentinel Assault: Standard
+RAID_06_02_E_10	Guardian Sentinel Assault: Standard
+RAID_06_02_E_17	Guardian Sentinel Assault: Standard
+RAID_06_02_E_18	Guardian Sentinel Assault: Standard
+RAID_06_02_E_19	Thanatos Clash: Standard
+RAID_06_02_E_20	Thanatos Clash: Standard
+RAID_06_02_E_21	Thanatos Clash: Standard
+RAID_06_02_E_22	Thanatos Clash: Standard
+RAID_06_02_E_23	Thanatos Clash: Standard
+RAID_06_02_E_25	Thanatos Clash: Standard
+RAID_06_02_E_26	Thanatos Clash: Standard
+RAID_06_02_E_27	Thanatos Clash: Standard
+RAID_06_03_E_01	Guardian Sentinel Assault: Expert
+RAID_06_03_E_02	Guardian Sentinel Assault: Expert
+RAID_06_03_E_03	Guardian Sentinel Assault: Expert
+RAID_06_03_E_05	Guardian Sentinel Assault: Expert
+RAID_06_03_E_07	Guardian Sentinel Assault: Expert
+RAID_06_03_E_09	Guardian Sentinel Assault: Expert
+RAID_06_03_E_10	Guardian Sentinel Assault: Expert
+RAID_06_03_E_17	Guardian Sentinel Assault: Expert
+RAID_06_03_E_18	Guardian Sentinel Assault: Expert
+RAID_06_03_E_19	Thanatos Clash: Expert
+RAID_06_03_E_20	Thanatos Clash: Expert
+RAID_06_03_E_21	Thanatos Clash: Expert
+RAID_06_03_E_22	Thanatos Clash: Expert
+RAID_06_03_E_23	Thanatos Clash: Expert
+RAID_06_03_E_25	Thanatos Clash: Expert
+RAID_06_03_E_26	Thanatos Clash: Expert
+RAID_06_03_E_27	Thanatos Clash: Expert
+RAID_06_04_E_19	Thanatos Clash: EX
+RAID_06_04_E_20	Thanatos Clash: EX
+RAID_06_04_E_21	Thanatos Clash: EX
+RAID_06_04_E_22	Thanatos Clash: EX
+RAID_06_04_E_23	Thanatos Clash: EX
+RAID_06_04_E_25	Thanatos Clash: EX
+RAID_06_04_E_26	Thanatos Clash: EX
+RAID_06_04_E_27	Thanatos Clash: EX
+RAID_07_01_E_01	Qitian Dasheng Clash: Beginner
+RAID_07_01_E_02	Qitian Dasheng Clash: Beginner
+RAID_07_01_E_05	Qitian Dasheng Clash: Beginner
+RAID_07_01_E_06	Qitian Dasheng Clash: Beginner
+RAID_07_01_E_08	Cyclops Assault: Beginner
+RAID_07_01_E_09	Cyclops Assault: Beginner
+RAID_07_01_E_10	Cyclops Assault: Beginner
+RAID_07_01_E_11	Cyclops Assault: Beginner
+RAID_07_01_E_12	Cyclops Assault: Beginner
+RAID_07_01_E_13	Echoes of Antiquity: Story
+RAID_07_01_E_14	Echoes of Antiquity: Story
+RAID_07_01_E_15	Echoes of Antiquity: Story
+RAID_07_01_E_16	Cyclops Assault: Beginner
+RAID_07_01_E_17	Cyclops Assault: Beginner
+RAID_07_02_E_01	Qitian Dasheng Clash: Standard
+RAID_07_02_E_02	Qitian Dasheng Clash: Standard
+RAID_07_02_E_05	Qitian Dasheng Clash: Standard
+RAID_07_02_E_06	Qitian Dasheng Clash: Standard
+RAID_07_02_E_08	Cyclops Assault: Standard
+RAID_07_02_E_09	Cyclops Assault: Standard
+RAID_07_02_E_10	Cyclops Assault: Standard
+RAID_07_02_E_11	Cyclops Assault: Standard
+RAID_07_02_E_12	Cyclops Assault: Standard
+RAID_07_02_E_13	Cyclops Assault: Standard
+RAID_07_02_E_14	Cyclops Assault: Standard
+RAID_07_03_E_01	Qitian Dasheng Clash: Expert
+RAID_07_03_E_02	Qitian Dasheng Clash: Expert
+RAID_07_03_E_05	Qitian Dasheng Clash: Expert
+RAID_07_03_E_06	Qitian Dasheng Clash: Expert
+RAID_07_03_E_08	Cyclops Assault: Expert
+RAID_07_03_E_09	Cyclops Assault: Expert
+RAID_07_03_E_10	Cyclops Assault: Expert
+RAID_07_03_E_11	Cyclops Assault: Expert
+RAID_07_03_E_12	Cyclops Assault: Expert
+RAID_07_03_E_13	Cyclops Assault: Expert
+RAID_07_03_E_14	Cyclops Assault: Expert
+RAID_07_04_E_01	Qitian Dasheng Clash: EX
+RAID_07_04_E_02	Qitian Dasheng Clash: EX
+RAID_07_04_E_05	Qitian Dasheng Clash: EX
+RAID_07_04_E_06	Qitian Dasheng Clash: EX
+RAID_07_05_E_01	Qitian Dasheng Clash: Nightmare
+RAID_07_05_E_02	Qitian Dasheng Clash: Nightmare
+RAID_07_05_E_05	Qitian Dasheng Clash: Nightmare
+RAID_07_05_E_06	Qitian Dasheng Clash: Nightmare
+RAID_08_01_E_01	Aspidochelone Clash: Beginner
+RAID_08_01_E_02	Aspidochelone Clash: Beginner
+RAID_08_01_E_03	Aspidochelone Clash: Beginner
+RAID_08_01_E_04	Aspidochelone Clash: Beginner
+RAID_08_01_E_05	Aspidochelone Clash: Beginner
+RAID_08_01_E_06	Aspidochelone Clash: Beginner
+RAID_08_01_E_11	Light Manticore Assault: Beginner
+RAID_08_01_E_12	Light Manticore Assault: Beginner
+RAID_08_01_E_13	Light Manticore Assault: Beginner
+RAID_08_01_E_14	Light Manticore Assault: Beginner
+RAID_08_01_E_15	Light Manticore Assault: Beginner
+RAID_08_01_E_16	Light Manticore Assault: Beginner
+RAID_08_01_E_17	Light Manticore Assault: Beginner
+RAID_08_01_E_18	Light Manticore Assault: Beginner
+RAID_08_01_E_19	Light Manticore Assault: Beginner
+RAID_08_03_E_01	Aspidochelone Clash: Expert
+RAID_08_03_E_02	Aspidochelone Clash: Expert
+RAID_08_03_E_03	Aspidochelone Clash: Expert
+RAID_08_03_E_04	Aspidochelone Clash: Expert
+RAID_08_03_E_05	Aspidochelone Clash: Expert
+RAID_08_03_E_06	Aspidochelone Clash: Expert
+RAID_08_03_E_11	Light Manticore Assault: Expert
+RAID_08_03_E_12	Light Manticore Assault: Expert
+RAID_08_03_E_13	Light Manticore Assault: Expert
+RAID_08_03_E_14	Light Manticore Assault: Expert
+RAID_08_03_E_15	Light Manticore Assault: Expert
+RAID_08_03_E_16	Light Manticore Assault: Expert
+RAID_08_03_E_17	Light Manticore Assault: Expert
+RAID_08_03_E_18	Light Manticore Assault: Expert
+RAID_08_03_E_19	Light Manticore Assault: Expert
+RAID_08_04_E_01	Aspidochelone Clash: EX
+RAID_08_04_E_02	Aspidochelone Clash: EX
+RAID_08_04_E_03	Aspidochelone Clash: EX
+RAID_08_04_E_04	Aspidochelone Clash: EX
+RAID_08_04_E_05	Aspidochelone Clash: EX
+RAID_08_04_E_06	Aspidochelone Clash: EX
+RAID_08_05_E_01	Aspidochelone Clash: Nightmare
+RAID_08_05_E_02	Aspidochelone Clash: Nightmare
+RAID_08_05_E_03	Aspidochelone Clash: Nightmare
+RAID_08_05_E_04	Aspidochelone Clash: Nightmare
+RAID_08_05_E_05	Aspidochelone Clash: Nightmare
+RAID_08_05_E_06	Aspidochelone Clash: Nightmare
+RAID_08_06_E_01	Aspidochelone Clash: Omega (Solo)
+RAID_08_06_E_02	Aspidochelone Clash: Omega (Solo)
+RAID_08_06_E_03	Aspidochelone Clash: Omega (Solo)
+RAID_08_06_E_04	Aspidochelone Clash: Omega (Solo)
+RAID_08_06_E_05	Aspidochelone Clash: Omega (Solo)
+RAID_08_06_E_06	Aspidochelone Clash: Omega (Solo)
+RAID_08_06_E_11	Aspidochelone Clash: Omega (Raid)
+RAID_08_06_E_12	Aspidochelone Clash: Omega (Raid)
+RAID_08_06_E_13	Aspidochelone Clash: Omega (Raid)
+RAID_08_06_E_14	Aspidochelone Clash: Omega (Raid)
+RAID_08_06_E_15	Aspidochelone Clash: Omega (Raid)
+RAID_08_06_E_16	Aspidochelone Clash: Omega (Raid)
+RAID_11_01_E_01	Barbary Clash: Beginner
+RAID_11_01_E_02	Barbary Clash: Beginner
+RAID_11_01_E_03	Barbary Clash: Beginner
+RAID_11_01_E_04	Barbary Clash: Beginner
+RAID_11_01_E_05	Barbary Clash: Beginner
+RAID_11_01_E_06	Giant Ember Toad Assault: Beginner
+RAID_11_01_E_07	Giant Ember Toad Assault: Beginner
+RAID_11_01_E_08	A Splash of Adventure: Event
+RAID_11_01_E_09	A Splash of Adventure: Event
+RAID_11_01_E_10	Giant Ember Toad Assault: Beginner
+RAID_11_01_E_11	A Splash of Adventure: Event
+RAID_11_01_E_12	Giant Ember Toad Assault: Beginner
+RAID_11_01_E_13	Giant Ember Toad Assault: Beginner
+RAID_11_01_E_14	A Splash of Adventure: Event
+RAID_11_01_E_15	A Splash of Adventure: Event
+RAID_11_01_E_16	A Splash of Adventure: Event
+RAID_11_02_E_01	Barbary Clash: Standard
+RAID_11_02_E_02	Barbary Clash: Standard
+RAID_11_02_E_03	Barbary Clash: Standard
+RAID_11_02_E_04	Barbary Clash: Standard
+RAID_11_02_E_05	Barbary Clash: Standard
+RAID_11_02_E_06	Giant Ember Toad Assault: Standard
+RAID_11_02_E_07	Giant Ember Toad Assault: Standard
+RAID_11_02_E_08	Giant Ember Toad Assault: Standard
+RAID_11_02_E_09	Giant Ember Toad Assault: Standard
+RAID_11_02_E_10	Giant Ember Toad Assault: Standard
+RAID_11_02_E_11	Giant Ember Toad Assault: Standard
+RAID_11_03_E_01	Barbary Clash: Expert
+RAID_11_03_E_02	Barbary Clash: Expert
+RAID_11_03_E_03	Barbary Clash: Expert
+RAID_11_03_E_04	Barbary Clash: Expert
+RAID_11_03_E_05	Barbary Clash: Expert
+RAID_11_03_E_06	Giant Ember Toad Assault: Expert
+RAID_11_03_E_07	Giant Ember Toad Assault: Expert
+RAID_11_03_E_08	Giant Ember Toad Assault: Expert
+RAID_11_03_E_09	Giant Ember Toad Assault: Expert
+RAID_11_03_E_10	Giant Ember Toad Assault: Expert
+RAID_11_03_E_11	Giant Ember Toad Assault: Expert
+RAID_11_04_E_01	Barbary Clash: EX
+RAID_11_04_E_02	Barbary Clash: EX
+RAID_11_04_E_03	Barbary Clash: EX
+RAID_11_04_E_04	Barbary Clash: EX
+RAID_11_04_E_05	Barbary Clash: EX
+RAID_11_05_E_01	Barbary Clash: Nightmare
+RAID_11_05_E_02	Barbary Clash: Nightmare
+RAID_11_05_E_03	Barbary Clash: Nightmare
+RAID_11_05_E_04	Barbary Clash: Nightmare
+RAID_11_05_E_05	Barbary Clash: Nightmare
+RAID_13_01_E_01	Chronos Clash: Beginner
+RAID_13_01_E_02	Chronos Clash: Beginner
+RAID_13_01_E_03	Chronos Clash: Beginner
+RAID_13_01_E_04	Chronos Clash: Beginner
+RAID_13_01_E_05	Shining Cyclops Assault: Beginner
+RAID_13_01_E_06	Shining Cyclops Assault: Beginner
+RAID_13_01_E_07	Shining Cyclops Assault: Beginner
+RAID_13_01_E_08	Fractured Futures: Event
+RAID_13_01_E_09	Fractured Futures: Event
+RAID_13_01_E_10	Shining Cyclops Assault: Beginner
+RAID_13_01_E_11	Shining Cyclops Assault: Beginner
+RAID_13_01_E_12	Fractured Futures: Event
+RAID_13_01_E_13	Fractured Futures: Event
+RAID_13_01_E_14	Shining Cyclops Assault: Beginner
+RAID_13_01_E_15	Chronos Clash: Beginner
+RAID_13_01_E_16	Chronos Clash: Beginner
+RAID_13_01_E_17	Chronos Clash: Beginner
+RAID_13_01_E_18	Chronos Clash: Beginner
+RAID_13_01_E_19	Chronos Clash: Beginner
+RAID_13_01_E_20	Chronos Clash: Beginner
+RAID_13_02_E_01	Chronos Clash: Standard
+RAID_13_02_E_02	Shining Cyclops Assault: Standard
+RAID_13_02_E_03	Shining Cyclops Assault: Standard
+RAID_13_02_E_04	Shining Cyclops Assault: Standard
+RAID_13_02_E_07	Shining Cyclops Assault: Standard
+RAID_13_02_E_08	Shining Cyclops Assault: Standard
+RAID_13_02_E_09	Shining Cyclops Assault: Standard
+RAID_13_02_E_10	Chronos Clash: Standard
+RAID_13_02_E_11	Chronos Clash: Standard
+RAID_13_02_E_12	Chronos Clash: Standard
+RAID_13_02_E_13	Chronos Clash: Standard
+RAID_13_02_E_14	Chronos Clash: Standard
+RAID_13_02_E_15	Chronos Clash: Standard
+RAID_13_02_E_16	Chronos Clash: Standard
+RAID_13_02_E_17	Chronos Clash: Standard
+RAID_13_02_E_18	Chronos Clash: Standard
+RAID_13_03_E_01	Chronos Clash: Expert
+RAID_13_03_E_02	Shining Cyclops Assault: Expert
+RAID_13_03_E_03	Shining Cyclops Assault: Expert
+RAID_13_03_E_04	Shining Cyclops Assault: Expert
+RAID_13_03_E_07	Shining Cyclops Assault: Expert
+RAID_13_03_E_08	Shining Cyclops Assault: Expert
+RAID_13_03_E_09	Shining Cyclops Assault: Expert
+RAID_13_03_E_10	Chronos Clash: Expert
+RAID_13_03_E_11	Chronos Clash: Expert
+RAID_13_03_E_12	Chronos Clash: Expert
+RAID_13_03_E_13	Chronos Clash: Expert
+RAID_13_03_E_14	Chronos Clash: Expert
+RAID_13_03_E_15	Chronos Clash: Expert
+RAID_13_03_E_16	Chronos Clash: Expert
+RAID_13_03_E_17	Chronos Clash: Expert
+RAID_13_03_E_18	Chronos Clash: Expert
+RAID_13_04_E_01	Chronos Nyx Clash: EX
+RAID_13_04_E_02	Chronos Nyx Clash: EX
+RAID_13_04_E_03	Chronos Nyx Clash: EX
+RAID_13_05_E_01	Chronos Nyx Clash: Nightmare
+RAID_13_05_E_02	Chronos Nyx Clash: Nightmare
+RAID_13_05_E_03	Chronos Nyx Clash: Nightmare
+RAID_13_06_E_01	Chronos Clash: Omega (Solo)
+RAID_13_06_E_02	Chronos Clash: Omega (Raid)
+RAID_13_06_E_03	Chronos Nyx Clash: Omega (Solo)
+RAID_13_06_E_05	Chronos Nyx Clash: Omega (Solo)
+RAID_13_06_E_06	Chronos Nyx Clash: Omega (Solo)
+RAID_13_06_E_04	Chronos Nyx Clash: Omega (Raid)
+RAID_13_06_E_07	Chronos Nyx Clash: Omega (Raid)
+RAID_13_06_E_08	Chronos Nyx Clash: Omega (Raid)
+RAID_13_06_E_09	Chronos Clash: Omega (Solo)
+RAID_13_06_E_10	Chronos Clash: Omega (Raid)
+RAID_13_06_E_11	Chronos Clash: Omega (Solo)
+RAID_13_06_E_12	Chronos Clash: Omega (Solo)
+RAID_13_06_E_13	Chronos Clash: Omega (Raid)
+RAID_13_06_E_14	Chronos Clash: Omega (Raid)
+RAID_17_01_E_11	A Clawful Caper: Event
+RAID_17_01_E_12	A Clawful Caper: Event
+RAID_17_01_E_13	A Clawful Caper: Event
+RAID_17_01_E_14	A Clawful Caper: Event
+RAID_17_01_E_15	A Clawful Caper: Event
+RAID_17_01_E_16	A Clawful Caper: Event
+RAID_17_01_E_17	A Clawful Caper: Event
+RAID_17_01_E_18	A Clawful Caper: Event
+RAID_17_01_E_19	Subdue the Snapper: Beginner
+RAID_17_01_E_20	A Clawful Caper: Event
+RAID_17_01_E_21	A Clawful Caper: Event
+RAID_17_01_E_22	A Clawful Caper: Event
+RAID_17_02_E_01	Ebisu Showdown: Beginner
+RAID_17_02_E_02	Ebisu Showdown: Beginner
+RAID_17_02_E_03	Ebisu Showdown: Beginner
+RAID_17_02_E_04	Ebisu Showdown: Beginner
+RAID_17_02_E_05	Ebisu Showdown: Beginner
+RAID_17_03_E_01	Ebisu Showdown: Expert
+RAID_17_03_E_02	Ebisu Showdown: Expert
+RAID_17_03_E_03	Ebisu Showdown: Expert
+RAID_17_03_E_04	Ebisu Showdown: Expert
+RAID_17_03_E_11	Subdue the Snapper: Expert
+RAID_17_03_E_05	Ebisu Showdown: Expert
+RAID_17_04_E_01	Ebisu Showdown: EX
+RAID_17_04_E_02	Ebisu Showdown: EX
+RAID_17_04_E_03	Ebisu Showdown: EX
+RAID_17_04_E_04	Ebisu Showdown: EX
+RAID_17_04_E_05	Ebisu Showdown: EX
+RAID_17_05_E_01	Ebisu Showdown: Nightmare
+RAID_17_05_E_02	Ebisu Showdown: Nightmare
+RAID_17_05_E_03	Ebisu Showdown: Nightmare
+RAID_17_05_E_04	Ebisu Showdown: Nightmare
+RAID_17_05_E_05	Ebisu Showdown: Nightmare
+RAID_17_06_E_01	Ebisu Showdown: Omega (Solo)
+RAID_17_06_E_02	Ebisu Showdown: Omega (Solo)
+RAID_17_06_E_03	Ebisu Showdown: Omega (Solo)
+RAID_17_06_E_04	Ebisu Showdown: Omega (Solo)
+RAID_17_06_E_05	Ebisu Showdown: Omega (Solo)
+RAID_17_06_E_11	Ebisu Showdown: Omega (Raid)
+RAID_17_06_E_12	Ebisu Showdown: Omega (Raid)
+RAID_17_06_E_13	Ebisu Showdown: Omega (Raid)
+RAID_17_06_E_14	Ebisu Showdown: Omega (Raid)
+RAID_17_06_E_15	Ebisu Showdown: Omega (Raid)
+
+
+
+
+
+
+
+
+
+
+BUILD_01_01_E_01	Dream Big Under the Big Top: Event
+BUILD_01_01_E_02	Dream Big Under the Big Top: Event
+BUILD_01_01_E_03	Dream Big Under the Big Top: Event
+BUILD_01_01_E_04	Dream Big Under the Big Top: Event
+BUILD_01_02_E_01	Dream Big Under the Big Top: Event
+BUILD_01_02_E_02	Dream Big Under the Big Top: Event
+BUILD_01_02_E_03	Dream Big Under the Big Top: Event
+BUILD_01_02_E_04	Dream Big Under the Big Top: Event
+BUILD_01_02_E_05	Dream Big Under the Big Top: Event
+BUILD_01_02_E_06	Dream Big Under the Big Top: Event
+BUILD_01_03_E_01	Dream Big Under the Big Top: Event
+BUILD_01_03_E_02	Dream Big Under the Big Top: Event
+BUILD_01_03_E_03	Dream Big Under the Big Top: Event
+BUILD_01_03_E_04	Dream Big Under the Big Top: Event
+BUILD_01_04_E_01	Dream Big Under the Big Top: Event
+BUILD_01_04_E_02	Dream Big Under the Big Top: Event
+BUILD_01_04_E_03	Dream Big Under the Big Top: Event
+BUILD_01_04_E_04	Dream Big Under the Big Top: Event
+BUILD_01_04_E_05	Dream Big Under the Big Top: Event
+BUILD_01_04_E_06	Dream Big Under the Big Top: Event
+BUILD_01_05_E_01	Welcome to the Fiend Circus: Beginner
+BUILD_01_05_E_02	Welcome to the Fiend Circus: Beginner
+BUILD_01_05_E_03	Welcome to the Fiend Circus: Beginner
+BUILD_01_05_E_04	Welcome to the Fiend Circus: Beginner
+BUILD_01_05_E_05	Welcome to the Fiend Circus: Beginner
+BUILD_01_05_E_06	Welcome to the Fiend Circus: Beginner
+BUILD_01_05_E_07	Welcome to the Fiend Circus: Beginner
+BUILD_01_05_E_08	Welcome to the Fiend Circus: Standard
+BUILD_01_05_E_09	Welcome to the Fiend Circus: Standard
+BUILD_01_05_E_10	Welcome to the Fiend Circus: Standard
+BUILD_01_05_E_11	Welcome to the Fiend Circus: Standard
+BUILD_01_05_E_12	Welcome to the Fiend Circus: Standard
+BUILD_01_05_E_13	Welcome to the Fiend Circus: Standard
+BUILD_01_05_E_14	Welcome to the Fiend Circus: Standard
+BUILD_01_05_E_15	Welcome to the Fiend Circus: Expert
+BUILD_01_05_E_16	Welcome to the Fiend Circus: Expert
+BUILD_01_05_E_17	Welcome to the Fiend Circus: Expert
+BUILD_01_05_E_18	Welcome to the Fiend Circus: Expert
+BUILD_01_05_E_19	Welcome to the Fiend Circus: Expert
+BUILD_01_05_E_20	Welcome to the Fiend Circus: Expert
+BUILD_01_05_E_21	Welcome to the Fiend Circus: Expert
+BUILD_01_06_E_01	Fiend Circus Encore
+BUILD_01_06_E_02	Fiend Circus Encore
+BUILD_01_06_E_03	Fiend Circus Encore
+BUILD_01_06_E_04	Fiend Circus Encore
+BUILD_01_06_E_05	Fiend Circus Encore
+BUILD_01_06_E_06	Fiend Circus Encore
+BUILD_01_06_E_07	Fiend Circus Encore
+BUILD_01_07_E_01	Down to the Wire
+BUILD_01_07_E_02	Down to the Wire
+BUILD_01_07_E_03	Down to the Wire
+BUILD_01_07_E_04	Down to the Wire
+BUILD_01_07_E_05	Down to the Wire
+BUILD_01_07_E_06	Down to the Wire
+BUILD_01_07_E_07	Down to the Wire
+BUILD_01_07_E_08	Down to the Wire
+BUILD_01_07_E_09	Down to the Wire
+BUILD_01_08_E_01	Top Star Trial: Expert
+BUILD_01_08_E_02	Top Star Trial: Expert
+BUILD_01_08_E_03	Top Star Trial: Expert
+BUILD_01_08_E_04	Top Star Trial: Expert
+BUILD_01_08_E_05	Top Star Trial: Expert
+BUILD_01_08_E_06	Top Star Trial: Expert
+BUILD_01_08_E_07	Top Star Trial: Expert
+BUILD_01_08_E_08	Top Star Trial: Expert
+BUILD_01_08_E_09	Top Star Trial: Expert
+BUILD_01_08_E_10	Top Star Trial: Expert
+BUILD_01_09_E_01	Dream Big Under the Big Top: Menace Spawn A
+BUILD_01_09_E_02	Dream Big Under the Big Top: Menace Spawn A
+BUILD_01_09_E_03	Dream Big Under the Big Top: Menace Spawn A
+BUILD_01_09_E_04	Dream Big Under the Big Top: Menace Spawn A
+BUILD_01_09_E_05	Dream Big Under the Big Top: Menace Spawn A
+BUILD_01_09_E_06	Dream Big Under the Big Top: Menace Spawn A
+BUILD_01_10_E_01	Dream Big Under the Big Top: Menace Spawn B
+BUILD_01_10_E_02	Dream Big Under the Big Top: Menace Spawn B
+BUILD_01_10_E_03	Dream Big Under the Big Top: Menace Spawn B
+BUILD_01_10_E_04	Dream Big Under the Big Top: Menace Spawn B
+BUILD_01_10_E_05	Dream Big Under the Big Top: Menace Spawn B
+BUILD_01_10_E_06	Dream Big Under the Big Top: Menace Spawn B
+BUILD_01_11_E_01	Dream Big Under the Big Top: Menace Spawn C
+BUILD_01_11_E_02	Dream Big Under the Big Top: Menace Spawn C
+BUILD_01_11_E_03	Dream Big Under the Big Top: Menace Spawn C
+BUILD_01_11_E_04	Dream Big Under the Big Top: Menace Spawn C
+BUILD_01_11_E_05	Dream Big Under the Big Top: Menace Spawn C
+BUILD_01_12_E_01	Top Star Trial: Master
+BUILD_01_12_E_02	Top Star Trial: Master
+BUILD_01_12_E_03	Top Star Trial: Master
+BUILD_01_12_E_04	Top Star Trial: Master
+BUILD_01_12_E_05	Top Star Trial: Master
+BUILD_01_12_E_06	Top Star Trial: Master
+BUILD_01_12_E_07	Top Star Trial: Master
+BUILD_01_12_E_12	Top Star Trial: Master
+BUILD_01_12_E_09	Top Star Trial: Master
+BUILD_01_12_E_10	Top Star Trial: Master
+BUILD_02_01_E_01	A Wish To The Winds: Event
+BUILD_02_01_E_02	A Wish To The Winds: Event
+BUILD_02_01_E_03	A Wish To The Winds: Event
+BUILD_02_01_E_04	A Wish To The Winds: Event
+BUILD_02_02_E_01	A Wish To The Winds: Event
+BUILD_02_02_E_02	A Wish To The Winds: Event
+BUILD_02_02_E_03	A Wish To The Winds: Event
+BUILD_02_02_E_04	A Wish To The Winds: Event
+BUILD_02_02_E_05	A Wish To The Winds: Event
+BUILD_02_02_E_06	A Wish To The Winds: Event
+BUILD_02_03_E_01	A Wish To The Winds: Event
+BUILD_02_03_E_02	A Wish To The Winds: Event
+BUILD_02_03_E_03	A Wish To The Winds: Event
+BUILD_02_03_E_04	A Wish To The Winds: Event
+BUILD_02_03_E_05	A Wish To The Winds: Event
+BUILD_02_04_E_01	A Wish To The Winds: Event
+BUILD_02_04_E_02	A Wish To The Winds: Event
+BUILD_02_04_E_03	A Wish To The Winds: Event
+BUILD_02_04_E_04	A Wish To The Winds: Event
+BUILD_02_04_E_05	A Wish To The Winds: Event
+BUILD_02_04_E_06	A Wish To The Winds: Event
+BUILD_02_04_E_07	A Wish To The Winds: Event
+BUILD_02_05_E_01	Another Breezy Day
+BUILD_02_05_E_02	Another Breezy Day
+BUILD_02_05_E_03	Another Breezy Day
+BUILD_02_05_E_04	Another Breezy Day
+BUILD_02_05_E_05	Another Breezy Day
+BUILD_02_05_E_06	Another Breezy Day
+BUILD_02_05_E_07	Another Breezy Day
+BUILD_02_05_E_08	Another Breezy Day
+BUILD_02_05_E_09	Another Breezy Day
+BUILD_02_05_E_10	Another Breezy Day
+BUILD_02_06_E_01	Fiend Alert!: Beginner
+BUILD_02_06_E_02	Fiend Alert!: Beginner
+BUILD_02_06_E_03	Fiend Alert!: Beginner
+BUILD_02_06_E_04	Fiend Alert!: Beginner
+BUILD_02_06_E_05	Fiend Alert!: Beginner
+BUILD_02_06_E_06	Fiend Alert!: Beginner
+BUILD_02_06_E_07	Fiend Alert!: Beginner
+BUILD_02_06_E_08	Fiend Alert!: Beginner
+BUILD_02_06_E_09	Fiend Alert!: Beginner
+BUILD_02_06_E_10	Fiend Alert!: Standard
+BUILD_02_06_E_11	Fiend Alert!: Standard
+BUILD_02_06_E_12	Fiend Alert!: Standard
+BUILD_02_06_E_13	Fiend Alert!: Standard
+BUILD_02_06_E_14	Fiend Alert!: Standard
+BUILD_02_06_E_15	Fiend Alert!: Standard
+BUILD_02_06_E_16	Fiend Alert!: Standard
+BUILD_02_06_E_17	Fiend Alert!: Standard
+BUILD_02_06_E_18	Fiend Alert!: Standard
+BUILD_02_06_E_19	Fiend Alert!: Expert
+BUILD_02_06_E_20	Fiend Alert!: Expert
+BUILD_02_06_E_21	Fiend Alert!: Expert
+BUILD_02_06_E_22	Fiend Alert!: Expert
+BUILD_02_06_E_23	Fiend Alert!: Expert
+BUILD_02_06_E_24	Fiend Alert!: Expert
+BUILD_02_06_E_25	Fiend Alert!: Expert
+BUILD_02_06_E_26	Fiend Alert!: Expert
+BUILD_02_06_E_27	Fiend Alert!: Expert
+BUILD_02_07_E_01	Mega-Fiend Spotted!
+BUILD_02_07_E_02	Mega-Fiend Spotted!
+BUILD_02_07_E_03	Mega-Fiend Spotted!
+BUILD_02_07_E_04	Mega-Fiend Spotted!
+BUILD_02_07_E_05	Mega-Fiend Spotted!
+BUILD_02_07_E_06	Mega-Fiend Spotted!
+BUILD_02_08_E_01	Ruler of the Shore: Expert
+BUILD_02_08_E_02	Ruler of the Shore: Expert
+BUILD_02_08_E_03	Ruler of the Shore: Expert
+BUILD_02_08_E_04	Ruler of the Shore: Expert
+BUILD_02_08_E_05	Ruler of the Shore: Expert
+BUILD_02_08_E_06	Ruler of the Shore: Expert
+BUILD_02_08_E_07	Ruler of the Shore: Expert
+BUILD_02_08_E_08	Ruler of the Shore: Expert
+BUILD_02_08_E_09	Ruler of the Shore: Expert
+BUILD_02_08_E_10	Ruler of the Shore: Expert
+BUILD_02_09_E_01	A Wish To The Winds: Event
+BUILD_02_09_E_02	A Wish To The Winds: Event
+BUILD_02_09_E_03	A Wish To The Winds: Event
+BUILD_02_09_E_04	A Wish To The Winds: Event
+BUILD_02_10_E_01	A Wish To The Winds: Event
+BUILD_02_10_E_02	A Wish To The Winds: Event
+BUILD_02_10_E_03	A Wish To The Winds: Event
+BUILD_02_10_E_04	A Wish To The Winds: Event
+BUILD_02_10_E_05	A Wish To The Winds: Event
+BUILD_02_11_E_01	A Wish To The Winds: Event
+BUILD_02_11_E_02	A Wish To The Winds: Event
+BUILD_02_11_E_03	A Wish To The Winds: Event
+BUILD_02_11_E_04	A Wish To The Winds: Event
+BUILD_02_11_E_05	A Wish To The Winds: Event
+BUILD_02_11_E_06	A Wish To The Winds: Event
+BUILD_02_12_E_01	Ruler of the Shore: Master
+BUILD_02_12_E_02	Ruler of the Shore: Master
+BUILD_02_12_E_03	Ruler of the Shore: Master
+BUILD_02_12_E_04	Ruler of the Shore: Master
+BUILD_02_12_E_05	Ruler of the Shore: Master
+BUILD_02_12_E_06	Ruler of the Shore: Master
+BUILD_02_12_E_07	Ruler of the Shore: Master
+BUILD_02_12_E_08	Ruler of the Shore: Master
+BUILD_02_12_E_09	Ruler of the Shore: Master
+BUILD_02_12_E_10	Ruler of the Shore: Master
+BUILD_03_01_E_01	Trick or Treasure!: Event
+BUILD_03_01_E_02	Trick or Treasure!: Event
+BUILD_03_01_E_03	Trick or Treasure!: Event
+BUILD_03_01_E_04	Trick or Treasure!: Event
+BUILD_03_02_E_01	Trick or Treasure!: Event
+BUILD_03_02_E_02	Trick or Treasure!: Event
+BUILD_03_02_E_03	Trick or Treasure!: Event
+BUILD_03_02_E_04	Trick or Treasure!: Event
+BUILD_03_02_E_05	Trick or Treasure!: Event
+BUILD_03_03_E_01	Trick or Treasure!: Event
+BUILD_03_03_E_02	Trick or Treasure!: Event
+BUILD_03_03_E_03	Trick or Treasure!: Event
+BUILD_03_03_E_04	Trick or Treasure!: Event
+BUILD_03_03_E_05	Trick or Treasure!: Event
+BUILD_03_03_E_06	Trick or Treasure!: Event
+BUILD_03_04_E_01	Trick or Treasure!: Event
+BUILD_03_04_E_02	Trick or Treasure!: Event
+BUILD_03_04_E_03	Trick or Treasure!: Event
+BUILD_03_04_E_04	Trick or Treasure!: Event
+BUILD_03_04_E_05	Trick or Treasure!: Event
+BUILD_03_04_E_06	Trick or Treasure!: Event
+BUILD_03_04_E_07	Trick or Treasure!: Event
+BUILD_03_05_E_01	Nightly Haunts
+BUILD_03_05_E_02	Nightly Haunts
+BUILD_03_05_E_03	Nightly Haunts
+BUILD_03_05_E_04	Nightly Haunts
+BUILD_03_05_E_05	Nightly Haunts
+BUILD_03_05_E_06	Nightly Haunts
+BUILD_03_05_E_07	Nightly Haunts
+BUILD_03_05_E_08	Nightly Haunts
+BUILD_03_05_E_09	Nightly Haunts
+BUILD_03_05_E_10	Nightly Haunts
+BUILD_03_05_E_11	Nightly Haunts
+BUILD_03_06_E_01	Squash the Pumpking: Beginner
+BUILD_03_06_E_02	Squash the Pumpking: Beginner
+BUILD_03_06_E_03	Squash the Pumpking: Beginner
+BUILD_03_06_E_04	Squash the Pumpking: Beginner
+BUILD_03_06_E_05	Squash the Pumpking: Standard
+BUILD_03_06_E_06	Squash the Pumpking: Standard
+BUILD_03_06_E_07	Squash the Pumpking: Standard
+BUILD_03_06_E_08	Squash the Pumpking: Standard
+BUILD_03_06_E_09	Squash the Pumpking: Standard
+BUILD_03_06_E_10	Squash the Pumpking: Standard
+BUILD_03_06_E_11	Squash the Pumpking: Standard
+BUILD_03_06_E_12	Squash the Pumpking: Expert
+BUILD_03_06_E_13	Squash the Pumpking: Expert
+BUILD_03_06_E_14	Squash the Pumpking: Expert
+BUILD_03_06_E_15	Squash the Pumpking: Expert
+BUILD_03_06_E_16	Squash the Pumpking: Expert
+BUILD_03_06_E_17	Squash the Pumpking: Expert
+BUILD_03_06_E_18	Squash the Pumpking: Expert
+BUILD_03_06_E_19	Squash the Pumpking: Expert
+BUILD_03_06_E_20	Squash the Pumpking: Expert
+BUILD_03_06_E_21	Squash the Pumpking: Expert
+BUILD_03_07_E_01	Revenge of the Pumpking
+BUILD_03_07_E_02	Revenge of the Pumpking
+BUILD_03_07_E_03	Revenge of the Pumpking
+BUILD_03_07_E_04	Revenge of the Pumpking
+BUILD_03_07_E_05	Revenge of the Pumpking
+BUILD_03_08_E_01	Halloween Horrors: Expert
+BUILD_03_08_E_02	Halloween Horrors: Expert
+BUILD_03_08_E_03	Halloween Horrors: Expert
+BUILD_03_08_E_04	Halloween Horrors: Expert
+BUILD_03_08_E_05	Halloween Horrors: Expert
+BUILD_03_08_E_06	Halloween Horrors: Expert
+BUILD_03_08_E_07	Halloween Horrors: Expert
+BUILD_03_08_E_08	Halloween Horrors: Expert
+BUILD_03_08_E_10	Halloween Horrors: Expert
+BUILD_03_08_E_11	Halloween Horrors: Expert
+BUILD_03_08_E_12	Halloween Horrors: Expert
+BUILD_03_09_E_01	Trick or Treasure!: Event
+BUILD_03_09_E_02	Trick or Treasure!: Event
+BUILD_03_09_E_03	Trick or Treasure!: Event
+BUILD_03_09_E_04	Trick or Treasure!: Event
+BUILD_03_10_E_01	Trick or Treasure!: Event
+BUILD_03_10_E_02	Trick or Treasure!: Event
+BUILD_03_10_E_03	Trick or Treasure!: Event
+BUILD_03_10_E_04	Trick or Treasure!: Event
+BUILD_03_10_E_05	Trick or Treasure!: Event
+BUILD_03_11_E_01	Trick or Treasure!: Event
+BUILD_03_11_E_02	Trick or Treasure!: Event
+BUILD_03_11_E_03	Trick or Treasure!: Event
+BUILD_03_11_E_04	Trick or Treasure!: Event
+BUILD_03_11_E_05	Trick or Treasure!: Event
+BUILD_03_11_E_06	Trick or Treasure!: Event
+BUILD_03_12_E_01	Halloween Horrors: Master
+BUILD_03_12_E_02	Halloween Horrors: Master
+BUILD_03_12_E_03	Halloween Horrors: Master
+BUILD_03_12_E_04	Halloween Horrors: Master
+BUILD_03_12_E_05	Halloween Horrors: Master
+BUILD_03_12_E_06	Halloween Horrors: Master
+BUILD_03_12_E_07	Halloween Horrors: Master
+BUILD_03_12_E_08	Halloween Horrors: Master
+BUILD_03_12_E_09	Halloween Horrors: Master
+BUILD_03_12_E_10	Halloween Horrors: Master
+BUILD_03_12_E_11	Halloween Horrors: Master
+BUILD_03_12_E_21	Halloween Horrors: Nightmare
+BUILD_03_12_E_22	Halloween Horrors: Nightmare
+BUILD_03_12_E_23	Halloween Horrors: Nightmare
+BUILD_03_12_E_24	Halloween Horrors: Nightmare
+BUILD_03_12_E_25	Halloween Horrors: Nightmare
+BUILD_03_12_E_26	Halloween Horrors: Nightmare
+BUILD_03_12_E_27	Halloween Horrors: Nightmare
+BUILD_03_12_E_28	Halloween Horrors: Nightmare
+BUILD_03_12_E_29	Halloween Horrors: Nightmare
+BUILD_03_12_E_30	Halloween Horrors: Nightmare
+BUILD_03_12_E_31	Halloween Horrors: Nightmare
+BUILD_04_01_E_01	The Miracle of Dragonyule: Event
+BUILD_04_01_E_02	The Miracle of Dragonyule: Event
+BUILD_04_01_E_03	The Miracle of Dragonyule: Event
+BUILD_04_01_E_04	The Miracle of Dragonyule: Event
+BUILD_04_01_E_05	The Miracle of Dragonyule: Event
+BUILD_04_01_E_06	The Miracle of Dragonyule: Event
+BUILD_04_02_E_01	The Miracle of Dragonyule: Event
+BUILD_04_02_E_02	The Miracle of Dragonyule: Event
+BUILD_04_02_E_03	The Miracle of Dragonyule: Event
+BUILD_04_02_E_04	The Miracle of Dragonyule: Event
+BUILD_04_02_E_05	The Miracle of Dragonyule: Event
+BUILD_04_03_E_01	The Miracle of Dragonyule: Event
+BUILD_04_03_E_02	The Miracle of Dragonyule: Event
+BUILD_04_03_E_03	The Miracle of Dragonyule: Event
+BUILD_04_03_E_04	The Miracle of Dragonyule: Event
+BUILD_04_03_E_05	The Miracle of Dragonyule: Event
+BUILD_04_03_E_06	The Miracle of Dragonyule: Event
+BUILD_04_04_E_01	The Miracle of Dragonyule: Event
+BUILD_04_04_E_02	The Miracle of Dragonyule: Event
+BUILD_04_04_E_03	The Miracle of Dragonyule: Event
+BUILD_04_04_E_04	The Miracle of Dragonyule: Event
+BUILD_04_04_E_05	The Miracle of Dragonyule: Event
+BUILD_04_04_E_06	The Miracle of Dragonyule: Event
+BUILD_04_04_E_07	The Miracle of Dragonyule: Event
+BUILD_04_05_E_01	Days of Dragonyule
+BUILD_04_05_E_02	Days of Dragonyule
+BUILD_04_05_E_03	Days of Dragonyule
+BUILD_04_05_E_04	Days of Dragonyule
+BUILD_04_05_E_05	Days of Dragonyule
+BUILD_04_05_E_06	Days of Dragonyule
+BUILD_04_05_E_07	Days of Dragonyule
+BUILD_04_05_E_08	Days of Dragonyule
+BUILD_04_05_E_09	Days of Dragonyule
+BUILD_04_05_E_10	Days of Dragonyule
+BUILD_04_05_E_11	Days of Dragonyule
+BUILD_04_06_E_01	Dazzling Delusions: Beginner
+BUILD_04_06_E_02	Dazzling Delusions: Beginner
+BUILD_04_06_E_03	Dazzling Delusions: Beginner
+BUILD_04_06_E_04	Dazzling Delusions: Beginner
+BUILD_04_06_E_05	Dazzling Delusions: Beginner
+BUILD_04_06_E_06	Dazzling Delusions: Beginner
+BUILD_04_06_E_07	Dazzling Delusions: Beginner
+BUILD_04_06_E_08	Dazzling Delusions: Beginner
+BUILD_04_06_E_09	Dazzling Delusions: Beginner
+BUILD_04_06_E_10	Dazzling Delusions: Beginner
+BUILD_04_06_E_11	Dazzling Delusions: Standard
+BUILD_04_06_E_12	Dazzling Delusions: Standard
+BUILD_04_06_E_13	Dazzling Delusions: Standard
+BUILD_04_06_E_14	Dazzling Delusions: Standard
+BUILD_04_06_E_15	Dazzling Delusions: Standard
+BUILD_04_06_E_16	Dazzling Delusions: Standard
+BUILD_04_06_E_17	Dazzling Delusions: Standard
+BUILD_04_06_E_18	Dazzling Delusions: Standard
+BUILD_04_06_E_19	Dazzling Delusions: Standard
+BUILD_04_06_E_20	Dazzling Delusions: Standard
+BUILD_04_06_E_21	Dazzling Delusions: Expert
+BUILD_04_06_E_22	Dazzling Delusions: Expert
+BUILD_04_06_E_23	Dazzling Delusions: Expert
+BUILD_04_06_E_24	Dazzling Delusions: Expert
+BUILD_04_06_E_25	Dazzling Delusions: Expert
+BUILD_04_06_E_26	Dazzling Delusions: Expert
+BUILD_04_06_E_27	Dazzling Delusions: Expert
+BUILD_04_06_E_28	Dazzling Delusions: Expert
+BUILD_04_06_E_29	Dazzling Delusions: Expert
+BUILD_04_06_E_30	Dazzling Delusions: Expert
+BUILD_04_07_E_01	The Brightest Star
+BUILD_04_07_E_02	The Brightest Star
+BUILD_04_07_E_03	The Brightest Star
+BUILD_04_07_E_04	The Brightest Star
+BUILD_04_07_E_05	The Brightest Star
+BUILD_04_07_E_06	The Brightest Star
+BUILD_04_07_E_07	The Brightest Star
+BUILD_04_08_E_01	Season's Beatings: Expert
+BUILD_04_08_E_02	Season's Beatings: Expert
+BUILD_04_08_E_03	Season's Beatings: Expert
+BUILD_04_08_E_04	Season's Beatings: Expert
+BUILD_04_08_E_05	Season's Beatings: Expert
+BUILD_04_08_E_06	Season's Beatings: Expert
+BUILD_04_08_E_07	Season's Beatings: Expert
+BUILD_04_08_E_08	Season's Beatings: Expert
+BUILD_04_08_E_09	Season's Beatings: Expert
+BUILD_04_08_E_10	Season's Beatings: Expert
+BUILD_04_08_E_11	Season's Beatings: Expert
+BUILD_04_09_E_01	The Miracle of Dragonyule: Event
+BUILD_04_09_E_02	The Miracle of Dragonyule: Event
+BUILD_04_09_E_03	The Miracle of Dragonyule: Event
+BUILD_04_09_E_04	The Miracle of Dragonyule: Event
+BUILD_04_09_E_05	The Miracle of Dragonyule: Event
+BUILD_04_10_E_01	The Miracle of Dragonyule: Event
+BUILD_04_10_E_02	The Miracle of Dragonyule: Event
+BUILD_04_10_E_03	The Miracle of Dragonyule: Event
+BUILD_04_10_E_04	The Miracle of Dragonyule: Event
+BUILD_04_10_E_05	The Miracle of Dragonyule: Event
+BUILD_04_11_E_01	The Miracle of Dragonyule: Event
+BUILD_04_11_E_02	The Miracle of Dragonyule: Event
+BUILD_04_11_E_03	The Miracle of Dragonyule: Event
+BUILD_04_11_E_04	The Miracle of Dragonyule: Event
+BUILD_04_11_E_05	The Miracle of Dragonyule: Event
+BUILD_04_11_E_06	The Miracle of Dragonyule: Event
+BUILD_04_12_E_01	Season's Beatings: Master
+BUILD_04_12_E_02	Season's Beatings: Master
+BUILD_04_12_E_03	Season's Beatings: Master
+BUILD_04_12_E_04	Season's Beatings: Master
+BUILD_04_12_E_05	Season's Beatings: Master
+BUILD_04_12_E_06	Season's Beatings: Master
+BUILD_04_12_E_07	Season's Beatings: Master
+BUILD_04_12_E_08	Season's Beatings: Master
+BUILD_04_12_E_09	Season's Beatings: Master
+BUILD_04_12_E_10	Season's Beatings: Master
+BUILD_04_12_E_21	Season's Beatings: Nightmare
+BUILD_04_12_E_22	Season's Beatings: Nightmare
+BUILD_04_12_E_23	Season's Beatings: Nightmare
+BUILD_04_12_E_24	Season's Beatings: Nightmare
+BUILD_04_12_E_25	Season's Beatings: Nightmare
+BUILD_04_12_E_26	Season's Beatings: Nightmare
+BUILD_04_12_E_27	Season's Beatings: Nightmare
+BUILD_04_12_E_28	Season's Beatings: Nightmare
+BUILD_04_12_E_29	Season's Beatings: Nightmare
+BUILD_04_12_E_30	Season's Beatings: Nightmare
+BUILD_06_01_E_01	The Accursed Archives: Event
+BUILD_06_01_E_02	The Accursed Archives: Event
+BUILD_06_01_E_03	The Accursed Archives: Event
+BUILD_06_01_E_04	The Accursed Archives: Event
+BUILD_06_01_E_05	The Accursed Archives: Event
+BUILD_06_02_E_01	The Accursed Archives: Event
+BUILD_06_02_E_02	The Accursed Archives: Event
+BUILD_06_02_E_03	The Accursed Archives: Event
+BUILD_06_02_E_04	The Accursed Archives: Event
+BUILD_06_02_E_05	The Accursed Archives: Event
+BUILD_06_02_E_06	The Accursed Archives: Event
+BUILD_06_02_E_07	The Accursed Archives: Event
+BUILD_06_02_E_08	The Accursed Archives: Event
+BUILD_06_03_E_01	The Crawling Nightmare: Beginner
+BUILD_06_03_E_02	The Crawling Nightmare: Beginner
+BUILD_06_03_E_03	The Crawling Nightmare: Beginner
+BUILD_06_03_E_04	The Crawling Nightmare: Beginner
+BUILD_06_03_E_05	The Crawling Nightmare: Beginner
+BUILD_06_03_E_06	The Crawling Nightmare: Beginner
+BUILD_06_03_E_07	The Crawling Nightmare: Beginner
+BUILD_06_03_E_08	The Crawling Nightmare: Beginner
+BUILD_06_03_E_09	The Crawling Nightmare: Standard
+BUILD_06_03_E_10	The Crawling Nightmare: Standard
+BUILD_06_03_E_11	The Crawling Nightmare: Standard
+BUILD_06_03_E_12	The Crawling Nightmare: Standard
+BUILD_06_03_E_13	The Crawling Nightmare: Standard
+BUILD_06_03_E_14	The Crawling Nightmare: Standard
+BUILD_06_03_E_15	The Crawling Nightmare: Standard
+BUILD_06_03_E_16	The Crawling Nightmare: Standard
+BUILD_06_03_E_17	The Crawling Nightmare: Expert
+BUILD_06_03_E_18	The Crawling Nightmare: Expert
+BUILD_06_03_E_19	The Crawling Nightmare: Expert
+BUILD_06_03_E_20	The Crawling Nightmare: Expert
+BUILD_06_03_E_21	The Crawling Nightmare: Expert
+BUILD_06_03_E_22	The Crawling Nightmare: Expert
+BUILD_06_03_E_23	The Crawling Nightmare: Expert
+BUILD_06_03_E_24	The Crawling Nightmare: Expert
+BUILD_06_04_E_01	It Prowls the Endless Dark...
+BUILD_06_04_E_02	It Prowls the Endless Dark...
+BUILD_06_04_E_03	It Prowls the Endless Dark...
+BUILD_06_04_E_04	It Prowls the Endless Dark...
+BUILD_06_04_E_05	It Prowls the Endless Dark...
+BUILD_06_04_E_06	It Prowls the Endless Dark...
+BUILD_06_04_E_07	It Prowls the Endless Dark...
+BUILD_06_04_E_08	It Prowls the Endless Dark...
+BUILD_06_05_E_01	Chaos's Calling: Expert
+BUILD_06_05_E_02	Chaos's Calling: Expert
+BUILD_06_05_E_03	Chaos's Calling: Expert
+BUILD_06_05_E_04	Chaos's Calling: Expert
+BUILD_06_05_E_05	Chaos's Calling: Expert
+BUILD_06_05_E_06	Chaos's Calling: Expert
+BUILD_06_05_E_07	Chaos's Calling: Expert
+BUILD_06_05_E_08	Chaos's Calling: Expert
+BUILD_06_05_E_09	Chaos's Calling: Expert
+BUILD_06_05_E_10	Chaos's Calling: Expert
+BUILD_06_05_E_11	Chaos's Calling: Expert
+BUILD_06_05_E_12	Chaos's Calling: Expert
+BUILD_06_05_E_13	Chaos's Calling: Expert
+BUILD_06_06_E_01	Chaos's Calling: Master
+BUILD_06_06_E_02	Chaos's Calling: Master
+BUILD_06_06_E_03	Chaos's Calling: Master
+BUILD_06_06_E_04	Chaos's Calling: Master
+BUILD_06_06_E_05	Chaos's Calling: Master
+BUILD_06_06_E_06	Chaos's Calling: Master
+BUILD_06_06_E_07	Chaos's Calling: Master
+BUILD_06_06_E_08	Chaos's Calling: Master
+BUILD_06_06_E_09	Chaos's Calling: Master
+BUILD_06_06_E_10	Chaos's Calling: Master
+BUILD_06_06_E_11	Chaos's Calling: Master
+BUILD_06_06_E_12	Chaos's Calling: Master
+BUILD_06_06_E_13	Chaos's Calling: Master
+BUILD_06_06_E_14	Chaos's Calling: Master
+BUILD_06_06_E_15	Chaos's Calling: Master
+BUILD_06_07_E_01	Chaos's Calling: Nightmare
+BUILD_06_07_E_02	Chaos's Calling: Nightmare
+BUILD_06_07_E_03	Chaos's Calling: Nightmare
+BUILD_06_07_E_04	Chaos's Calling: Nightmare
+BUILD_06_07_E_05	Chaos's Calling: Nightmare
+BUILD_06_07_E_06	Chaos's Calling: Nightmare
+BUILD_06_07_E_07	Chaos's Calling: Nightmare
+BUILD_06_07_E_08	Chaos's Calling: Nightmare
+BUILD_06_07_E_09	Chaos's Calling: Nightmare
+BUILD_06_07_E_10	Chaos's Calling: Nightmare
+BUILD_06_07_E_11	Chaos's Calling: Nightmare
+BUILD_06_07_E_12	Chaos's Calling: Nightmare
+BUILD_06_07_E_13	Chaos's Calling: Nightmare
+BUILD_06_07_E_14	Chaos's Calling: Nightmare
+BUILD_06_07_E_15	Chaos's Calling: Nightmare
+BUILD_07_01_E_01	The Hunt for Harmony: Event
+BUILD_07_01_E_02	The Hunt for Harmony: Event
+BUILD_07_01_E_03	The Hunt for Harmony: Event
+BUILD_07_01_E_06	The Hunt for Harmony: Event
+BUILD_07_02_E_02	The Hunt for Harmony: Event
+BUILD_07_02_E_03	The Hunt for Harmony: Event
+BUILD_07_02_E_06	The Hunt for Harmony: Event
+BUILD_07_02_E_07	The Hunt for Harmony: Event
+BUILD_07_03_E_01	The Vernal Games: Beginner
+BUILD_07_03_E_02	The Vernal Games: Beginner
+BUILD_07_03_E_03	The Vernal Games: Beginner
+BUILD_07_03_E_04	The Vernal Games: Beginner
+BUILD_07_03_E_05	The Vernal Games: Beginner
+BUILD_07_03_E_07	The Vernal Games: Beginner
+BUILD_07_03_E_08	The Vernal Games: Beginner
+BUILD_07_03_E_09	The Vernal Games: Beginner
+BUILD_07_03_E_10	The Vernal Games: Beginner
+BUILD_07_03_E_11	The Vernal Games: Standard
+BUILD_07_03_E_12	The Vernal Games: Standard
+BUILD_07_03_E_13	The Vernal Games: Standard
+BUILD_07_03_E_14	The Vernal Games: Standard
+BUILD_07_03_E_15	The Vernal Games: Standard
+BUILD_07_03_E_17	The Vernal Games: Standard
+BUILD_07_03_E_18	The Vernal Games: Standard
+BUILD_07_03_E_19	The Vernal Games: Standard
+BUILD_07_03_E_20	The Vernal Games: Standard
+BUILD_07_03_E_21	The Vernal Games: Expert
+BUILD_07_03_E_22	The Vernal Games: Expert
+BUILD_07_03_E_23	The Vernal Games: Expert
+BUILD_07_03_E_24	The Vernal Games: Expert
+BUILD_07_03_E_25	The Vernal Games: Expert
+BUILD_07_03_E_27	The Vernal Games: Expert
+BUILD_07_03_E_28	The Vernal Games: Expert
+BUILD_07_03_E_29	The Vernal Games: Expert
+BUILD_07_03_E_30	The Vernal Games: Expert
+BUILD_07_04_E_01	The Vernal Games: Finals
+BUILD_07_04_E_02	The Vernal Games: Finals
+BUILD_07_04_E_03	The Vernal Games: Finals
+BUILD_07_04_E_04	The Vernal Games: Finals
+BUILD_07_04_E_05	The Vernal Games: Finals
+BUILD_07_04_E_07	The Vernal Games: Finals
+BUILD_07_04_E_08	The Vernal Games: Finals
+BUILD_07_04_E_09	The Vernal Games: Finals
+BUILD_07_05_E_01	Full-Bloom Festivities: Expert
+BUILD_07_05_E_02	Full-Bloom Festivities: Expert
+BUILD_07_05_E_03	Full-Bloom Festivities: Expert
+BUILD_07_05_E_04	Full-Bloom Festivities: Expert
+BUILD_07_05_E_05	Full-Bloom Festivities: Expert
+BUILD_07_05_E_06	Full-Bloom Festivities: Expert
+BUILD_07_05_E_07	Full-Bloom Festivities: Expert
+BUILD_07_05_E_09	Full-Bloom Festivities: Expert
+BUILD_07_05_E_10	Full-Bloom Festivities: Expert
+BUILD_07_05_E_11	Full-Bloom Festivities: Expert
+BUILD_07_05_E_12	Full-Bloom Festivities: Expert
+BUILD_07_05_E_14	Full-Bloom Festivities: Expert
+BUILD_07_06_E_01	Full-Bloom Festivities: Master
+BUILD_07_06_E_02	Full-Bloom Festivities: Master
+BUILD_07_06_E_03	Full-Bloom Festivities: Master
+BUILD_07_06_E_04	Full-Bloom Festivities: Master
+BUILD_07_06_E_05	Full-Bloom Festivities: Master
+BUILD_07_06_E_06	Full-Bloom Festivities: Master
+BUILD_07_06_E_07	Full-Bloom Festivities: Master
+BUILD_07_06_E_09	Full-Bloom Festivities: Master
+BUILD_07_06_E_10	Full-Bloom Festivities: Master
+BUILD_07_06_E_11	Full-Bloom Festivities: Master
+BUILD_07_06_E_12	Full-Bloom Festivities: Master
+BUILD_07_06_E_14	Full-Bloom Festivities: Master
+BUILD_07_06_E_15	Full-Bloom Festivities: Master
+BUILD_07_06_E_16	Full-Bloom Festivities: Master
+BUILD_08_01_E_01	Flames of Reflection: Event
+BUILD_08_01_E_02	Flames of Reflection: Event
+BUILD_08_01_E_03	Flames of Reflection: Event
+BUILD_08_01_E_04	Flames of Reflection: Event
+BUILD_08_02_E_01	Flames of Reflection: Event
+BUILD_08_02_E_02	Flames of Reflection: Event
+BUILD_08_02_E_03	Flames of Reflection: Event
+BUILD_08_02_E_04	Flames of Reflection: Event
+BUILD_08_03_E_01	Arctos's Trial: Beginner
+BUILD_08_03_E_06	Arctos's Trial: Beginner
+BUILD_08_03_E_10	Arctos's Trial: Beginner
+BUILD_08_03_E_11	Arctos's Trial: Standard
+BUILD_08_03_E_12	Arctos's Trial: Standard
+BUILD_08_03_E_13	Arctos's Trial: Standard
+BUILD_08_03_E_14	Arctos's Trial: Standard
+BUILD_08_03_E_15	Arctos's Trial: Standard
+BUILD_08_03_E_16	Arctos's Trial: Standard
+BUILD_08_03_E_17	Arctos's Trial: Standard
+BUILD_08_03_E_18	Arctos's Trial: Standard
+BUILD_08_03_E_19	Arctos's Trial: Standard
+BUILD_08_03_E_20	Arctos's Trial: Standard
+BUILD_08_03_E_21	Arctos's Trial: Expert
+BUILD_08_03_E_22	Arctos's Trial: Expert
+BUILD_08_03_E_23	Arctos's Trial: Expert
+BUILD_08_03_E_24	Arctos's Trial: Expert
+BUILD_08_03_E_25	Arctos's Trial: Expert
+BUILD_08_03_E_26	Arctos's Trial: Expert
+BUILD_08_03_E_27	Arctos's Trial: Expert
+BUILD_08_03_E_28	Arctos's Trial: Expert
+BUILD_08_03_E_29	Arctos's Trial: Expert
+BUILD_08_03_E_30	Arctos's Trial: Expert
+BUILD_08_04_E_01	Arctos's Final Trial
+BUILD_08_04_E_02	Arctos's Final Trial
+BUILD_08_04_E_03	Arctos's Final Trial
+BUILD_08_04_E_04	Arctos's Final Trial
+BUILD_08_04_E_05	Arctos's Final Trial
+BUILD_08_04_E_06	Arctos's Final Trial
+BUILD_08_04_E_07	Arctos's Final Trial
+BUILD_08_05_E_01	The Path to Mastery: Expert
+BUILD_08_05_E_02	The Path to Mastery: Expert
+BUILD_08_05_E_03	The Path to Mastery: Expert
+BUILD_08_05_E_04	The Path to Mastery: Expert
+BUILD_08_05_E_05	The Path to Mastery: Expert
+BUILD_08_05_E_06	The Path to Mastery: Expert
+BUILD_08_05_E_07	The Path to Mastery: Expert
+BUILD_08_05_E_08	The Path to Mastery: Expert
+BUILD_08_05_E_09	The Path to Mastery: Expert
+BUILD_08_05_E_10	The Path to Mastery: Expert
+BUILD_08_05_E_11	The Path to Mastery: Expert
+BUILD_08_05_E_12	The Path to Mastery: Expert
+BUILD_08_05_E_13	The Path to Mastery: Expert
+BUILD_08_05_E_14	The Path to Mastery: Expert
+BUILD_08_06_E_01	The Path to Mastery: Master
+BUILD_08_06_E_02	The Path to Mastery: Master
+BUILD_08_06_E_03	The Path to Mastery: Master
+BUILD_08_06_E_04	The Path to Mastery: Master
+BUILD_08_06_E_05	The Path to Mastery: Master
+BUILD_08_06_E_06	The Path to Mastery: Master
+BUILD_08_06_E_07	The Path to Mastery: Master
+BUILD_08_06_E_08	The Path to Mastery: Master
+BUILD_08_06_E_09	The Path to Mastery: Master
+BUILD_08_06_E_10	The Path to Mastery: Master
+BUILD_08_06_E_11	The Path to Mastery: Master
+BUILD_08_06_E_12	The Path to Mastery: Master
+BUILD_08_06_E_13	The Path to Mastery: Master
+BUILD_08_06_E_14	The Path to Mastery: Master
+BUILD_08_07_E_01	The Path to Mastery: Nightmare
+BUILD_08_07_E_02	The Path to Mastery: Nightmare
+BUILD_08_07_E_03	The Path to Mastery: Nightmare
+BUILD_08_07_E_04	The Path to Mastery: Nightmare
+BUILD_08_07_E_05	The Path to Mastery: Nightmare
+BUILD_08_07_E_06	The Path to Mastery: Nightmare
+BUILD_08_07_E_08	The Path to Mastery: Nightmare
+BUILD_08_07_E_09	The Path to Mastery: Nightmare
+BUILD_08_07_E_10	The Path to Mastery: Nightmare
+BUILD_08_07_E_11	The Path to Mastery: Nightmare
+BUILD_08_07_E_12	The Path to Mastery: Nightmare
+BUILD_08_07_E_13	The Path to Mastery: Nightmare
+BUILD_08_07_E_14	The Path to Mastery: Nightmare
+BUILD_10_01_E_01	A Crescendo of Courage: Event
+BUILD_10_01_E_02	A Crescendo of Courage: Event
+BUILD_10_01_E_03	A Crescendo of Courage: Event
+BUILD_10_01_E_04	A Crescendo of Courage: Event
+BUILD_10_01_E_05	A Crescendo of Courage: Event
+BUILD_10_02_E_01	A Crescendo of Courage: Event
+BUILD_10_02_E_02	A Crescendo of Courage: Event
+BUILD_10_02_E_04	A Crescendo of Courage: Event
+BUILD_10_02_E_05	A Crescendo of Courage: Event
+BUILD_10_03_E_01	A Fiendish Performance: Beginner
+BUILD_10_03_E_02	A Fiendish Performance: Beginner
+BUILD_10_03_E_03	A Fiendish Performance: Beginner
+BUILD_10_03_E_04	A Fiendish Performance: Beginner
+BUILD_10_03_E_05	A Fiendish Performance: Beginner
+BUILD_10_03_E_07	A Fiendish Performance: Beginner
+BUILD_10_03_E_11	A Fiendish Performance: Standard
+BUILD_10_03_E_12	A Fiendish Performance: Standard
+BUILD_10_03_E_13	A Fiendish Performance: Standard
+BUILD_10_03_E_14	A Fiendish Performance: Standard
+BUILD_10_03_E_15	A Fiendish Performance: Standard
+BUILD_10_03_E_16	A Fiendish Performance: Standard
+BUILD_10_03_E_17	A Fiendish Performance: Standard
+BUILD_10_03_E_18	A Fiendish Performance: Standard
+BUILD_10_03_E_19	A Fiendish Performance: Standard
+BUILD_10_03_E_20	A Fiendish Performance: Standard
+BUILD_10_03_E_21	A Fiendish Performance: Expert
+BUILD_10_03_E_22	A Fiendish Performance: Expert
+BUILD_10_03_E_23	A Fiendish Performance: Expert
+BUILD_10_03_E_24	A Fiendish Performance: Expert
+BUILD_10_03_E_25	A Fiendish Performance: Expert
+BUILD_10_03_E_26	A Fiendish Performance: Expert
+BUILD_10_03_E_27	A Fiendish Performance: Expert
+BUILD_10_03_E_28	A Fiendish Performance: Expert
+BUILD_10_03_E_29	A Fiendish Performance: Expert
+BUILD_10_03_E_30	A Fiendish Performance: Expert
+BUILD_10_04_E_01	A Fiendish Encore
+BUILD_10_04_E_02	A Fiendish Encore
+BUILD_10_04_E_03	A Fiendish Encore
+BUILD_10_04_E_04	A Fiendish Encore
+BUILD_10_04_E_05	A Fiendish Encore
+BUILD_10_04_E_06	A Fiendish Encore
+BUILD_10_04_E_07	A Fiendish Encore
+BUILD_10_04_E_08	A Fiendish Encore
+BUILD_10_05_E_01	Can't Stop the Beatdown: Expert
+BUILD_10_05_E_02	Can't Stop the Beatdown: Expert
+BUILD_10_05_E_03	Can't Stop the Beatdown: Expert
+BUILD_10_05_E_04	Can't Stop the Beatdown: Expert
+BUILD_10_05_E_05	Can't Stop the Beatdown: Expert
+BUILD_10_05_E_06	Can't Stop the Beatdown: Expert
+BUILD_10_05_E_07	Can't Stop the Beatdown: Expert
+BUILD_10_05_E_09	Can't Stop the Beatdown: Expert
+BUILD_10_05_E_10	Can't Stop the Beatdown: Expert
+BUILD_10_05_E_11	Can't Stop the Beatdown: Expert
+BUILD_10_05_E_12	Can't Stop the Beatdown: Expert
+BUILD_10_05_E_13	Can't Stop the Beatdown: Expert
+BUILD_10_05_E_14	Can't Stop the Beatdown: Expert
+BUILD_10_06_E_01	Can't Stop the Beatdown: Master
+BUILD_10_06_E_02	Can't Stop the Beatdown: Master
+BUILD_10_06_E_03	Can't Stop the Beatdown: Master
+BUILD_10_06_E_04	Can't Stop the Beatdown: Master
+BUILD_10_06_E_05	Can't Stop the Beatdown: Master
+BUILD_10_06_E_06	Can't Stop the Beatdown: Master
+BUILD_10_06_E_07	Can't Stop the Beatdown: Master
+BUILD_10_06_E_09	Can't Stop the Beatdown: Master
+BUILD_10_06_E_10	Can't Stop the Beatdown: Master
+BUILD_10_06_E_11	Can't Stop the Beatdown: Master
+BUILD_10_06_E_12	Can't Stop the Beatdown: Master
+BUILD_10_06_E_13	Can't Stop the Beatdown: Master
+BUILD_10_06_E_14	Can't Stop the Beatdown: Master
+BUILD_10_07_E_01	Can't Stop the Beatdown: Nightmare
+BUILD_10_07_E_02	Can't Stop the Beatdown: Nightmare
+BUILD_10_07_E_03	Can't Stop the Beatdown: Nightmare
+BUILD_10_07_E_04	Can't Stop the Beatdown: Nightmare
+BUILD_10_07_E_05	Can't Stop the Beatdown: Nightmare
+BUILD_10_07_E_06	Can't Stop the Beatdown: Nightmare
+BUILD_10_07_E_07	Can't Stop the Beatdown: Nightmare
+BUILD_10_07_E_09	Can't Stop the Beatdown: Nightmare
+BUILD_10_07_E_10	Can't Stop the Beatdown: Nightmare
+BUILD_10_07_E_11	Can't Stop the Beatdown: Nightmare
+BUILD_10_07_E_12	Can't Stop the Beatdown: Nightmare
+BUILD_10_07_E_13	Can't Stop the Beatdown: Nightmare
+BUILD_10_07_E_14	Can't Stop the Beatdown: Nightmare
+BUILD_15_01_E_01	A Dash of Disaster: Event
+BUILD_15_01_E_02	A Dash of Disaster: Event
+BUILD_15_01_E_03	A Dash of Disaster: Event
+BUILD_15_01_E_04	A Dash of Disaster: Event
+BUILD_15_02_E_01	A Dash of Disaster: Event
+BUILD_15_02_E_02	A Dash of Disaster: Event
+BUILD_15_02_E_03	A Dash of Disaster: Event
+BUILD_15_02_E_04	A Dash of Disaster: Event
+BUILD_15_03_E_01	Nature's Bounty - À La Carte: Beginner
+BUILD_15_03_E_02	Nature's Bounty - À La Carte: Beginner
+BUILD_15_03_E_03	Nature's Bounty - À La Carte: Beginner
+BUILD_15_03_E_04	Nature's Bounty - À La Carte: Beginner
+BUILD_15_03_E_05	Nature's Bounty - À La Carte: Beginner
+BUILD_15_03_E_11	Nature's Bounty - À La Carte: Standard
+BUILD_15_03_E_12	Nature's Bounty - À La Carte: Standard
+BUILD_15_03_E_13	Nature's Bounty - À La Carte: Standard
+BUILD_15_03_E_14	Nature's Bounty - À La Carte: Standard
+BUILD_15_03_E_15	Nature's Bounty - À La Carte: Standard
+BUILD_15_03_E_21	Nature's Bounty - À La Carte: Expert
+BUILD_15_03_E_22	Nature's Bounty - À La Carte: Expert
+BUILD_15_03_E_23	Nature's Bounty - À La Carte: Expert
+BUILD_15_03_E_24	Nature's Bounty - À La Carte: Expert
+BUILD_15_03_E_25	Nature's Bounty - À La Carte: Expert
+BUILD_15_04_E_06	Nature's Bounty - Full Course
+BUILD_15_04_E_07	Nature's Bounty - Full Course
+BUILD_15_04_E_08	Nature's Bounty - Full Course
+BUILD_15_05_E_01	Survival of the Hungriest: Expert
+BUILD_15_05_E_02	Survival of the Hungriest: Expert
+BUILD_15_05_E_03	Survival of the Hungriest: Expert
+BUILD_15_05_E_04	Survival of the Hungriest: Expert
+BUILD_15_05_E_05	Survival of the Hungriest: Expert
+BUILD_15_05_E_06	Survival of the Hungriest: Expert
+BUILD_15_05_E_07	Survival of the Hungriest: Expert
+BUILD_15_05_E_08	Survival of the Hungriest: Expert
+BUILD_15_05_E_09	Survival of the Hungriest: Expert
+BUILD_15_05_E_10	Survival of the Hungriest: Expert
+BUILD_15_05_E_11	Survival of the Hungriest: Expert
+BUILD_15_06_E_01	Survival of the Hungriest: Master
+BUILD_15_06_E_02	Survival of the Hungriest: Master
+BUILD_15_06_E_03	Survival of the Hungriest: Master
+BUILD_15_06_E_04	Survival of the Hungriest: Master
+BUILD_15_06_E_05	Survival of the Hungriest: Master
+BUILD_15_06_E_06	Survival of the Hungriest: Master
+BUILD_15_06_E_07	Survival of the Hungriest: Master
+BUILD_15_06_E_08	Survival of the Hungriest: Master
+BUILD_15_06_E_09	Survival of the Hungriest: Master
+BUILD_15_06_E_10	Survival of the Hungriest: Master
+BUILD_15_06_E_11	Survival of the Hungriest: Master
+BUILD_15_07_E_01	Survival of the Hungriest: Nightmare
+BUILD_15_07_E_02	Survival of the Hungriest: Nightmare
+BUILD_15_07_E_03	Survival of the Hungriest: Nightmare
+BUILD_15_07_E_04	Survival of the Hungriest: Nightmare
+BUILD_15_07_E_05	Survival of the Hungriest: Nightmare
+BUILD_15_07_E_06	Survival of the Hungriest: Nightmare
+BUILD_15_07_E_07	Survival of the Hungriest: Nightmare
+BUILD_15_07_E_08	Survival of the Hungriest: Nightmare
+BUILD_15_07_E_09	Survival of the Hungriest: Nightmare
+BUILD_15_07_E_10	Survival of the Hungriest: Nightmare
+BUILD_15_07_E_11	Survival of the Hungriest: Nightmare
+
+
+
+
+
+
+
+
+
+
+CLB_01_01_01_E_01	Repel the Empire! (Normal)
+CLB_01_01_01_E_02	Repel the Empire! (Normal)
+CLB_01_01_01_E_05	Repel the Empire! (Normal)
+CLB_01_01_01_E_06	Repel the Empire! (Normal)
+CLB_01_01_01_E_09	Repel the Empire! (Normal)
+CLB_01_01_01_E_10	Repel the Empire! (Normal)
+CLB_01_01_02_E_01	Repel the Empire! (Hard)
+CLB_01_01_02_E_02	Repel the Empire! (Hard)
+CLB_01_01_02_E_05	Repel the Empire! (Hard)
+CLB_01_01_02_E_07	Repel the Empire! (Hard)
+CLB_01_01_02_E_10	Repel the Empire! (Hard)
+CLB_01_01_02_E_11	Repel the Empire! (Hard)
+CLB_01_01_02_E_12	Repel the Empire! (Hard)
+CLB_01_01_03_E_01	Repel the Empire! (Lunatic)
+CLB_01_01_03_E_02	Repel the Empire! (Lunatic)
+CLB_01_01_03_E_07	Repel the Empire! (Lunatic)
+CLB_01_01_03_E_09	Repel the Empire! (Lunatic)
+CLB_01_01_03_E_10	Repel the Empire! (Lunatic)
+CLB_01_01_03_E_13	Repel the Empire! (Lunatic)
+CLB_01_01_03_E_14	Repel the Empire! (Lunatic)
+CLB_01_01_03_E_16	Repel the Empire! (Lunatic)
+CLB_01_01_04_E_01	Repel the Empire! (Infernal)
+CLB_01_01_04_E_03	Repel the Empire! (Infernal)
+CLB_01_01_04_E_10	Repel the Empire! (Infernal)
+CLB_01_01_04_E_12	Repel the Empire! (Infernal)
+CLB_01_01_04_E_13	Repel the Empire! (Infernal)
+CLB_01_01_04_E_16	Repel the Empire! (Infernal)
+CLB_01_01_04_E_17	Repel the Empire! (Infernal)
+CLB_01_01_04_E_19	Repel the Empire! (Infernal)
+CLB_01_01_11_E_01	The Alberian Front (Normal)
+CLB_01_01_11_E_02	The Alberian Front (Normal)
+CLB_01_01_11_E_03	The Alberian Front (Normal)
+CLB_01_01_11_E_04	The Alberian Front (Normal)
+CLB_01_01_11_E_05	The Alberian Front (Normal)
+CLB_01_01_11_E_06	The Alberian Front (Normal)
+CLB_01_01_11_E_07	The Alberian Front (Normal)
+CLB_01_01_11_E_08	The Alberian Front (Normal)
+CLB_01_01_11_E_09	The Alberian Front (Normal)
+CLB_01_01_11_E_10	The Alberian Front (Normal)
+CLB_01_01_11_E_11	The Alberian Front (Normal)
+CLB_01_01_11_E_12	The Alberian Front (Normal)
+CLB_01_01_11_E_13	The Alberian Front (Normal)
+CLB_01_01_11_E_14	The Alberian Front (Normal)
+CLB_01_01_11_E_15	The Alberian Front (Normal)
+CLB_01_01_11_E_16	The Alberian Front (Normal)
+CLB_01_01_11_E_17	The Alberian Front (Normal)
+CLB_01_01_11_E_18	The Alberian Front (Normal)
+CLB_01_01_11_E_19	The Alberian Front (Normal)
+CLB_01_01_11_E_20	The Alberian Front (Normal)
+CLB_01_01_11_E_21	The Alberian Front (Normal)
+CLB_01_01_11_E_22	The Alberian Front (Normal)
+CLB_01_01_11_E_23	The Alberian Front (Normal)
+CLB_01_01_11_E_24	The Alberian Front (Normal)
+CLB_01_01_11_E_25	The Alberian Front (Normal)
+CLB_01_01_11_E_26	The Alberian Front (Normal)
+CLB_01_01_11_E_27	The Alberian Front (Normal)
+CLB_01_01_11_E_28	The Alberian Front (Normal)
+CLB_01_01_11_E_29	The Alberian Front (Normal)
+CLB_01_01_12_E_01	The Alberian Front (Hard)
+CLB_01_01_12_E_02	The Alberian Front (Hard)
+CLB_01_01_12_E_03	The Alberian Front (Hard)
+CLB_01_01_12_E_04	The Alberian Front (Hard)
+CLB_01_01_12_E_05	The Alberian Front (Hard)
+CLB_01_01_12_E_06	The Alberian Front (Hard)
+CLB_01_01_12_E_07	The Alberian Front (Hard)
+CLB_01_01_12_E_08	The Alberian Front (Hard)
+CLB_01_01_12_E_09	The Alberian Front (Hard)
+CLB_01_01_12_E_10	The Alberian Front (Hard)
+CLB_01_01_12_E_11	The Alberian Front (Hard)
+CLB_01_01_12_E_12	The Alberian Front (Hard)
+CLB_01_01_12_E_13	The Alberian Front (Hard)
+CLB_01_01_12_E_14	The Alberian Front (Hard)
+CLB_01_01_12_E_15	The Alberian Front (Hard)
+CLB_01_01_12_E_16	The Alberian Front (Hard)
+CLB_01_01_12_E_17	The Alberian Front (Hard)
+CLB_01_01_12_E_18	The Alberian Front (Hard)
+CLB_01_01_12_E_19	The Alberian Front (Hard)
+CLB_01_01_12_E_20	The Alberian Front (Hard)
+CLB_01_01_12_E_21	The Alberian Front (Hard)
+CLB_01_01_12_E_22	The Alberian Front (Hard)
+CLB_01_01_12_E_23	The Alberian Front (Hard)
+CLB_01_01_12_E_24	The Alberian Front (Hard)
+CLB_01_01_12_E_25	The Alberian Front (Hard)
+CLB_01_01_12_E_26	The Alberian Front (Hard)
+CLB_01_01_12_E_27	The Alberian Front (Hard)
+CLB_01_01_12_E_28	The Alberian Front (Hard)
+CLB_01_01_12_E_29	The Alberian Front (Hard)
+CLB_01_01_13_E_01	The Alberian Front (Lunatic)
+CLB_01_01_13_E_02	The Alberian Front (Lunatic)
+CLB_01_01_13_E_03	The Alberian Front (Lunatic)
+CLB_01_01_13_E_04	The Alberian Front (Lunatic)
+CLB_01_01_13_E_05	The Alberian Front (Lunatic)
+CLB_01_01_13_E_06	The Alberian Front (Lunatic)
+CLB_01_01_13_E_07	The Alberian Front (Lunatic)
+CLB_01_01_13_E_08	The Alberian Front (Lunatic)
+CLB_01_01_13_E_09	The Alberian Front (Lunatic)
+CLB_01_01_13_E_10	The Alberian Front (Lunatic)
+CLB_01_01_13_E_11	The Alberian Front (Lunatic)
+CLB_01_01_13_E_12	The Alberian Front (Lunatic)
+CLB_01_01_13_E_13	The Alberian Front (Lunatic)
+CLB_01_01_13_E_14	The Alberian Front (Lunatic)
+CLB_01_01_13_E_15	The Alberian Front (Lunatic)
+CLB_01_01_13_E_16	The Alberian Front (Lunatic)
+CLB_01_01_13_E_17	The Alberian Front (Lunatic)
+CLB_01_01_13_E_18	The Alberian Front (Lunatic)
+CLB_01_01_13_E_19	The Alberian Front (Lunatic)
+CLB_01_01_13_E_20	The Alberian Front (Lunatic)
+CLB_01_01_13_E_21	The Alberian Front (Lunatic)
+CLB_01_01_13_E_22	The Alberian Front (Lunatic)
+CLB_01_01_13_E_23	The Alberian Front (Lunatic)
+CLB_01_01_13_E_24	The Alberian Front (Lunatic)
+CLB_01_01_13_E_25	The Alberian Front (Lunatic)
+CLB_01_01_13_E_26	The Alberian Front (Lunatic)
+CLB_01_01_13_E_27	The Alberian Front (Lunatic)
+CLB_01_01_13_E_28	The Alberian Front (Lunatic)
+CLB_01_01_13_E_29	The Alberian Front (Lunatic)
+CLB_01_01_21_E_01	The Prince from Another World
+CLB_01_01_22_E_01	The Reticent Princess
+CLB_01_01_22_E_02	The Reticent Princess
+CLB_01_01_23_E_01	Alfonse's Trial
+CLB_01_01_24_E_01	Veronica's Trial
+CLB_01_01_24_E_02	Veronica's Trial
+
+
+
+
+
+
+
+
+
+
+EX_RUSH_01_01_E_01	Brainwashed Midgardsormr: Beginner
+EX_RUSH_01_01_E_02	Brainwashed Midgardsormr: Beginner
+EX_RUSH_01_01_E_03	Brainwashed Midgardsormr: Beginner
+EX_RUSH_01_01_E_04	Brainwashed Midgardsormr: Beginner
+EX_RUSH_01_01_E_05	Brainwashed Midgardsormr: Beginner
+EX_RUSH_01_01_E_06	Brainwashed Mercury: Beginner
+EX_RUSH_01_01_E_07	Brainwashed Mercury: Beginner
+EX_RUSH_01_01_E_08	Brainwashed Mercury: Beginner
+EX_RUSH_01_01_E_09	Brainwashed Mercury: Beginner
+EX_RUSH_01_01_E_10	Brainwashed Mercury: Beginner
+EX_RUSH_01_01_E_11	Brainwashed Brunhilda: Beginner
+EX_RUSH_01_01_E_12	Brainwashed Brunhilda: Beginner
+EX_RUSH_01_01_E_13	Brainwashed Brunhilda: Beginner
+EX_RUSH_01_01_E_14	Brainwashed Brunhilda: Beginner
+EX_RUSH_01_01_E_15	Brainwashed Brunhilda: Beginner
+EX_RUSH_01_01_E_16	Brainwashed Jupiter: Beginner
+EX_RUSH_01_01_E_17	Brainwashed Jupiter: Beginner
+EX_RUSH_01_01_E_18	Brainwashed Jupiter: Beginner
+EX_RUSH_01_01_E_19	Brainwashed Jupiter: Beginner
+EX_RUSH_01_01_E_20	Brainwashed Jupiter: Beginner
+EX_RUSH_01_01_E_21	Brainwashed Zodiark: Beginner
+EX_RUSH_01_01_E_22	Brainwashed Zodiark: Beginner
+EX_RUSH_01_01_E_23	Brainwashed Zodiark: Beginner
+EX_RUSH_01_01_E_24	Brainwashed Zodiark: Beginner
+EX_RUSH_01_01_E_25	Brainwashed Zodiark: Beginner
+EX_RUSH_01_01_E_26	Brainwashed Midgardsormr: Beginner
+EX_RUSH_01_01_E_27	Brainwashed Mercury: Beginner
+EX_RUSH_01_01_E_28	Brainwashed Brunhilda: Beginner
+EX_RUSH_01_01_E_29	Brainwashed Jupiter: Beginner
+EX_RUSH_01_01_E_30	Brainwashed Zodiark: Beginner
+EX_RUSH_01_01_E_31	Wily Machine 2: Beginner
+EX_RUSH_01_01_E_32	Wily Machine 2: Beginner
+EX_RUSH_01_01_E_33	Wily Machine 2: Beginner
+EX_RUSH_01_02_E_01	Brainwashed Midgardsormr: Standard
+EX_RUSH_01_02_E_02	Brainwashed Midgardsormr: Standard
+EX_RUSH_01_02_E_03	Brainwashed Midgardsormr: Standard
+EX_RUSH_01_02_E_04	Brainwashed Midgardsormr: Standard
+EX_RUSH_01_02_E_05	Brainwashed Midgardsormr: Standard
+EX_RUSH_01_02_E_06	Brainwashed Mercury: Standard
+EX_RUSH_01_02_E_07	Brainwashed Mercury: Standard
+EX_RUSH_01_02_E_08	Brainwashed Mercury: Standard
+EX_RUSH_01_02_E_09	Brainwashed Mercury: Standard
+EX_RUSH_01_02_E_10	Brainwashed Mercury: Standard
+EX_RUSH_01_02_E_11	Brainwashed Brunhilda: Standard
+EX_RUSH_01_02_E_12	Brainwashed Brunhilda: Standard
+EX_RUSH_01_02_E_13	Brainwashed Brunhilda: Standard
+EX_RUSH_01_02_E_14	Brainwashed Brunhilda: Standard
+EX_RUSH_01_02_E_15	Brainwashed Brunhilda: Standard
+EX_RUSH_01_02_E_16	Brainwashed Jupiter: Standard
+EX_RUSH_01_02_E_17	Brainwashed Jupiter: Standard
+EX_RUSH_01_02_E_18	Brainwashed Jupiter: Standard
+EX_RUSH_01_02_E_19	Brainwashed Jupiter: Standard
+EX_RUSH_01_02_E_20	Brainwashed Jupiter: Standard
+EX_RUSH_01_02_E_21	Brainwashed Zodiark: Standard
+EX_RUSH_01_02_E_22	Brainwashed Zodiark: Standard
+EX_RUSH_01_02_E_23	Brainwashed Zodiark: Standard
+EX_RUSH_01_02_E_24	Brainwashed Zodiark: Standard
+EX_RUSH_01_02_E_25	Brainwashed Zodiark: Standard
+EX_RUSH_01_02_E_26	Brainwashed Midgardsormr: Standard
+EX_RUSH_01_02_E_27	Brainwashed Mercury: Standard
+EX_RUSH_01_02_E_28	Brainwashed Brunhilda: Standard
+EX_RUSH_01_02_E_29	Brainwashed Jupiter: Standard
+EX_RUSH_01_02_E_30	Brainwashed Zodiark: Standard
+EX_RUSH_01_02_E_31	Wily Machine 2: Standard
+EX_RUSH_01_02_E_32	Wily Machine 2: Standard
+EX_RUSH_01_02_E_33	Wily Machine 2: Standard
+EX_RUSH_01_03_E_01	Brainwashed Midgardsormr: Expert
+EX_RUSH_01_03_E_02	Brainwashed Midgardsormr: Expert
+EX_RUSH_01_03_E_03	Brainwashed Midgardsormr: Expert
+EX_RUSH_01_03_E_04	Brainwashed Midgardsormr: Expert
+EX_RUSH_01_03_E_05	Brainwashed Midgardsormr: Expert
+EX_RUSH_01_03_E_06	Brainwashed Mercury: Expert
+EX_RUSH_01_03_E_07	Brainwashed Mercury: Expert
+EX_RUSH_01_03_E_08	Brainwashed Mercury: Expert
+EX_RUSH_01_03_E_09	Brainwashed Mercury: Expert
+EX_RUSH_01_03_E_10	Brainwashed Mercury: Expert
+EX_RUSH_01_03_E_11	Brainwashed Brunhilda: Expert
+EX_RUSH_01_03_E_12	Brainwashed Brunhilda: Expert
+EX_RUSH_01_03_E_13	Brainwashed Brunhilda: Expert
+EX_RUSH_01_03_E_14	Brainwashed Brunhilda: Expert
+EX_RUSH_01_03_E_15	Brainwashed Brunhilda: Expert
+EX_RUSH_01_03_E_16	Brainwashed Jupiter: Expert
+EX_RUSH_01_03_E_17	Brainwashed Jupiter: Expert
+EX_RUSH_01_03_E_18	Brainwashed Jupiter: Expert
+EX_RUSH_01_03_E_19	Brainwashed Jupiter: Expert
+EX_RUSH_01_03_E_20	Brainwashed Jupiter: Expert
+EX_RUSH_01_03_E_21	Brainwashed Zodiark: Expert
+EX_RUSH_01_03_E_22	Brainwashed Zodiark: Expert
+EX_RUSH_01_03_E_23	Brainwashed Zodiark: Expert
+EX_RUSH_01_03_E_24	Brainwashed Zodiark: Expert
+EX_RUSH_01_03_E_25	Brainwashed Zodiark: Expert
+EX_RUSH_01_03_E_26	Brainwashed Midgardsormr: Expert
+EX_RUSH_01_03_E_27	Brainwashed Mercury: Expert
+EX_RUSH_01_03_E_28	Brainwashed Brunhilda: Expert
+EX_RUSH_01_03_E_29	Brainwashed Jupiter: Expert
+EX_RUSH_01_03_E_30	Brainwashed Zodiark: Expert
+EX_RUSH_01_03_E_31	Wily Machine 2: Expert
+EX_RUSH_01_03_E_32	Wily Machine 2: Expert
+EX_RUSH_01_03_E_33	Wily Machine 2: Expert
+EX_RUSH_01_04_E_01	Brainwashed Midgardsormr: Master
+EX_RUSH_01_04_E_02	Brainwashed Midgardsormr: Master
+EX_RUSH_01_04_E_03	Brainwashed Midgardsormr: Master
+EX_RUSH_01_04_E_04	Brainwashed Midgardsormr: Master
+EX_RUSH_01_04_E_05	Brainwashed Midgardsormr: Master
+EX_RUSH_01_04_E_06	Brainwashed Mercury: Master
+EX_RUSH_01_04_E_07	Brainwashed Mercury: Master
+EX_RUSH_01_04_E_08	Brainwashed Mercury: Master
+EX_RUSH_01_04_E_09	Brainwashed Mercury: Master
+EX_RUSH_01_04_E_10	Brainwashed Mercury: Master
+EX_RUSH_01_04_E_11	Brainwashed Brunhilda: Master
+EX_RUSH_01_04_E_12	Brainwashed Brunhilda: Master
+EX_RUSH_01_04_E_13	Brainwashed Brunhilda: Master
+EX_RUSH_01_04_E_14	Brainwashed Brunhilda: Master
+EX_RUSH_01_04_E_15	Brainwashed Brunhilda: Master
+EX_RUSH_01_04_E_16	Brainwashed Jupiter: Master
+EX_RUSH_01_04_E_17	Brainwashed Jupiter: Master
+EX_RUSH_01_04_E_18	Brainwashed Jupiter: Master
+EX_RUSH_01_04_E_19	Brainwashed Jupiter: Master
+EX_RUSH_01_04_E_20	Brainwashed Jupiter: Master
+EX_RUSH_01_04_E_21	Brainwashed Zodiark: Master
+EX_RUSH_01_04_E_22	Brainwashed Zodiark: Master
+EX_RUSH_01_04_E_23	Brainwashed Zodiark: Master
+EX_RUSH_01_04_E_24	Brainwashed Zodiark: Master
+EX_RUSH_01_04_E_25	Brainwashed Zodiark: Master
+EX_RUSH_01_04_E_26	Brainwashed Midgardsormr: Master
+EX_RUSH_01_04_E_27	Brainwashed Mercury: Master
+EX_RUSH_01_04_E_28	Brainwashed Brunhilda: Master
+EX_RUSH_01_04_E_29	Brainwashed Jupiter: Master
+EX_RUSH_01_04_E_30	Brainwashed Zodiark: Master
+EX_RUSH_01_04_E_31	Wily Machine 2: Master
+EX_RUSH_01_04_E_32	Mega Man's Trial (Solo)
+EX_RUSH_01_04_E_33	Wily Machine 2: Master
+EX_RUSH_01_04_E_34	Wily Machine 2: Master
+EX_RUSH_01_05_E_01	Brainwashed Midgardsormr: Superhero (Solo)
+EX_RUSH_01_05_E_02	Brainwashed Midgardsormr: Superhero
+EX_RUSH_01_05_E_03	Brainwashed Mercury: Superhero (Solo)
+EX_RUSH_01_05_E_04	Brainwashed Mercury: Superhero
+EX_RUSH_01_05_E_05	Brainwashed Brunhilda: Superhero (Solo)
+EX_RUSH_01_05_E_06	Brainwashed Brunhilda: Superhero
+EX_RUSH_01_05_E_07	Brainwashed Jupiter: Superhero (Solo)
+EX_RUSH_01_05_E_08	Brainwashed Jupiter: Superhero
+EX_RUSH_01_05_E_09	Brainwashed Zodiark: Superhero (Solo)
+EX_RUSH_01_05_E_10	Brainwashed Zodiark: Superhero
+EX_RUSH_01_05_E_11	Wily Machine 2: Superhero (Solo)
+EX_RUSH_01_05_E_12	Wily Machine 2: Superhero
+EX_RUSH_01_05_E_13	Mega Man's Trial
+EX_RUSH_01_05_E_14	Wily Machine 2: Superhero
+EX_RUSH_01_05_E_15	Wily Machine 2: Superhero
+EX_RUSH_01_05_E_16	Brainwashed Midgardsormr: Superhero
+EX_RUSH_01_05_E_17	Brainwashed Midgardsormr: Superhero
+EX_RUSH_01_05_E_18	Brainwashed Midgardsormr: Superhero
+EX_RUSH_01_05_E_19	Brainwashed Midgardsormr: Superhero
+EX_RUSH_01_05_E_20	Brainwashed Midgardsormr: Superhero
+EX_RUSH_01_05_E_21	Brainwashed Mercury: Superhero
+EX_RUSH_01_05_E_22	Brainwashed Mercury: Superhero
+EX_RUSH_01_05_E_23	Brainwashed Mercury: Superhero
+EX_RUSH_01_05_E_24	Brainwashed Mercury: Superhero
+EX_RUSH_01_05_E_25	Brainwashed Mercury: Superhero
+EX_RUSH_01_05_E_26	Brainwashed Brunhilda: Superhero
+EX_RUSH_01_05_E_27	Brainwashed Brunhilda: Superhero
+EX_RUSH_01_05_E_28	Brainwashed Brunhilda: Superhero
+EX_RUSH_01_05_E_29	Brainwashed Brunhilda: Superhero
+EX_RUSH_01_05_E_30	Brainwashed Brunhilda: Superhero
+EX_RUSH_01_05_E_31	Brainwashed Jupiter: Superhero
+EX_RUSH_01_05_E_32	Brainwashed Jupiter: Superhero
+EX_RUSH_01_05_E_33	Brainwashed Jupiter: Superhero
+EX_RUSH_01_05_E_34	Brainwashed Jupiter: Superhero
+EX_RUSH_01_05_E_35	Brainwashed Jupiter: Superhero
+EX_RUSH_01_05_E_36	Brainwashed Zodiark: Superhero
+EX_RUSH_01_05_E_37	Brainwashed Zodiark: Superhero
+EX_RUSH_01_05_E_38	Brainwashed Zodiark: Superhero
+EX_RUSH_01_05_E_39	Brainwashed Zodiark: Superhero
+EX_RUSH_01_05_E_40	Brainwashed Zodiark: Superhero
+
+
+
+
+
+
+
+
+
+
+EX_HUNTER_01_01_E_01	Monster Hunter Primal Crisis Event
+EX_HUNTER_01_01_E_02	Monster Hunter Primal Crisis Event
+EX_HUNTER_01_01_E_03	Monster Hunter Primal Crisis Event
+EX_HUNTER_01_01_E_04	Monster Hunter Primal Crisis Event
+EX_HUNTER_01_01_E_05	Monster Hunter Primal Crisis Event
+EX_HUNTER_01_01_E_06	Monster Hunter Primal Crisis Event
+EX_HUNTER_01_01_E_11	Monster Hunter Primal Crisis Event
+EX_HUNTER_01_01_E_12	Monster Hunter Primal Crisis Event
+EX_HUNTER_01_01_E_13	Monster Hunter Primal Crisis Event
+EX_HUNTER_01_01_E_14	Monster Hunter Primal Crisis Event
+EX_HUNTER_01_01_E_15	Monster Hunter Primal Crisis Event
+EX_HUNTER_01_01_E_16	Monster Hunter Primal Crisis Event
+EX_HUNTER_01_01_E_21	Monster Hunter Primal Crisis Event
+EX_HUNTER_01_01_E_22	Monster Hunter Primal Crisis Event
+EX_HUNTER_01_01_E_23	Monster Hunter Primal Crisis Event
+EX_HUNTER_01_01_E_24	Monster Hunter Primal Crisis Event
+EX_HUNTER_01_01_E_25	Monster Hunter Primal Crisis Event
+EX_HUNTER_01_01_E_31	Monster Hunter Primal Crisis Event
+EX_HUNTER_01_01_E_32	Monster Hunter Primal Crisis Event
+EX_HUNTER_01_01_E_33	Monster Hunter Primal Crisis Event
+EX_HUNTER_01_01_E_34	Monster Hunter Primal Crisis Event
+EX_HUNTER_01_01_E_35	Monster Hunter Primal Crisis Event
+EX_HUNTER_01_01_E_36	Monster Hunter Primal Crisis Event
+EX_HUNTER_01_01_E_37	Monster Hunter Primal Crisis Event
+EX_HUNTER_01_01_E_38	Monster Hunter Primal Crisis Event
+EX_HUNTER_01_02_E_01	Fatalis Clash: G★
+EX_HUNTER_01_02_E_02	Fatalis Clash: G★
+EX_HUNTER_01_02_E_03	Fatalis Clash: G★
+EX_HUNTER_01_02_E_04	Fatalis Clash: G★
+EX_HUNTER_01_02_E_05	Fatalis Clash: G★
+EX_HUNTER_01_02_E_11	Rathalos Assault: Low Rank
+EX_HUNTER_01_02_E_12	Rathalos Assault: Low Rank
+EX_HUNTER_01_02_E_13	Rathalos Assault: Low Rank
+EX_HUNTER_01_02_E_14	Rathalos Assault: Low Rank
+EX_HUNTER_01_02_E_15	Rathalos Assault: Low Rank
+EX_HUNTER_01_03_E_01	Fatalis Clash: G★★
+EX_HUNTER_01_03_E_02	Fatalis Clash: G★★
+EX_HUNTER_01_03_E_03	Fatalis Clash: G★★
+EX_HUNTER_01_03_E_04	Fatalis Clash: G★★
+EX_HUNTER_01_03_E_05	Fatalis Clash: G★★
+EX_HUNTER_01_03_E_11	Rathalos Assault: High Rank
+EX_HUNTER_01_03_E_12	Rathalos Assault: High Rank
+EX_HUNTER_01_03_E_13	Rathalos Assault: High Rank
+EX_HUNTER_01_03_E_14	Rathalos Assault: High Rank
+EX_HUNTER_01_03_E_15	Rathalos Assault: High Rank
+EX_HUNTER_01_04_E_01	Fatalis Clash: EX
+EX_HUNTER_01_04_E_02	Fatalis Clash: EX
+EX_HUNTER_01_04_E_03	Fatalis Clash: EX
+EX_HUNTER_01_04_E_04	Fatalis Clash: EX
+EX_HUNTER_01_04_E_05	Fatalis Clash: EX
+EX_HUNTER_01_05_E_01	Fatalis Clash: G★★★
+EX_HUNTER_01_05_E_02	Fatalis Clash: G★★★
+EX_HUNTER_01_05_E_03	Fatalis Clash: G★★★
+EX_HUNTER_01_05_E_04	Fatalis Clash: G★★★
+EX_HUNTER_01_05_E_05	Fatalis Clash: G★★★
+EX_HUNTER_01_05_E_11	Rathalos's Trial (Solo)
+EX_HUNTER_01_05_E_12	Rathalos's Trial (Solo)
+EX_HUNTER_01_05_E_13	Rathalos's Trial (Solo)
+EX_HUNTER_01_05_E_14	Rathalos's Trial (Solo)
+EX_HUNTER_01_05_E_15	Rathalos's Trial (Solo)
+EX_HUNTER_01_05_E_21	Advanced Rathalos's Trial (Solo)
+EX_HUNTER_01_05_E_22	Advanced Rathalos's Trial (Solo)
+EX_HUNTER_01_05_E_23	Advanced Rathalos's Trial (Solo)
+EX_HUNTER_01_05_E_24	Advanced Rathalos's Trial (Solo)
+EX_HUNTER_01_05_E_25	Advanced Rathalos's Trial (Solo)
+EX_HUNTER_01_05_E_31	Rathalos's Trial
+EX_HUNTER_01_05_E_32	Rathalos's Trial
+EX_HUNTER_01_05_E_33	Rathalos's Trial
+EX_HUNTER_01_05_E_34	Rathalos's Trial
+EX_HUNTER_01_05_E_35	Rathalos's Trial
+EX_HUNTER_01_05_E_41	Advanced Rathalos's Trial
+EX_HUNTER_01_05_E_42	Advanced Rathalos's Trial
+EX_HUNTER_01_05_E_43	Advanced Rathalos's Trial
+EX_HUNTER_01_05_E_44	Advanced Rathalos's Trial
+EX_HUNTER_01_05_E_45	Advanced Rathalos's Trial
+EX_HUNTER_01_06_E_01	Fatalis Clash: G★★★★ (Solo)
+EX_HUNTER_01_06_E_02	Fatalis Clash: G★★★★ (Solo)
+EX_HUNTER_01_06_E_03	Fatalis Clash: G★★★★ (Solo)
+EX_HUNTER_01_06_E_04	Fatalis Clash: G★★★★ (Solo)
+EX_HUNTER_01_06_E_05	Fatalis Clash: G★★★★ (Solo)
+EX_HUNTER_01_06_E_11	Fatalis Clash: G★★★★ (Raid)
+EX_HUNTER_01_06_E_12	Fatalis Clash: G★★★★ (Raid)
+EX_HUNTER_01_06_E_13	Fatalis Clash: G★★★★ (Raid)
+EX_HUNTER_01_06_E_14	Fatalis Clash: G★★★★ (Raid)
+EX_HUNTER_01_06_E_15	Fatalis Clash: G★★★★ (Raid)
+EX_HUNTER_01_06_E_21	Dreadking Rathalos's Trial (Solo)
+EX_HUNTER_01_06_E_22	Dreadking Rathalos's Trial (Solo)
+EX_HUNTER_01_06_E_23	Dreadking Rathalos's Trial (Solo)
+EX_HUNTER_01_06_E_24	Dreadking Rathalos's Trial (Solo)
+EX_HUNTER_01_06_E_25	Dreadking Rathalos's Trial (Solo)
+EX_HUNTER_01_06_E_31	Advanced Dreadking Rathalos's Trial (Solo)
+EX_HUNTER_01_06_E_32	Advanced Dreadking Rathalos's Trial (Solo)
+EX_HUNTER_01_06_E_33	Advanced Dreadking Rathalos's Trial (Solo)
+EX_HUNTER_01_06_E_34	Advanced Dreadking Rathalos's Trial (Solo)
+EX_HUNTER_01_06_E_35	Advanced Dreadking Rathalos's Trial (Solo)
+EX_HUNTER_01_06_E_41	Advanced Dreadking Rathalos's Trial (Solo)
+EX_HUNTER_01_06_E_42	Advanced Dreadking Rathalos's Trial (Solo)
+EX_HUNTER_01_06_E_43	Advanced Dreadking Rathalos's Trial (Solo)
+EX_HUNTER_01_06_E_44	Advanced Dreadking Rathalos's Trial (Solo)
+EX_HUNTER_01_06_E_45	Advanced Dreadking Rathalos's Trial (Solo)
+EX_HUNTER_01_06_E_51	Dreadking Rathalos's Trial
+EX_HUNTER_01_06_E_52	Dreadking Rathalos's Trial
+EX_HUNTER_01_06_E_53	Dreadking Rathalos's Trial
+EX_HUNTER_01_06_E_54	Dreadking Rathalos's Trial
+EX_HUNTER_01_06_E_55	Dreadking Rathalos's Trial
+EX_HUNTER_01_06_E_61	Advanced Dreadking Rathalos's Trial
+EX_HUNTER_01_06_E_62	Advanced Dreadking Rathalos's Trial
+EX_HUNTER_01_06_E_63	Advanced Dreadking Rathalos's Trial
+EX_HUNTER_01_06_E_64	Advanced Dreadking Rathalos's Trial
+EX_HUNTER_01_06_E_65	Advanced Dreadking Rathalos's Trial
+EX_HUNTER_01_06_E_71	Advanced Dreadking Rathalos's Trial
+EX_HUNTER_01_06_E_72	Advanced Dreadking Rathalos's Trial
+EX_HUNTER_01_06_E_73	Advanced Dreadking Rathalos's Trial
+EX_HUNTER_01_06_E_74	Advanced Dreadking Rathalos's Trial
+EX_HUNTER_01_06_E_75	Advanced Dreadking Rathalos's Trial
+
+
+
+
+
+
+
+
+
+
+SIMPLE_01_01_E_01	Treasure Slime Clean-Up
+SIMPLE_01_01_E_02	Fafnir Clean-Up
+SIMPLE_01_01_E_03	Fafnir Clean-Up
+SIMPLE_01_01_E_04	Fafnir Clean-Up
+SIMPLE_01_01_E_05	Gold Slime Clean-Up
+SIMPLE_01_01_E_06	Gold Slime Clean-Up
+SIMPLE_01_01_E_07	A Sweeping Retrospective Quests

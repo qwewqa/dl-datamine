@@ -98,7 +98,7 @@ def filter_image_dict(images):
     ref = copy.deepcopy(images)
     for dir_name in ref:
         for base_name in ref[dir_name]:
-            if len(ref[dir_name][base_name]) == 1:
+            if len(ref[dir_name][base_name]) == 1 and 'YCbCr' not in ref[dir_name][base_name]:
                 if dir_name not in no_merge:
                     no_merge[dir_name] = {}
                 no_merge[dir_name][base_name] = images[dir_name][base_name]
@@ -301,7 +301,6 @@ if __name__ == '__main__':
     WYRMPRINT_ALPHA = args.wpa
     images = build_image_dict(args.i)
     images, Not_Merged = filter_image_dict(images)
-    # print_image_dict(images, False)
 
     merged = merge_all_images(images)
     save_merged_images(merged, args.i, args.o)
